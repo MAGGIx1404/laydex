@@ -1,0 +1,8 @@
+extends /layouts/default
+include /mixins/button
+
+block content
+    section.banner
+        .container
+            h1 Welcome to the site
+            +link('Go to the about page', '/about', 'link-bg')

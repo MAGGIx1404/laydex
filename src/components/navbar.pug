@@ -1,0 +1,14 @@
+nav.navbar
+    .container
+        a.logo(href="/") Logo
+        .navbar-links
+            +link('Home', '/', 'link')
+            +link('About', '/', 'link')
+            .drop-down
+                button.link Services
+                .drop-down-content
+                    +link('Service 1', '/', 'dd-btn')
+                    +link('Service 2', '/', 'dd-btn')
+                    +link('Service 3', '/', 'dd-btn')
+            +link('Contact', '/', 'link-bg')
+        button.hamb-btn Hamburger

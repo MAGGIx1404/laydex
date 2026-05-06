@@ -1,0 +1,38 @@
+@use '../abstracts' as *;
+
+.navbar {
+    position: relative;
+    z-index: 10;
+
+    .container {
+        @include set-flex(row, space-between, center);
+        padding: 2rem 0;
+
+        .logo {
+            font-size: 3rem;
+        }
+
+        .navbar-links {
+            @include set-flex(row, space-between, center);
+            gap: 2rem;
+        }
+
+        .hamb-btn {
+            display: none;
+        }
+    }
+}
+
+@include responsive(md) {
+    .navbar {
+        .container {
+            .navbar-links {
+                display: none;
+            }
+
+            .hamb-btn {
+                display: flex;
+            }
+        }
+    }
+}

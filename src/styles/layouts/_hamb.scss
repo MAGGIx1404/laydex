@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+
+.hamb-menu {
+    @extend %size-full;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: $color-dark;
+    color: $color-white;
+    overflow-y: scroll;
+    transition: all $animation-primary;
+    transform: translateX(100%);
+
+    .hamb-menu-inner {
+        @extend %size-cover;
+        @include set-flex(column, flex-start, flex-start);
+        padding: 15rem 5%;
+
+        .hamb-link {
+            @extend %size-cover;
+            font-size: 5rem;
+            line-height: 1.25;
+            padding: 2rem 0;
+            border-bottom: 1px solid currentColor;
+        }
+    }
+
+    &.active {
+        transform: translateX(0);
+        opacity: 1 !important;
+    }
+}

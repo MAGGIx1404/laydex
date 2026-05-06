@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    include /partials/head
+
+    body
+        include /mixins/button
+        include /components/navbar
+        include /components/hamb
+
+        //- content
+        .page-wrapper
+            block content
+
+        include /components/footer
+        include /partials/script

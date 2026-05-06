@@ -1,0 +1,17 @@
+// fonts
+$font-poppins: 'Poppins', sans-serif;
+
+// variables
+$vh: calc(var(--vh, 1vh) * 100);
+
+// colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-dark: #1a1a1a;
+
+// easing functions
+$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+$animation-smooth: cubic-bezier(0.3, 1, 0.3, 1);
+$animation-primary: 0.6s cubic-bezier(0.3, 1, 0.3, 1);
+$animation-slow: 0.8s cubic-bezier(0.6, 0, 0.2, 1);
+$ease-hover: cubic-bezier(0.19, 1, 0.22, 1);

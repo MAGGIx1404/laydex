@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+%link {
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.link {
+    @extend %link;
+}
+
+.link-bg {
+    @extend %link;
+    background: $color-black;
+    color: $color-white;
+    padding: 1.25rem 3rem;
+}

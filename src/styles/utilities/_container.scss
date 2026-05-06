@@ -1,0 +1,13 @@
+@use '../abstracts' as var;
+
+.page-wrapper {
+    @extend %size-cover;
+    overflow: hidden;
+}
+
+.container {
+    @extend %size-cover;
+    position: relative;
+    max-width: 95%;
+    margin: 0 auto;
+}

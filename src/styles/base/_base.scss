@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    outline: none;
+    -webkit-touch-callout: none;
+    font-family: $font-poppins;
+}
+
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border: 0;
+}
+
+a {
+    color: inherit;
+    outline: none;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+button {
+    background: none;
+    border: none;
+    border-radius: none;
+    color: inherit;
+    outline: none;
+    cursor: pointer;
+}
+
+video,
+img {
+    vertical-align: middle;
+    object-fit: cover;
+    object-position: center;
+}
+
+input,
+textarea {
+    appearance: none;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    pointer-events: auto;
+}
+
+:root {
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-optical-sizing: auto;
+}
+
+html {
+    box-sizing: border-box;
+    overscroll-behavior: none;
+    font-size: calc(100vw / 1920 * 10) !important;
+
+    @media only screen and (max-width: 1024px) {
+        font-size: calc(100vw / 1024 * 10) !important;
+    }
+
+    @media only screen and (max-width: 482px) {
+        font-size: calc(100vw / 482 * 10) !important;
+    }
+}
+
+body {
+    overscroll-behavior: none;
+    font-weight: 400;
+    width: 100%;
+    min-height: 100vh;
+}
