@@ -1,14 +1,15 @@
 nav.navbar
     .container
-        a.logo(href="/") Logo
+        a.logo(href="/")
+            img.logo-image(src="/images/logo.svg", alt="Laydex logo")
         .navbar-links
-            +link('Home', '/', 'link')
-            +link('About', '/', 'link')
-            .drop-down
-                button.link Services
-                .drop-down-content
-                    +link('Service 1', '/', 'dd-btn')
-                    +link('Service 2', '/', 'dd-btn')
-                    +link('Service 3', '/', 'dd-btn')
-            +link('Contact', '/', 'link-bg')
-        button.hamb-btn Hamburger
+            button.link-outline-icon
+                img.icon(src="/icons/search.svg", alt="image")
+            a.link-outline(href="/") SERVICES +
+            a.link-outline(href="/") ABOUT US
+            a.link-outline(href="/") PRODUCTS +
+            a.link-outline(href="/") Sales Contacts
+            a.link-outline(href="/") Contact US
+            a.link-outline(href="/")
+                | LOG IN
+                img.icon(src="/icons/user.svg", alt="image")

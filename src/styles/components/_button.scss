@@ -4,3 +4,39 @@ a,
 button {
     pointer-events: auto;
 }
+
+%link {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    font-family: $font-primary;
+
+    &:has(img) {
+        @include set-flex(row, flex-start, flex-end, 0.75rem);
+    }
+
+    .icon {
+        height: 1.5rem;
+    }
+}
+
+%padding {
+    padding: 1rem 2rem 0.9rem 2rem;
+    border: 1px solid currentColor;
+}
+
+.link-outline {
+    @extend %link, %padding;
+    text-transform: uppercase;
+}
+
+.link-outline-icon {
+    @include set-flex(row, center, center);
+    border: 1px solid currentColor;
+    width: 3.5rem;
+    height: 3.5rem;
+
+    .icon {
+        width: 1.5rem;
+    }
+}

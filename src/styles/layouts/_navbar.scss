@@ -1,1 +1,25 @@
 @use '../abstracts' as *;
+
+.navbar {
+    @extend %size-cover;
+    background: $color-white;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    .container {
+        @include set-flex(row, space-between, center);
+        padding: 2rem 0 1rem 0;
+
+        .logo {
+            img {
+                width: 35rem;
+            }
+        }
+
+        .navbar-links {
+            @include set-flex(row, flex-end, center, 0.5rem);
+        }
+    }
+}

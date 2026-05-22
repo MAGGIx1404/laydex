@@ -4,5 +4,12 @@ include /mixins/button
 block content
     section.banner
         .container
-            h1 Welcome to the site
-            +link('Go to the about page', '/about', 'link-bg')
+            .content-box
+                h1 The Leading Supplier of Building Materials in the Irish Construction Market.
+                p Laydex delivers sustainable, innovative building solutions that meet the evolving needs of the construction industry. In partnership with global manufacturers, we’re committed to providing premium products that support Ireland’s construction growth.
+                .btns
+                    +btn('DISTRIBUTION DIVISION', '/')
+                    +btn('SPECIFICATION DIVISION', '/')
+                    +btn('CONTACT US', '/')
+        .bg
+            img.image(src="/images/home/banner.png", alt="image")

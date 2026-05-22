@@ -1,1 +1,7 @@
 @use '../abstracts/' as *;
+
+.banner {
+    .container {
+        min-height: 60rem;
+    }
+}
