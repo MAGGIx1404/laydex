@@ -1,4 +1,27 @@
-@use '../abstracts' as var;
+@use 'sass:math';
+@use '../abstracts' as *;
+
+%mobile-only {
+    img,
+    video {
+        &.mobile-version {
+            display: none;
+        }
+    }
+
+    @include responsive(md) {
+        &:has(.mobile-version) {
+            img,
+            video {
+                display: none;
+
+                &.mobile-version {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
 
 .page-wrapper {
     @extend %size-cover;
@@ -8,6 +31,59 @@
 .container {
     @extend %size-cover;
     position: relative;
-    max-width: 95%;
+    max-width: 90%;
     margin: 0 auto;
+    z-index: 3;
+    overflow: hidden;
+}
+
+figure {
+    @extend %size-cover, %mobile-only;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        @extend %size-cover;
+    }
+}
+
+section {
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+
+    .bg {
+        @extend %size-full, %mobile-only;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 1;
+        pointer-events: none;
+
+        img,
+        video {
+            @extend %size-full;
+        }
+    }
+
+    @for $i from 20 through 80 {
+        &.overlay-#{$i} {
+            .bg {
+                &::before {
+                    content: '';
+                    @extend %size-full;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: rgba($color-black, math.div($i, 100));
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}
+
+.btns {
+    @include set-flex(row, flex-start, center, 1.5rem);
 }

@@ -1,17 +1,52 @@
-// fonts
-$font-poppins: 'Poppins', sans-serif;
+@use './media-query' as *;
 
-// variables
+// Fonts
+$font-primary: 'Geist', sans-serif;
+$font-secondary: 'Inter', serif;
+
+// Variables
 $vh: calc(var(--vh, 1vh) * 100);
 
-// colors
+// Colors
 $color-white: #ffffff;
 $color-black: #000000;
-$color-dark: #1a1a1a;
 
-// easing functions
+// padding
+:root {
+    --padding-sm: 10rem 0;
+    --padding: 15rem 0;
+    --padding-md: 20rem 0;
+}
+
+@include responsive(xl) {
+    :root {
+        --padding-sm: 7.5rem 0;
+        --padding: 10rem 0;
+        --padding-md: 15rem 0;
+    }
+}
+
+@include responsive(md) {
+    :root {
+        --padding: 7.5rem 0;
+        --padding-md: 10rem 0;
+    }
+}
+
+$padding-sm: var(--padding-sm);
+$padding: var(--padding);
+$padding-md: var(--padding-md);
+
+// Easing Functions
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 $animation-smooth: cubic-bezier(0.3, 1, 0.3, 1);
 $animation-primary: 0.6s cubic-bezier(0.3, 1, 0.3, 1);
 $animation-slow: 0.8s cubic-bezier(0.6, 0, 0.2, 1);
 $ease-hover: cubic-bezier(0.19, 1, 0.22, 1);
+$ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+$ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+$ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$ease-none: cubic-bezier(0.25, 0.25, 0.75, 0.75);

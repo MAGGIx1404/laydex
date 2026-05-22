@@ -1,3 +1,6 @@
+@use './variables' as *;
+@use './media-query' as *;
+
 %size-cover {
     width: 100%;
     height: auto;
@@ -33,4 +36,27 @@
     max-width: $size;
     width: 100%;
     height: auto;
+}
+
+%form {
+    @extend %size-cover;
+    @include set-grid(2);
+    row-gap: 4rem;
+    column-gap: 5rem;
+
+    .form-group {
+        @include set-flex(column, flex-start, flex-start, 1rem);
+
+        &:has(textarea, input[type='submit'], .terms) {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @include responsive(md) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.terms {
+    @include set-flex(row, flex-start, center, 1rem, nowrap);
 }

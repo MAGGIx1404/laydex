@@ -1,12 +1,1 @@
 @use '../abstracts' as *;
-
-.footer {
-    .container {
-        @include set-flex(column, center, center);
-        padding: 10rem 0;
-
-        h1 {
-            font-size: 2rem;
-        }
-    }
-}
