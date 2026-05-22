@@ -1,2 +1,6 @@
 mixin btn(title, href)
-  a.btn(href=href)= title
+  a.btn(href=href)
+    span.btn-box= title
+    .icon-box
+        svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")

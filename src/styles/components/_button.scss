@@ -40,3 +40,25 @@ button {
         width: 1.5rem;
     }
 }
+
+.btn {
+    @extend %link;
+    @include set-flex(row, flex-start, stretch);
+    background: $color-white;
+    color: $color-black;
+    border: 1px solid currentColor;
+
+    .btn-box {
+        padding: 1rem 2rem 0.9rem 2rem;
+        border-right: 2px solid currentColor;
+    }
+
+    .icon-box {
+        @include set-flex(row, center, center);
+        width: 3.55rem;
+
+        svg {
+            height: 1.25rem;
+        }
+    }
+}

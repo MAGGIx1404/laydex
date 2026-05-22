@@ -31,7 +31,7 @@
 .container {
     @extend %size-cover;
     position: relative;
-    max-width: 90%;
+    max-width: 85%;
     margin: 0 auto;
     z-index: 3;
     overflow: hidden;
@@ -86,4 +86,12 @@ section {
 
 .btns {
     @include set-flex(row, flex-start, center, 1.5rem);
+}
+
+.content-box {
+    @include set-flex(column, flex-start, flex-start, 2.5rem);
+
+    .btns {
+        margin-top: 2rem;
+    }
 }
