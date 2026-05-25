@@ -10,6 +10,7 @@ button {
     font-weight: 400;
     line-height: 1;
     font-family: $font-primary;
+    position: relative;
 
     &:has(img) {
         @include set-flex(row, flex-start, flex-end, 0.75rem);
@@ -46,11 +47,10 @@ button {
     @include set-flex(row, flex-start, stretch);
     background: $color-white;
     color: $color-black;
-    border: 1px solid currentColor;
 
     .btn-box {
         padding: 1rem 2rem 0.9rem 2rem;
-        border-right: 2px solid currentColor;
+        border-right: 2px solid $color-orange;
     }
 
     .icon-box {
@@ -61,4 +61,84 @@ button {
             height: 1.25rem;
         }
     }
+
+    &:not(.no-border) {
+        border: 1px solid currentColor;
+
+        .btn-box {
+            border-right: 2px solid currentColor;
+        }
+    }
+}
+
+.slider-prev,
+.slider-next {
+    @include set-flex(row, center, center);
+    width: 3.55rem;
+    height: 3.55rem;
+    border: 1px solid currentColor;
+
+    svg {
+        height: 1.25rem;
+    }
+}
+
+.slider-prev {
+    transform: rotate(-180deg);
+}
+
+.slider-controls {
+    @include set-flex(row, center, center, 0.25rem);
+}
+
+%hover-underline {
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.25rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 1s $animation-smooth;
+    }
+
+    &:hover::after {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+    &.active {
+        &::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        &:hover::after {
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+    }
+}
+
+p {
+    .link {
+        &::after {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+
+        &:hover::after {
+            transform-origin: right;
+            transform: scaleX(0);
+        }
+    }
+}
+
+.link {
+    @extend %link, %hover-underline;
+    font-size: 1.6rem;
+    font-weight: 500;
 }

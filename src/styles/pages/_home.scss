@@ -16,3 +16,108 @@
         }
     }
 }
+
+.divisions {
+    @include set-flex(column, flex-start, flex-start, 8rem);
+    background: $color-dark;
+    color: $color-white;
+    padding: 10rem 0 2.5rem 0;
+
+    .section-header {
+        @extend %size-cover;
+        @include set-flex(row, space-between, flex-end);
+        max-width: 85%;
+        margin: 0 auto;
+
+        .header-box {
+            .tag,
+            a {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    .embla {
+        overflow: visible;
+
+        .embla__container {
+            .embla__slide {
+                position: relative;
+                height: 61rem;
+                flex: 0 0 57.5rem;
+                width: 57.5rem;
+                margin-right: 2.5rem;
+
+                .slide-content {
+                    @extend %size-full;
+                    @include set-flex(column, space-between, flex-start);
+                    position: relative;
+                    z-index: 3;
+                    padding: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+.expertise {
+    @include set-flex(column, flex-start, flex-start, 10rem);
+    padding: $padding;
+
+    .header {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    .embla {
+        .embla__container {
+            .embla__slide {
+                @include set-flex(column, flex-start, flex-start);
+                flex: 0 0 62.5rem;
+                width: 62.5rem;
+                margin-right: 2.5rem;
+                background: $color-orange;
+                color: $color-white;
+
+                .slide-figure {
+                    img {
+                        height: 22.5rem;
+                    }
+                }
+
+                .content-box {
+                    padding: 4rem;
+                    flex: 1;
+
+                    .paragraph-lg {
+                        font-weight: 500;
+                        opacity: 0.5;
+                    }
+
+                    .btns {
+                        margin-top: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stats {
+    background: $color-orange;
+    color: $color-white;
+
+    .container {
+        @include set-grid(3);
+        padding: $padding;
+
+        .stats-box {
+            @include set-flex(column, center, center, 1.75rem);
+
+            .icon {
+                height: 8.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+}

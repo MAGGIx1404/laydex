@@ -1,6 +1,32 @@
-mixin btn(title, href)
-  a.btn(href=href)
+mixin btn(title, href, className='')
+  a.btn(href=href, class=className )
     span.btn-box= title
     .icon-box
+        svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+mixin tag(text, className = '')
+    p.tag(class=className)
+        svg(
+            width="38"
+            height="10"
+            viewBox="0 0 38 10"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        )
+            path(
+                d="M29.801 0H38l-7.801 10H22zM19.289 0H28l-8.289 10H11zm-11 0H17L8.711 10H0z"
+                fill="currentColor"
+            )
+        | #{text}
+
+mixin prev
+    button.slider-prev
+        svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+
+mixin next
+    button.slider-next
         svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
             path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")

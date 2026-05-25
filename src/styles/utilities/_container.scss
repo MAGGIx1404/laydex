@@ -95,3 +95,27 @@ section {
         margin-top: 2rem;
     }
 }
+
+.header {
+    @extend %size-cover;
+    @include set-flex(row, flex-end, flex-start);
+
+    .header-box {
+        @include set-flex(column, flex-start, flex-start, 3rem);
+
+        &:nth-child(1) {
+            @include set-flex-size(15%);
+            padding-top: 2rem;
+        }
+
+        &:nth-child(2) {
+            @include set-flex-size(46.5%);
+        }
+
+        .box-bar {
+            @extend %size-cover;
+            @include set-flex(row, space-between, center);
+            max-width: 85%;
+        }
+    }
+}

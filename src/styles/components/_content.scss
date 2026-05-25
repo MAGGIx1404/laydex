@@ -6,8 +6,45 @@ h1 {
     line-height: 1.25;
 }
 
+h2 {
+    font-size: 4.2rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
+h3 {
+    font-size: 3.25rem;
+    font-weight: 500;
+    line-height: 1.25;
+}
+
 p {
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.45;
+}
+
+.paragraph-lg {
+    font-size: 2rem;
+}
+
+.paragraph-sm {
+    font-size: 1.6rem;
+}
+
+.tag {
+    @include set-flex(row, flex-start, center, 0.75rem, nowrap);
+    font-size: 1.6rem;
+    position: relative;
+
+    &.orange {
+        svg {
+            width: 4rem;
+            color: $color-orange;
+        }
+    }
+}
+
+.orange:not(.tag) {
+    color: $color-orange;
 }

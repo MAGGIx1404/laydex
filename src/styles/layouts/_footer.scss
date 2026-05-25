@@ -1,1 +1,40 @@
 @use '../abstracts' as *;
+
+.footer {
+    background: $color-orange;
+    color: $color-white;
+
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: 10rem 0 5rem 0;
+
+        .footer-panel {
+            @extend %size-cover;
+            @include set-flex(row, space-between, flex-start);
+
+            .paragraph-sm {
+                font-weight: 500;
+            }
+
+            .footer-links {
+                @include set-flex(column, flex-start, flex-start, 1rem);
+
+                & > .paragraph-sm {
+                    margin-bottom: 1rem;
+                }
+
+                .footer-box {
+                    margin-bottom: 1rem;
+                }
+
+                &:not(:last-child) {
+                    max-width: 20%;
+                }
+
+                &:last-child {
+                    max-width: 22.5%;
+                }
+            }
+        }
+    }
+}

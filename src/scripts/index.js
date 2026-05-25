@@ -3,6 +3,7 @@ import '../styles/main.scss'
 import { setDynamicVH } from './utils/_viewports'
 
 import Hamb from './components/_hamb'
+import Sliders from './components/_slider'
 
 if (window.history.scrollRestoration) {
     window.history.scrollRestoration = 'manual'
@@ -18,6 +19,7 @@ class _APP {
     _init() {
         try {
             this._initHamb()
+            this._initSliders()
             console.log('App initialized successfully🎉🎉🎉🎉')
         } catch (error) {
             console.error(error)
@@ -27,6 +29,10 @@ class _APP {
 
     _initHamb() {
         new Hamb()
+    }
+
+    _initSliders() {
+        new Sliders()
     }
 
     _onResize() {}

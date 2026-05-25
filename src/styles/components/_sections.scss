@@ -1,1 +1,64 @@
 @use '../abstracts' as *;
+
+.content-section {
+    @include set-grid(2, 12.5rem);
+    background: $color-orange;
+    color: $color-white;
+    align-items: center;
+    padding: $padding;
+
+    .content-box {
+        max-width: 77.5%;
+    }
+}
+
+.certification {
+    background: $color-dark;
+    color: $color-white;
+
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding;
+
+        .certification-grid {
+            @extend %size-cover;
+            @include set-flex(row, space-between, center, 7.5rem);
+
+            .certification-figure {
+                @include set-flex(row, center, center);
+                width: max-content;
+            }
+        }
+    }
+}
+
+.types {
+    background: $color-dark;
+    color: $color-white;
+
+    .container {
+        @include set-flex(row, space-between, flex-start);
+        padding: $padding;
+
+        .content-box {
+            @include set-flex-size(45%);
+        }
+
+        .type-list {
+            @include set-flex-size(50%);
+            @include set-grid(5, 2.5rem);
+
+            .type-item {
+                @include set-flex(column, flex-end, flex-start, 1rem);
+                text-transform: uppercase;
+
+                .icon-box {
+                    @include set-flex(row, center, center);
+                    width: 100%;
+                    height: 15rem;
+                    border: 1px solid currentColor;
+                }
+            }
+        }
+    }
+}

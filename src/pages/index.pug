@@ -13,3 +13,148 @@ block content
                     +btn('CONTACT US', '/')
         .bg
             img.image(src="/images/home/banner.png", alt="image")
+
+    section.divisions
+            .section-header
+                .header-box
+                    +tag('DIVISIONS', 'orange')
+                .header-box
+                    h2 Product areas that matches your needs
+                .header-box
+                    +btn('SEE ALL', '/')
+
+            .embla.carousel-slider
+                .embla__container
+                    each i in [1,2]
+                        .embla__slide
+                            .slide-content
+                                +tag('DISTRIBUTION DIVISION', 'orange')
+                                .content-box
+                                    h3 Building Products
+                                    p Nationwide distributor of essential building materials to builders’ merchants and retailers.
+                                    +btn('EXPLORE', '')
+                            .bg
+                                img.image(src="/images/home/r-1.png", alt="image")
+                        .embla__slide
+                            .slide-content
+                                +tag('SPECIFICATION DIVISION', 'orange')
+                                .content-box
+                                    h3 Flooring
+                                    p Specified flooring products specified for commercial and project–based applications
+                                    +btn('EXPLORE', '/')
+                            .bg
+                                img.image(src="/images/home/r-2.png", alt="image")
+                        .embla__slide
+                            .slide-content
+                                +tag('SPECIFICATION DIVISION', 'orange')
+                                .content-box
+                                    h3 Radon & Gas Protection
+                                    p Certified radon and gas protection systems for specification and compliance.
+                                    +btn('EXPLORE', '/')
+                            .bg
+                                img.image(src="/images/home/r-3.png", alt="image")
+
+    section.content-section
+        figure.content-figure
+            img.image(src="/images/home/image-1.png", alt="image")
+        .content-box
+            +tag('ABOUT US')
+            h2 Building Excellence Since 1995: Innovation, Quality, and Expertise You Can Trust
+            p Laydex Building Solutions, founded in 1995, is an independent Irish company supplying leading construction brands across roofing, flooring, and building products. From our Dublin centre, we deliver innovative, cost-effective solutions with expert support and design guidance, serving contractors, specifiers, and retailers nationwide.
+            +btn('ABOUT US', '/about.html', 'no-border')
+
+    section.expertise
+            .header
+                .header-box
+                    +tag('Evolving Expertise', 'orange')
+                .header-box
+                    h2 Updates, Expertise and Innovations
+                    .box-bar
+                        .btns
+                            +btn('SEE ALL', '/')
+                        .slider-controls
+                            +prev
+                            +next
+
+            .embla.carousel-slider
+                .embla__container
+                    each i in [1,2]
+                        .embla__slide
+                            figure.slide-figure
+                                img.image(src="/images/home/s-1.png", alt="image")
+                            .content-box
+                                p.paragraph-lg Roofing
+                                h3 Commercial Vinyl Flooring Project
+                                p.paragraph-sm Providing a ceramic concrete look, the IVC Matrix 70 Luxury vinyl tiles were installed in two Chadwicks branches recently. Easy to clean and easy to install, efficient in any space, makes this floor ideal for high...
+                                .btns
+                                    +btn('VIEW', '/', 'no-border')
+                        .embla__slide
+                            figure.slide-figure
+                                img.image(src="/images/home/s-2.png", alt="image")
+                            .content-box
+                                p.paragraph-lg Roofing | Project
+                                h3 Residential Apartment Block Roof Project.
+                                p.paragraph-sm Providing a ceramic concrete look, the IVC Matrix 70 Luxury vinyl tiles were installed in two Chadwicks branches recently. Easy to clean and easy to install, efficient in any space, makes this floor ideal for high...
+                                .btns
+                                    +btn('VIEW', '/', 'no-border')
+                        .embla__slide
+                            figure.slide-figure
+                                img.image(src="/images/home/s-3.png", alt="image")
+                            .content-box
+                                p.paragraph-lg Flooring | Article
+                                h3 Resitrix SK W & Sage Artificial Grass Residential Project.
+                                p.paragraph-sm Bam Construction contracted Philipe tiling Galway to install the floor finishes at the new Clinical Research Facility & Translational Research facility (CRF-TRF) Galway. Following an on-site inspection by Tremco...
+                                .btns
+                                    +btn('VIEW', '/', 'no-border')
+                        .embla__slide
+                            figure.slide-figure
+                                img.image(src="/images/home/s-4.png", alt="image")
+                            .content-box
+                                p.paragraph-lg Flooring
+                                h3 Saint Mary’s Secondary School
+                                p.paragraph-sm Consideration was given to the overall floor finishes and colours. It was decided to use Tarkett 2.5mm Veneto XF2 linoleum and Tarkett Safetred Universal R10. Laydex also included Tremco in the subflo...
+                                .btns
+                                    +btn('VIEW', '/', 'no-border')
+
+    section.stats
+        .container
+            .stats-box
+                img.icon(src="/images/home/i-1.svg", alt="image")
+                h3 28102
+                p.paragraph-sm Orders shipped in 2021
+            .stats-box
+                img.icon(src="/images/home/i-2.svg", alt="image")
+                h3 1175
+                p.paragraph-sm Active Customers
+            .stats-box
+                img.icon(src="/images/home/i-3.svg", alt="image")
+                h3 2000+
+                p.paragraph-sm Over 2000 products listed
+
+    section.certification
+        .container
+            .header
+                .header-box
+                    +tag('CERTIFICATIONS', 'orange')
+                .header-box
+                    h3
+                        | Our Commitment to&nbsp;
+                        span.orange Industry Standards
+
+            .certification-grid
+                each image in [1,2,3,4,5]
+                    figure.certification-figure
+                        img(src=`/images/certifications/${image}.svg`, alt="Icon")
+
+    section.types
+        .container
+            .content-box
+                h2 Build with Confidence. Innovative Solutions for Ireland.
+                .btns
+                    +btn('CONTACT US', '/')
+            .type-list
+                each item, idx in ['BUILDING PRODUCTS', 'ROOFING', 'Radon & Gas Protection', 'FLOORING', 'Passive Fire Protection']
+                    .type-item
+                        p.paragraph-sm=item
+                        .icon-box
+                            img.icon(src=`/images/home/t-${idx+1}.svg`, alt="image")
