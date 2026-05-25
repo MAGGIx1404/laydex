@@ -1,0 +1,56 @@
+@use '../abstracts/' as *;
+
+.team {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding;
+
+        .section-top {
+            @include set-flex(column, flex-start, flex-start, 3rem);
+        }
+
+        .team-panel {
+            @extend %size-cover;
+            @include set-flex(row, flex-end, flex-start, 25rem);
+
+            .team-figure {
+                width: 25rem;
+                height: 35rem;
+
+                img {
+                    height: 100%;
+                    display: none;
+                }
+            }
+
+            .team-list {
+                @include set-flex-size(47.5%);
+                @include set-flex(column, flex-start, flex-start);
+
+                .team-item {
+                    @extend %size-cover;
+                    @include set-flex(row, space-between, center);
+                    padding: 2.5rem 0;
+                    border-bottom: 0.5px solid rgba($color-black, 0.5);
+                    cursor: pointer;
+
+                    &:first-child {
+                        border-top: 0.5px solid rgba($color-black, 0.5);
+                    }
+                }
+            }
+
+            @for $i from 1 through 8 {
+                &:has(.team-list .team-item:nth-child(#{$i}):hover) {
+                    .team-figure img {
+                        display: none;
+
+                        &:nth-child(#{$i}) {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

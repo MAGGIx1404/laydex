@@ -82,6 +82,20 @@ section {
             }
         }
     }
+
+    &.bg-dark {
+        background: $color-dark;
+        color: $color-white;
+    }
+
+    &.bg-orange {
+        background: $color-orange;
+        color: $color-white;
+    }
+
+    &.bg-gray {
+        background: $color-gray;
+    }
 }
 
 .btns {

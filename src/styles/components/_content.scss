@@ -18,6 +18,12 @@ h3 {
     line-height: 1.25;
 }
 
+h5 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
 p {
     font-size: 1.8rem;
     font-weight: 400;
@@ -32,19 +38,37 @@ p {
     font-size: 1.6rem;
 }
 
+.paragraph-xs {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
 .tag {
     @include set-flex(row, flex-start, center, 0.75rem, nowrap);
     font-size: 1.6rem;
     position: relative;
 
+    svg {
+        width: 4rem;
+    }
+
     &.orange {
         svg {
-            width: 4rem;
             color: $color-orange;
+        }
+    }
+
+    &.blue {
+        svg {
+            color: $color-blue;
         }
     }
 }
 
 .orange:not(.tag) {
     color: $color-orange;
+}
+
+.blue:not(.tag) {
+    color: $color-blue;
 }

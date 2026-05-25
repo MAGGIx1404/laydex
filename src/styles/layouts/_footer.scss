@@ -5,8 +5,8 @@
     color: $color-white;
 
     .container {
-        @include set-flex(column, flex-start, flex-start, 10rem);
-        padding: 10rem 0 5rem 0;
+        @include set-flex(column, flex-start, flex-start, 5rem);
+        padding: 12.5rem 0 5rem 0;
 
         .footer-panel {
             @extend %size-cover;
@@ -34,6 +34,20 @@
                 &:last-child {
                     max-width: 22.5%;
                 }
+            }
+        }
+
+        .footer-bottom {
+            @extend %size-cover;
+            @include set-flex(row, space-between, flex-end);
+
+            .footer-bottom-box {
+                @include set-flex-size(60%);
+                @include set-flex(row, space-between, center);
+            }
+
+            .footer-logo {
+                max-width: 25%;
             }
         }
     }

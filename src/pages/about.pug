@@ -3,5 +3,59 @@ extends /layouts/default
 block content
     section.banner
         .container
-            h1 This is the about page
-            +link('Go to the home page', '/', 'link-bg')
+            .content-box
+                h1 Built on Expertise.<br/> Driven by Quality.
+                p Since 1995, Laydex has been delivering innovative and high-performance building solutions across Ireland, combining trusted global brands with local expertise and unrivalled technical support.
+        .bg
+            img.image(src="/images/about/banner.png", alt="image")
+
+    section.content-section.bg-dark
+        figure.content-figure
+            img.image(src="/images/about/image-1.png", alt="image")
+        .content-box
+            +tag('ABOUT US', 'orange')
+            h2 About Laydex
+            p Laydex Building Solutions was founded in 1995 and is a wholly owned, independent Irish Company servicing the Construction industry in the Republic of Ireland. Operating from our 40,000 square foot Warehousing, Sales, Administration, and Distribution centre in Dublin we represent some of the world’s leading brands in construction materials encompassing Roofing, Flooring and a wide range of Building Products.
+            p Laydex was established to service Ireland’s builders merchant and hardware retailers by providing them with innovative, cost effective building products with no compromise on quality. We identified the importance of specification and have established specification divisions selling specified solutions for the Flat Roofing, Commercial Flooring and Fire Stopping sectors. We have built a reputation for being a dynamic business meeting the ever-changing needs of contractors and project specifiers alike.
+            p Together with our manufacturing partners we provide an unrivalled level of support, technical expertise, and design assistance throughout each project and aim to provide a premium service to everyone of our valued customers.
+
+    section.team.bg-gray
+        .container
+            .section-top
+                +tag('THE TEAM', 'orange')
+                h2
+                    | Our People,&nbsp;<br/>
+                    span.orange Our Leadership Team
+            .team-panel
+                figure.team-figure
+                    each i in [1,2,3,4,5]
+                        img.image(src=`/images/about/team-${i}.png`, alt="image")
+                .team-list
+                    .team-item
+                        h5 Peter Woods
+                        h5 Managing Director & CEO
+                    .team-item
+                        h5 Michael McErlean
+                        h5 Finance Director
+                    .team-item
+                        h5 Alan Donohoe
+                        h5 Commercial Director
+                    .team-item
+                        h5 Declan Murphy
+                        h5 Roofing Director
+                    .team-item
+                        h5 Jason Coburn
+                        h5 Operations Director
+
+    section.content-section.reverse
+        figure.content-figure
+            img.image(src="/images/about/image-2.png", alt="image")
+
+        .content-box
+            +tag('CAREERS', 'blue')
+            h2
+                | Interested in joining us?&nbsp;
+                span.blue Build Your Future with Laydex
+            p At Laydex, we are constantly inspired to improve results and provide our customers with innovative solutions. Each member of our team plays an important role in our success as one of the leading distributors on the Irish Construction Market. Laydex is not just about the products and brands; it’s also about appreciating our colleagues, customers and business partners. We continuously aim to ensure a culture that promotes a work-life balance in order to maximize individual and organizational potential.
+            p There are currently NO VACANCIES available. However, we are always keen to meet energetic and talented professionals who would like to join our team.
+            p Learn more about Laydex and what it’s like to work with our team in the About Us section or visit our social media sites on LinkedIn, Twitter or Facebook.

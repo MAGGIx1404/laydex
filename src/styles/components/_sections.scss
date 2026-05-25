@@ -2,20 +2,26 @@
 
 .content-section {
     @include set-grid(2, 12.5rem);
-    background: $color-orange;
-    color: $color-white;
     align-items: center;
     padding: $padding;
 
     .content-box {
         max-width: 77.5%;
     }
+
+    &.reverse {
+        .content-box {
+            order: 1;
+            margin-left: 15rem;
+        }
+
+        .content-figure {
+            order: 2;
+        }
+    }
 }
 
 .certification {
-    background: $color-dark;
-    color: $color-white;
-
     .container {
         @include set-flex(column, flex-start, flex-start, 10rem);
         padding: $padding;
@@ -33,9 +39,6 @@
 }
 
 .types {
-    background: $color-dark;
-    color: $color-white;
-
     .container {
         @include set-flex(row, space-between, flex-start);
         padding: $padding;

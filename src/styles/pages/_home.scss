@@ -19,8 +19,6 @@
 
 .divisions {
     @include set-flex(column, flex-start, flex-start, 8rem);
-    background: $color-dark;
-    color: $color-white;
     padding: 10rem 0 2.5rem 0;
 
     .section-header {
@@ -104,9 +102,6 @@
 }
 
 .stats {
-    background: $color-orange;
-    color: $color-white;
-
     .container {
         @include set-grid(3);
         padding: $padding;
