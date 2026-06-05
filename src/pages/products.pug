@@ -1,0 +1,16 @@
+extends /layouts/default
+include /mixins/button
+
+block content
+    section.banner
+        .container
+            .content-box
+                h1 Building Product Supply
+                p Delivering a trusted product range with reliable stock levels and a service you can depend on.
+                .btns
+                    +btn('BUILDING PRODUCTS', '/')
+                    +btn('BROCHURES', '/')
+                    +btn('TECHNICAL RESOURCES', '/')
+                    +btn('FIND YOUR LOCAL REP', '/')
+        .bg
+            img.image(src="/images/products/banner.png", alt="image")
