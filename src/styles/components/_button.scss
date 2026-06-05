@@ -148,3 +148,9 @@ p {
     font-size: 1.2rem;
     text-transform: uppercase;
 }
+
+.btns-wrapper {
+    @include set-flex(row, flex-start, center, 0.5rem);
+    border: 1px solid currentColor;
+    padding: 0.5rem;
+}

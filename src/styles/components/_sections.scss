@@ -7,6 +7,19 @@
 
     .content-box {
         max-width: 77.5%;
+
+        .list {
+            @extend %size-cover;
+            @include set-flex(column, flex-start, flex-start, 3rem);
+            margin: 1rem 0;
+
+            .list-item {
+                @extend %size-cover;
+                @include set-flex(column, flex-start, flex-start, 1rem);
+                border-bottom: 0.5px solid currentColor;
+                padding-bottom: 3rem;
+            }
+        }
     }
 
     &.reverse {
@@ -60,6 +73,49 @@
                     width: 100%;
                     height: 15rem;
                     border: 1px solid currentColor;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    .container {
+        @include set-flex(row, space-between, center);
+        padding: $padding;
+        color: $color-white;
+
+        .content-box {
+            .box {
+                @include set-flex(column, flex-start, flex-start, 0.5rem);
+
+                p {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .form-wrapper {
+            @include set-flex-size(40%);
+
+            form {
+                @extend %size-cover;
+                @include set-grid(2);
+                row-gap: 4rem;
+                column-gap: 2.5rem;
+
+                textarea,
+                .checklists {
+                    grid-column: 1 / -1;
+                }
+
+                .checklists {
+                    @include set-flex(column, flex-start, flex-start, 1rem);
+                    margin-top: 2rem;
+                }
+
+                .btn {
+                    max-width: max-content;
                 }
             }
         }

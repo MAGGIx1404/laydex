@@ -133,3 +133,25 @@ section {
         }
     }
 }
+
+.section-header {
+    @extend %size-cover;
+    @include set-flex(row, space-between, flex-start);
+
+    .header-box {
+        @include set-flex(column, flex-start, flex-start, 2.5rem);
+
+        .btns,
+        .btns-wrapper {
+            margin-top: 2rem;
+        }
+
+        &:nth-child(1) {
+            @include set-flex-size(50%);
+        }
+
+        &:nth-child(2) {
+            @include set-flex-size(30%);
+        }
+    }
+}

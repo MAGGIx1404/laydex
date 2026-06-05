@@ -14,3 +14,171 @@ block content
                     +btn('FIND YOUR LOCAL REP', '/')
         .bg
             img.image(src="/images/products/banner.png", alt="image")
+
+    section.content-section.bg-orange
+        figure.content-figure
+            img.image(src="/images/products/image-1.png", alt="image")
+        .content-box
+            +tag('Supporting Your Sales')
+            h2 In-Store Support Services
+            .list
+                .list-item
+                    h4 Product Demos
+                    p.paragraph-sm Hands-on in-branch demos that boost engagement and sales.
+                .list-item
+                    h4 In-Store Training
+                    p.paragraph-sm Expert staff training and site support to strengthen your team’s product knowledge.
+                .list-item
+                    h4 Marketing Support
+                    p.paragraph-sm Effective POS and multi-channel campaigns to grow your in-store and online visibility.
+            +btn('SEE MORE', '/', 'no-border')
+
+    section.products
+        .container
+            .section-header
+                .header-box
+                    +tag('PRODUCTS', 'orange')
+                    h2
+                        | A Complete Range of&nbsp;<br/>
+                        span.orange High Performance Building Products
+                    .btns-wrapper
+                        button.link-outline Brands +
+                        button.link-outline Categories +
+                        .search-box
+                            input(type="text", placeholder="SEARCH...")
+                            button.search-btn
+                                img(src="/images/products/search.svg", alt="search")
+                .header-box
+                    img.cap-icon(src="/images/products/cap.svg", alt="icon")
+            .products-grid
+                each item, idx in ['Fortessa Door Handles & Accessories', 'Fibre Cement & Tile Backer Boards', 'Joint Compounds', 'Radon & Gas Protection', 'DPC & DPM', 'Breather Membranes']
+                    .product-card
+                        figure.product-figure
+                            img.image(src=`/images/products/p-${idx+1}.png`, alt="image")
+                        .card-content
+                            h3=item
+                            +btn('SEE ALL', '/')
+            .btns
+                +btn('SEE MORE', '/')
+
+    section.content-section.bg-orange
+        figure.content-figure
+            img.image(src="/images/products/image-2.png", alt="image")
+        .content-box
+            +tag('WHY US')
+            h2 Premium Building Products for Every Project
+            p We deliver innovative, cost-effective solutions with no compromise on quality, supporting contractors and project specifiers alike. Our divisions specialise in Flat Roofing, Commercial Flooring and Fire Stopping, offering specified solutions backed by technical expertise and design assistance. Choosing Laydex means access to over 20 years of experience, unrivalled technical support, and a commitment to environmentally sustainable, high-quality products. All our offerings are certified to meet rigorous standards such as CE, NSAI and BBA, ensuring they are fit for purpose and compliant with building regulations.<br/> From premium products to personalised project support, we aim to provide an exceptional service to every customer, helping your projects succeed from start to finish.
+
+    section.resources.bg-dark
+        .container
+            .section-header
+                .header-box
+                    +tag('Technical Resources', 'orange')
+                    h2
+                        | Specifications, Guides&nbsp;<br/>
+                        span.orange and Downloads
+
+            .resources-grid
+                .resource-card
+                    h5 Technical Data Sheets
+                    p Access a wide collection of over 430 datasheets with detailed technical characteristics and specifications for our products.
+                    .btns
+                        +btn('READ MORE', '/')
+                .resource-card
+                    h5 Brochures
+                    p Explore our products and ranges through downloadable brochures.
+                    .btns
+                        +btn('READ MORE', '/')
+                .resource-card
+                    h5 Agrément Certificates
+                    p Access our product standards and compliance documents.
+                    .btns
+                        +btn('READ MORE', '/')
+                .resource-card
+                    h5 Installation Instructions
+                    p Check out the installation instructions section to view all instruction sheets, or narrow your search by choosing a specific product.
+                    .btns
+                        +btn('READ MORE', '/')
+
+            .btns
+                +btn('SEE ALL RESOURCES', '/')
+
+    section.certification.bg-dark
+        .container
+            .header
+                .header-box
+                    +tag('CERTIFICATIONS', 'orange')
+                .header-box
+                    h3
+                        | Our Commitment to&nbsp;
+                        span.orange Industry Standards
+
+            .certification-grid
+                each image in [1,2,3,4,5]
+                    figure.certification-figure
+                        img(src=`/images/certifications/${image}.svg`, alt="Icon")
+
+    section.contact
+        .container
+            .content-box
+                +tag('CONTACT')
+                h1 Got a Question?<br/> Reach Out to Us
+                .box
+                    p.paragraph-sm Call us now
+                    a.link(href="/") IE: 01 6426600
+                    a.link(href="/") NI: 028 9038 2223
+                .btns
+                    +btn('REQUEST A CALL BACK', '/')
+                    +btn('FIND A STOCKIST', '/')
+            .form-wrapper
+                form
+                    input(type="text", placeholder="Full name")
+                    input(type="tel", placeholder="Phone number")
+                    input(type="email", placeholder="Email")
+                    input(type="text", placeholder="Location")
+                    select
+                        option(value="" disabled selected) Which product are you interested in?
+                        option(value="product") Product enquiry
+                        option(value="technical") Technical support
+                        option(value="general") General enquiry
+                    select
+                        option(value="" disabled selected) Which division interests you?
+                        option(value="product") Product enquiry
+                        option(value="technical") Technical support
+                        option(value="general") General enquiry
+                    select
+                        option(value="" disabled selected) How would you like us to reach you?
+                        option(value="product") Product enquiry
+                        option(value="technical") Technical support
+                        option(value="general") General enquiry
+                    textarea(placeholder="Your message", rows="1")
+                    .checklists
+                        label
+                            input(type="checkbox")
+                            | I understand and accept the Privacy Policy *
+                        label
+                            input(type="checkbox")
+                            | Yes, please keep me updated on Laydex news & special offers
+                    button.btn
+                        span.btn-box SUBMIT
+                        .icon-box
+                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+
+
+        .bg
+            img.image(src="/images/products/image-3.png", alt="image")
+
+    section.types.bg-dark
+        .container
+            .content-box
+                h2 Build with Confidence. Innovative Solutions for Ireland.
+                .btns
+                    +btn('CONTACT US', '/')
+            .type-list
+                each item, idx in ['BUILDING PRODUCTS', 'ROOFING', 'Radon & Gas Protection', 'FLOORING', 'Passive Fire Protection']
+                    .type-item
+                        p.paragraph-sm=item
+                        .icon-box
+                            img.icon(src=`/images/home/t-${idx+1}.svg`, alt="image")

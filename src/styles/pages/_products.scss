@@ -1,0 +1,72 @@
+@use '../abstracts/' as *;
+
+.products {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 12.5rem);
+        padding: $padding-sm;
+
+        .section-header {
+            .header-box {
+                .cap-icon {
+                    align-self: flex-end;
+                }
+            }
+        }
+
+        .products-grid {
+            @extend %size-cover;
+            @include set-grid(2);
+            row-gap: 7.5rem;
+            column-gap: 10rem;
+
+            .product-card {
+                @include set-flex(row, space-between, stretch);
+
+                .product-figure {
+                    @include set-flex-size(35%);
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .card-content {
+                    @include set-flex-size(60%);
+                    @include set-flex(column, space-between, flex-start);
+
+                    h3 {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.resources {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding-sm;
+
+        .resources-grid {
+            @extend %size-cover;
+            @include set-grid(4, 2.5rem);
+
+            .resource-card {
+                @include set-flex(column, flex-start, flex-start, 4rem);
+                border: 1px solid $color-white;
+                padding: 4rem 3rem;
+                transition: all 0.2s $ease-in-out-cubic;
+
+                .btns {
+                    margin-top: auto;
+                }
+
+                &:hover {
+                    background: $color-white;
+                    color: $color-dark;
+                }
+            }
+        }
+    }
+}
