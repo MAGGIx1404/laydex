@@ -121,3 +121,30 @@
         }
     }
 }
+
+.brands {
+    @include set-flex(column, flex-start, flex-start, 12.5rem);
+    padding: $padding;
+
+    .section-header {
+        max-width: 85%;
+        margin: 0 auto;
+    }
+
+    .embla {
+        pointer-events: none;
+        overflow: visible;
+
+        .embla__container {
+            .embla__slide {
+                flex: 0 0 auto;
+                margin-right: 20rem;
+
+                img {
+                    width: auto;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

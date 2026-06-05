@@ -83,6 +83,14 @@ section {
         }
     }
 
+    [data-tab-content] {
+        display: none;
+
+        &.active {
+            display: block;
+        }
+    }
+
     &.bg-dark {
         background: $color-dark;
         color: $color-white;
@@ -140,18 +148,11 @@ section {
 
     .header-box {
         @include set-flex(column, flex-start, flex-start, 2.5rem);
+        @include set-flex-size(50%);
 
         .btns,
         .btns-wrapper {
             margin-top: 2rem;
-        }
-
-        &:nth-child(1) {
-            @include set-flex-size(50%);
-        }
-
-        &:nth-child(2) {
-            @include set-flex-size(30%);
         }
     }
 }

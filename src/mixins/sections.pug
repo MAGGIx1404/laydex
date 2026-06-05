@@ -1,0 +1,26 @@
+mixin tab-section
+    section.brands
+            .section-header
+                .header-box
+                    .btns-wrapper
+                        button.link-outline.active(data-tab="1") BUILDING PRODUCTS
+                        button.link-outline(data-tab="2") SPECIALIST PRODUCTS
+                .header-box
+                    +tag('OUR BRANDS', 'orange')
+                    h2
+                        | Trusted Global Names,&nbsp;<br/>
+                        span.orange Delivered Locally
+                    p Laydex proudly represents some of the world’s leading brands in construction materials, bringing innovation, reliability and performance to every project across Ireland. From advanced roofing and flooring systems to specialised fire protection and building solutions, our partners are at the forefront of quality and sustainability.
+                    p Each brand we represent shares our commitment to excellence, ensuring contractors, architects and specifiers have access to products that meet the highest industry standards. Together with our manufacturing partners, we deliver proven solutions backed by technical expertise, certification and dedicated support at every stage.
+
+            .embla.autoscroll-slider.active(data-tab-content="1")
+                .embla__container
+                    each i in [1,2,3,4,5,6,7,8,9,10,11,12]
+                        .embla__slide
+                            img.logo-image(src=`/images/brands/${i}.svg`, alt="brand logo")
+
+            .embla.autoscroll-slider(data-tab-content="2")
+                .embla__container
+                    each i in [1,2,3,4,5,6,7,8,9,10]
+                        .embla__slide
+                            img.logo-image(src=`/images/brands/${i}.png`, alt="brand logo")

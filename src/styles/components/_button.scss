@@ -24,11 +24,18 @@ button {
 %padding {
     padding: 1rem 2rem 0.9rem 2rem;
     border: 1px solid currentColor;
+    transition: all 0.3s $ease-in-out-cubic;
 }
 
 .link-outline {
     @extend %link, %padding;
     text-transform: uppercase;
+
+    &:hover,
+    &.active {
+        background: $color-orange;
+        color: $color-white;
+    }
 }
 
 .link-outline-icon {
