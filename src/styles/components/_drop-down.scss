@@ -1,0 +1,92 @@
+@use '../abstracts' as *;
+
+.drop-down {
+    @include set-flex(row, flex-start, flex-start);
+    position: relative;
+
+    .drop-down-content {
+        @include set-flex(column, flex-start, stretch, 1rem);
+        width: max-content;
+        position: absolute;
+        top: calc(100%);
+        left: -0.1rem;
+        transition: opacity 0.2s ease;
+        opacity: 0;
+        visibility: hidden;
+        padding: 1rem 0;
+
+        button,
+        a {
+            text-align: center;
+            background: $color-white;
+
+            &:hover {
+                background: $color-orange;
+            }
+        }
+    }
+
+    &:hover {
+        .drop-down-content {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.panel {
+    @extend %size-full;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    background: $color-orange;
+    color: $color-white;
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition:
+        opacity 0.4s $ease-in-out-cubic,
+        transform 0.4s $ease-in-out-cubic,
+        visibility 0.4s $ease-in-out-cubic;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .panel-inner {
+        @extend %size-cover;
+        @include set-flex(column, flex-start, flex-start, 7.5rem);
+        padding: 17.5rem 15rem 10rem 15rem;
+
+        .panel-top {
+            @extend %size-cover;
+            @include set-flex(row, space-between, center);
+
+            h3 {
+                @include set-flex(row, flex-start, center, 2rem);
+
+                img {
+                    width: 4.5rem;
+                    height: auto;
+                }
+            }
+        }
+
+        .panel-grid {
+            @extend %size-cover;
+            @include set-grid(6, 10rem);
+
+            .accordion {
+                opacity: 0.5;
+
+                &.active {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

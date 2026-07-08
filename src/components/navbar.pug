@@ -5,11 +5,44 @@ nav.navbar
         .navbar-links
             button.link-outline-icon
                 img.icon(src="/icons/search.svg", alt="image")
-            a.link-outline(href="/") SERVICES +
+            .drop-down
+                a.link-outline(href="/") SERVICES +
+                .drop-down-content
+                    a.link-outline(href="/") DISTRIBUTION DIVISION
+                    a.link-outline(href="/") SPECIFICATION DIVISION
+                    a.link-outline(href="/") CPD
+                    a.link-outline(href="/") TECHNICAL RESOURCES
             a.link-outline(href="/about.html") ABOUT US
-            a.link-outline(href="/products.html") PRODUCTS +
+            .drop-down
+                a.link-outline(href="/products.html") PRODUCTS +
+                .drop-down-content
+                    a.link-outline(href="/products.html") BUILDING PRODUCTS
+                    a.link-outline(href="/products.html") flooring
+                    a.link-outline(href="/products.html") passive fire protection
+                    a.link-outline(href="/products.html") roofing
+                    a.link-outline(href="/products.html") radon & gas protection
+                    button.link-outline(data-panel-trigger="products") ALL PRODUCTS
             a.link-outline(href="/") Sales Contacts
             a.link-outline(href="/") Contact US
             a.link-outline(href="/login.html")
                 | LOG IN
                 img.icon(src="/icons/user.svg", alt="image")
+
+.panel(data-panel="products")
+    .panel-inner
+        .panel-top
+            h3
+                img.icon(src="/icons/cap.svg", alt="image")
+                | Building Products
+            button.close-btn Close
+        .panel-grid
+            each i in [1,2,3,4,5,6,7,8,9,10,11,12,13,1,2,32,3,2,321,2,3]
+                .accordion
+                    .accordion-trigger
+                        h6
+                            | BREATHER MEMBRANES&nbsp;
+                            span.accordion-icon +
+                    .accordion-content
+                        .accordion-content-inner
+                            a.link(href="/") COROTOP
+                            a.link(href="/") BREATH-X

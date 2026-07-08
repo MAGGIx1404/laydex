@@ -5,6 +5,7 @@ import { setDynamicVH } from './utils/_viewports'
 import Hamb from './components/_hamb'
 import Sliders from './components/_slider'
 import ScrollAnimations from './components/_scrolltrigger'
+import Accordion from './components/_accordion'
 
 if (window.history.scrollRestoration) {
     window.history.scrollRestoration = 'manual'
@@ -23,6 +24,8 @@ class _APP {
             this._initSliders()
             this._initScrollAnimations()
             this._initTabs()
+            this._initPanel()
+            this._initAccordion()
             console.log('App initialized successfully🎉🎉🎉🎉')
         } catch (error) {
             console.error(error)
@@ -42,6 +45,29 @@ class _APP {
         const section = document.querySelector('.why')
         if (section) {
             new ScrollAnimations(section)
+        }
+    }
+
+    _initAccordion() {
+        new Accordion()
+    }
+
+    _initPanel() {
+        const panel = document.querySelector('.panel')
+        const triggers = [...document.querySelectorAll('[data-panel-trigger]')]
+        if (panel && triggers.length > 0) {
+            const closeBtn = panel.querySelector('.close-btn')
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    panel.classList.remove('active')
+                })
+            }
+
+            triggers.forEach((trigger) => {
+                trigger.addEventListener('click', () => {
+                    panel.classList.add('active')
+                })
+            })
         }
     }
 

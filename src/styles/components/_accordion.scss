@@ -1,1 +1,38 @@
 @use '../abstracts/' as *;
+
+.accordion {
+    @extend %size-cover;
+
+    .accordion-trigger {
+        @extend %size-cover;
+        @include set-flex(row, space-between, center, 0, nowrap);
+        cursor: pointer;
+
+        .trigger-content {
+            @include set-flex(row, flex-start, flex-start, 6rem, nowrap);
+            max-width: calc(100% - 6rem);
+        }
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $animation-primary;
+
+        .accordion-content-inner {
+            @include set-flex(column, flex-start, flex-start, 2rem);
+            padding-top: 2rem;
+            max-width: 80%;
+        }
+    }
+}
+
+@include responsive(xl) {
+    .accordion {
+        .accordion-content {
+            .accordion-content-inner {
+                max-width: 100%;
+            }
+        }
+    }
+}
