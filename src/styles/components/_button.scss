@@ -51,29 +51,29 @@ button {
 
 .btn {
     @extend %link;
-    @include set-flex(row, flex-start, stretch);
-    background: $color-white;
-    color: $color-black;
+    @include set-flex(row, flex-start, stretch, 0.25rem);
 
     .btn-box {
+        background: $color-white;
+        color: $color-black;
         padding: 1rem 2rem 0.9rem 2rem;
-        border-right: 2px solid $color-orange;
     }
 
     .icon-box {
         @include set-flex(row, center, center);
         width: 3.55rem;
+        background: $color-white;
+        color: $color-black;
 
         svg {
             height: 1.25rem;
         }
     }
 
-    &:not(.no-border) {
-        border: 1px solid currentColor;
-
+    &.border {
+        .icon-box,
         .btn-box {
-            border-right: 2px solid currentColor;
+            border: 1px solid currentColor;
         }
     }
 }
