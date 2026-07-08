@@ -116,6 +116,15 @@ section {
     .btns {
         margin-top: 2rem;
     }
+
+    .box {
+        @extend %size-cover;
+        @include set-flex(column, flex-start, flex-start, 0.5rem);
+
+        p {
+            font-weight: 500;
+        }
+    }
 }
 
 .header {

@@ -27,7 +27,7 @@
 
 .related {
     @include set-flex(column, flex-start, flex-start, 10rem);
-    padding: $padding;
+    padding: $padding-sm;
     overflow: visible;
 
     .header {
@@ -67,6 +67,13 @@
                     color: $color-white;
                     padding: 4rem;
                 }
+            }
+
+            .project-slide {
+                @extend %project-card;
+                flex: 0 0 50rem;
+                max-width: 50rem;
+                margin-right: 2.4rem;
             }
         }
     }

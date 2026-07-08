@@ -1,0 +1,25 @@
+@use '../abstracts/' as *;
+
+.privacy {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 7.5rem);
+        padding: $padding;
+
+        .header {
+            justify-content: flex-start;
+        }
+
+        .privacy-content {
+            @extend %size-cover;
+            @include set-flex(column, flex-start, flex-start, 7.5rem);
+            padding: 0 28.5rem 0 28.5rem;
+
+            .content-box {
+                &:not(:last-child) {
+                    padding-bottom: 7.5rem;
+                    border-bottom: 0.5px solid currentColor;
+                }
+            }
+        }
+    }
+}

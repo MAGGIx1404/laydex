@@ -117,56 +117,5 @@ block content
                     figure.certification-figure
                         img(src=`/images/certifications/${image}.svg`, alt="Icon")
 
-    section.contact
-        .container
-            .content-box
-                +tag('CONTACT')
-                h1 Got a Question?<br/> Reach Out to Us
-                .box
-                    p.paragraph-sm Call us now
-                    a.link(href="/") IE: 01 6426600
-                    a.link(href="/") NI: 028 9038 2223
-                .btns
-                    +btn('REQUEST A CALL BACK', '/')
-                    +btn('FIND A STOCKIST', '/')
-            .form-wrapper
-                form
-                    input(type="text", placeholder="Full name")
-                    input(type="tel", placeholder="Phone number")
-                    input(type="email", placeholder="Email")
-                    input(type="text", placeholder="Location")
-                    select
-                        option(value="" disabled selected) Which product are you interested in?
-                        option(value="product") Product enquiry
-                        option(value="technical") Technical support
-                        option(value="general") General enquiry
-                    select
-                        option(value="" disabled selected) Which division interests you?
-                        option(value="product") Product enquiry
-                        option(value="technical") Technical support
-                        option(value="general") General enquiry
-                    select
-                        option(value="" disabled selected) How would you like us to reach you?
-                        option(value="product") Product enquiry
-                        option(value="technical") Technical support
-                        option(value="general") General enquiry
-                    textarea(placeholder="Your message", rows="1")
-                    .checklists
-                        label
-                            input(type="checkbox")
-                            | I understand and accept the Privacy Policy *
-                        label
-                            input(type="checkbox")
-                            | Yes, please keep me updated on Laydex news & special offers
-                    button.btn
-                        span.btn-box SUBMIT
-                        .icon-box
-                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
-                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
-
-
-
-        .bg
-            img.image(src="/images/products/image-3.png", alt="image")
-
+    +contact-section
     +type-section

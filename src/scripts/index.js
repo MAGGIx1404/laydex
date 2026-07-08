@@ -4,6 +4,7 @@ import { setDynamicVH } from './utils/_viewports'
 
 import Hamb from './components/_hamb'
 import Sliders from './components/_slider'
+import ScrollAnimations from './components/_scrolltrigger'
 
 if (window.history.scrollRestoration) {
     window.history.scrollRestoration = 'manual'
@@ -20,6 +21,7 @@ class _APP {
         try {
             this._initHamb()
             this._initSliders()
+            this._initScrollAnimations()
             this._initTabs()
             console.log('App initialized successfully🎉🎉🎉🎉')
         } catch (error) {
@@ -34,6 +36,13 @@ class _APP {
 
     _initSliders() {
         new Sliders()
+    }
+
+    _initScrollAnimations() {
+        const section = document.querySelector('.why')
+        if (section) {
+            new ScrollAnimations(section)
+        }
     }
 
     _initTabs() {

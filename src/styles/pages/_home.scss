@@ -25,7 +25,7 @@
     @include set-flex(column, flex-start, flex-start, 8rem);
     padding: 10rem 0 2.5rem 0;
 
-    .section-header {
+    .divisions-header {
         @extend %size-cover;
         @include set-flex(row, space-between, flex-end);
         max-width: 85%;
@@ -56,6 +56,46 @@
                     position: relative;
                     z-index: 3;
                     padding: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+.why {
+    position: relative;
+    background: $color-dark;
+    height: $vh;
+
+    .why-panel {
+        @extend %size-full;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        .container {
+            @include set-flex(row, space-between, center);
+            padding: $padding;
+            color: $color-white;
+            height: $vh;
+
+            .content-box {
+                @include set-flex-size(37.5%);
+            }
+
+            .why-box {
+                @include set-flex-size(50%);
+                @include set-flex(column, flex-start, flex-start, 4rem);
+                background: $color-dark;
+                padding: 4rem;
+
+                h5 {
+                    @include set-flex(row, flex-start, center, 1rem);
+
+                    img {
+                        width: 1.75rem;
+                        height: auto;
+                    }
                 }
             }
         }

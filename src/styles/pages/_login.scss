@@ -1,0 +1,27 @@
+@use '../abstracts/' as *;
+
+.login {
+    .container {
+        @include set-grid(2, 2.4rem);
+        padding: $padding-md;
+        color: $color-white;
+
+        .content-box {
+            & > p {
+                max-width: 85%;
+            }
+
+            .box {
+                margin-top: 2rem;
+            }
+        }
+
+        .form-wrapper {
+            @include set-flex(column, flex-start, flex-start, 3.5rem);
+
+            form {
+                @extend %form;
+            }
+        }
+    }
+}

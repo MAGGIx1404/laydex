@@ -85,16 +85,6 @@
         padding: $padding;
         color: $color-white;
 
-        .content-box {
-            .box {
-                @include set-flex(column, flex-start, flex-start, 0.5rem);
-
-                p {
-                    font-weight: 500;
-                }
-            }
-        }
-
         .form-wrapper {
             @include set-flex-size(40%);
 

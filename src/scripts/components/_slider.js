@@ -29,6 +29,7 @@ export default class Sliders {
                 if (el.classList.contains('autoscroll-slider')) return new AutoScrollSlider(el)
                 if (el.classList.contains('carousel-slider')) return new CarouselSlider(el)
                 if (el.classList.contains('autoplay-slider')) return new AutoPlaySlider(el)
+                if (el.classList.contains('gallery-slider')) return new GallerySlider(el, section)
                 return null
             })
             .filter(Boolean)
@@ -158,5 +159,54 @@ class CarouselSlider {
             },
             [ClassNames()]
         )
+    }
+}
+
+class GallerySlider {
+    constructor(element, section) {
+        this.section = section
+        this.preview = section.querySelector('.slider-preview img')
+        this.slides = element.querySelectorAll('.embla__slide')
+
+        this.embla = EmblaCarousel(
+            element,
+            {
+                loop: true,
+                axis: 'y',
+                align: 'start',
+            },
+            [ClassNames()]
+        )
+
+        this.dotsNode = section.querySelector('.embla__dots')
+        if (this.dotsNode) addDotButtonAndClickHandlers(this.embla, this.dotsNode)
+
+        // Update preview on slide change
+        this.embla.on('select', () => {
+            this.updatePreview()
+        })
+
+        // Click on any slide to make it active and update preview
+        this.slides.forEach((slide, index) => {
+            slide.addEventListener('click', () => {
+                this.embla.scrollTo(index)
+            })
+        })
+
+        // Set initial preview
+        this.updatePreview()
+    }
+
+    updatePreview() {
+        if (!this.preview) return
+        const selectedIndex = this.embla.selectedScrollSnap()
+        const activeSlide = this.slides[selectedIndex]
+        if (activeSlide) {
+            const img = activeSlide.querySelector('img')
+            if (img) {
+                this.preview.src = img.src
+                this.preview.alt = img.alt
+            }
+        }
     }
 }
