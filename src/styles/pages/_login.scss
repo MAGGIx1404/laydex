@@ -25,3 +25,140 @@
         }
     }
 }
+
+.account {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 7.5rem);
+        padding: $padding;
+
+        .tab-content,
+        .content-box {
+            @extend %size-cover;
+            display: none;
+
+            &.active {
+                display: flex;
+            }
+        }
+
+        .account-panel {
+            @extend %size-cover;
+            @include set-flex(row, space-between, flex-start);
+
+            .left-panel {
+                @include set-flex-size(40%);
+
+                .content-box {
+                    p {
+                        max-width: 80%;
+                    }
+
+                    .tabs-list {
+                        @include set-flex(column, flex-start, flex-start, 2.4rem);
+
+                        button {
+                            opacity: 0.2;
+                            transition: opacity 0.3s $ease-in-out-cubic;
+
+                            &:hover,
+                            &.active {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .right-panel {
+                @include set-flex-size(60%);
+                @include set-flex(column, flex-start, flex-end, 7.5rem);
+
+                &:has(.btns-wrapper) {
+                    margin-top: 13.5rem;
+                }
+
+                .content-box {
+                    &:has(.profile-form-wrapper) {
+                        align-items: flex-end;
+                    }
+
+                    .profile-form-wrapper {
+                        @extend %size-cover;
+                        max-width: 77%;
+
+                        form {
+                            @extend %form, %size-cover;
+                        }
+                    }
+
+                    .downloads-list {
+                        @extend %size-cover;
+                        @include set-flex(column, flex-start, flex-start, 2.4rem);
+
+                        .dowload-item {
+                            @extend %size-cover;
+                            @include set-flex(column, flex-start, flex-start, 4rem);
+                            border: 1px solid currentColor;
+                            padding: 4rem;
+
+                            p {
+                                font-weight: 600;
+                            }
+
+                            .item-bar {
+                                @extend %size-cover;
+                                @include set-flex(row, space-between, center, 5rem);
+
+                                & > h5 {
+                                    flex: 1;
+                                }
+
+                                a {
+                                    color: $color-orange;
+                                }
+                            }
+                        }
+                    }
+
+                    .training-list {
+                        @extend %size-cover;
+                        @include set-flex(column, flex-start, flex-start, 2.4rem);
+
+                        .training-item {
+                            @extend %size-cover;
+                            @include set-flex(row, space-between, stretch);
+                            border: 1px solid currentColor;
+
+                            .medium {
+                                font-weight: 600;
+                            }
+
+                            .item-details {
+                                @include set-flex-size(35%);
+                                @include set-flex(column, flex-start, flex-start, 4rem);
+                                padding: 4rem;
+                                border-right: 1px solid currentColor;
+
+                                img {
+                                    width: 100%;
+                                    height: 25rem;
+                                    margin-top: -2rem;
+                                }
+                            }
+
+                            .item-content {
+                                @include set-flex-size(65%);
+                                @include set-flex(column, flex-start, flex-start, 4rem);
+                                padding: 4rem;
+
+                                .item-box {
+                                    @include set-flex(column, flex-start, flex-start, 2.4rem);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

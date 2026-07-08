@@ -32,10 +32,19 @@ button {
     @extend %link, %padding;
     text-transform: uppercase;
 
+    img {
+        transition: all 0.3s $ease-in-out-cubic;
+    }
+
     &:hover,
     &.active {
+        border-color: $color-orange;
         background: $color-orange;
         color: $color-white;
+
+        img {
+            filter: invert(1);
+        }
     }
 }
 

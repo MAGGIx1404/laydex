@@ -79,6 +79,38 @@ class _APP {
                     }
                 })
             })
+
+            // Sub-tabs
+            const subTabs = section.querySelectorAll('[data-sub-tab]')
+            const subContents = section.querySelectorAll('[data-sub-tab-content]')
+            if (subTabs.length === 0 || subContents.length === 0) return
+
+            // Initialize: check which sub-tab has active class and activate matching sub-content
+            const activeSubTab = section.querySelector('[data-sub-tab].active')
+            if (activeSubTab) {
+                const activeSubValue = activeSubTab.getAttribute('data-sub-tab')
+                if (activeSubValue === 'all') {
+                    subContents.forEach((c) => c.classList.add('active'))
+                } else {
+                    section.querySelectorAll(`[data-sub-tab-content="${activeSubValue}"]`).forEach((c) => c.classList.add('active'))
+                }
+            }
+
+            subTabs.forEach((subTab) => {
+                const target = subTab.getAttribute('data-sub-tab')
+
+                subTab.addEventListener('click', () => {
+                    subTabs.forEach((t) => t.classList.remove('active'))
+                    subContents.forEach((c) => c.classList.remove('active'))
+
+                    subTab.classList.add('active')
+                    if (target === 'all') {
+                        subContents.forEach((c) => c.classList.add('active'))
+                    } else {
+                        section.querySelectorAll(`[data-sub-tab-content="${target}"]`).forEach((c) => c.classList.add('active'))
+                    }
+                })
+            })
         })
     }
 

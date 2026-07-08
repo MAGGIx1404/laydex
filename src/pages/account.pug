@@ -1,0 +1,175 @@
+extends /layouts/default
+
+block content
+    section.account
+        .container
+            .account-panel
+                .left-panel
+                    .content-box(data-tab-content="profile")
+                        +tag('PROFILE & SETTINGS', 'orange')
+                        h1
+                            | Manage Your Laydex <br/> Relationship&nbsp;<br/>
+                            span.orange in One Place
+                        p Welcome to your Laydex account. This secure area allows you to manage your profile, track orders, access training and certifications, and download technical documentation — all designed to support you in delivering high-quality construction projects.
+
+                    .content-box(data-tab-content="orders")
+                        +tag('ORDER HISTORY', 'orange')
+                        h1
+                            | Track Your Orders & <br/>
+                            span.orange Shipments
+                        p Easily track your orders and shipments with our comprehensive order history feature. Stay informed about the status of your purchases, view past orders, and access shipment details to ensure timely delivery of your construction materials. Our user-friendly interface allows you to quickly find the information you need, helping you manage your projects efficiently and effectively.
+
+                    .content-box(data-tab-content="downloads")
+                        +tag('DOWNLOADS', 'orange')
+                        h1
+                            | Everything You Need&nbsp; <br/>
+                            span.orange When You Need It
+                        p Laydex provides industry-leading training and certification programmes in partnership with our global manufacturing partners. These programmes are designed to keep contractors, installers, and specifiers fully informed and compliant with current standards and best practices.
+
+                    .content-box(data-tab-content="training")
+                        +tag('TRAINING & CERTIFICATIONS', 'orange')
+                        h1
+                            | Stay Informed & <br/>
+                            span.orange Certified
+                        p Laydex provides industry-leading training and certification programmes in partnership with our global manufacturing partners. These programmes are designed to keep contractors, installers, and specifiers fully informed and compliant with current standards and best practices.
+
+                .right-panel
+                    .btns-wrapper
+                        button.link-outline.active(data-tab="profile") PROFILE & SETTINGS
+                        button.link-outline(data-tab="orders") ORDER HISTORY
+                        button.link-outline(data-tab="downloads") DOWNLOADS
+                        button.link-outline(data-tab="training") TRAINING & CERTIFICATIONS
+
+                    .content-box(data-tab-content="profile")
+                        .profile-form-wrapper
+                            form
+                                input(type="text" placeholder="First Name")
+                                input(type="phone" placeholder="Phone Number")
+                                input(type="email" placeholder="Email")
+                                input(type="text" placeholder="Location")
+                                input(type="text" placeholder="Address")
+                                input(type="text" placeholder="Postal Code")
+                                input(type="password" placeholder="Password")
+                                input(type="password" placeholder="Confirm Password")
+                                .btns
+                                    button.btn.border
+                                        span.btn-box RESET PASSWORD
+                                        .icon-box
+                                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+                                    button.btn.border
+                                        span.btn-box SAVE CHANGES
+                                        .icon-box
+                                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+            .account-panel
+                .left-panel
+                    .content-box(data-tab-content="downloads")
+                        .tabs-list
+                            button.active(data-sub-tab="agreement")
+                                h5 Agreement Certs
+                            button(data-sub-tab="dops")
+                                h5 Dops
+                            button(data-sub-tab="instructions")
+                                h5 Installation/ Maintenance Instructions
+                            button(data-sub-tab="sds")
+                                h5 Safety DataSheets
+                            button(data-sub-tab="technical-data-sheets")
+                                h5 Technical DataSheets
+
+                    .content-box(data-tab-content="training")
+                        .tabs-list
+                            button.active(data-sub-tab="upcoming-training")
+                                h5 Upcoming training sessions & product workshops
+                            button(data-sub-tab="completed-training")
+                                h5 Completed training records
+                            button(data-sub-tab="certificates")
+                                h5 Your certificates of completion
+
+                .right-panel
+                    .content-box(data-tab-content="downloads")
+                        .tab-content.active(data-sub-tab-content="agreement")
+                                .downloads-list
+                                    .dowload-item
+                                        p AGRÉMENT CERTS
+                                        .item-bar
+                                            h5 Illbruck FM230 Pro Foam Window – BBA Product Sheet 1
+                                            a(href="#")
+                                                h5 View
+
+                        .tab-content(data-sub-tab-content="dops")
+                                .downloads-list
+                                    .dowload-item
+                                        p DOPS
+                                        .item-bar
+                                            h5 Illbruck FM230 Pro Foam Window – BBA Product Sheet 1
+                                            a(href="#")
+                                                h5 View
+
+                        .tab-content(data-sub-tab-content="instructions")
+                                .downloads-list
+                                    .dowload-item
+                                        p INSTALLATION/ MAINTENANCE INSTRUCTIONS
+                                        .item-bar
+                                            h5 Illbruck FM230 Pro Foam Window – BBA Product Sheet 1
+                                            a(href="#")
+                                                h5 View
+
+                        .tab-content(data-sub-tab-content="sds")
+                                .downloads-list
+                                    .dowload-item
+                                        p SAFETY DATASHEETS
+                                        .item-bar
+                                            h5 Illbruck FM230 Pro Foam Window – BBA Product Sheet 1
+                                            a(href="#")
+                                                h5 View
+
+                        .tab-content(data-sub-tab-content="technical-data-sheets")
+                                .downloads-list
+                                    .dowload-item
+                                        p TECHNICAL DATASHEETS
+                                        .item-bar
+                                            h5 Illbruck FM230 Pro Foam Window – BBA Product Sheet 1
+                                            a(href="#")
+                                                h5 View
+
+                    .content-box(data-tab-content="training")
+                        .tab-content.active(data-sub-tab-content="upcoming-training")
+                            .training-list
+                                each i in [1,2]
+                                    .training-item
+                                        .item-details
+                                            p.medium TRAINNING SESSION #{i}
+                                            h5 Lorem Ipsum
+                                            img.image(src="/images/account/image-1.png", alt="image")
+                                        .item-content
+                                            p.medium DESCRIPTION
+                                            .item-box
+                                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+                        .tab-content(data-sub-tab-content="completed-training")
+                            .training-list
+                                each i in [1,2]
+                                    .training-item
+                                        .item-details
+                                            p.medium COMPLETED SESSION #{i}
+                                            h5 Lorem Ipsum
+                                            img.image(src="/images/account/image-1.png", alt="image")
+                                        .item-content
+                                            p.medium DESCRIPTION
+                                            .item-box
+                                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+
+                        .tab-content(data-sub-tab-content="certificates")
+                            .training-list
+                                each i in [1,2]
+                                    .training-item
+                                        .item-details
+                                            p.medium CERTIFICATE #{i}
+                                            h5 Lorem Ipsum
+                                            img.image(src="/images/account/image-1.png", alt="image")
+                                        .item-content
+                                            p.medium DESCRIPTION
+                                            .item-box
+                                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore

@@ -52,6 +52,10 @@
         }
     }
 
+    .btns {
+        grid-column: 1 / -1;
+    }
+
     @include responsive(md) {
         grid-template-columns: repeat(1, 1fr);
     }
