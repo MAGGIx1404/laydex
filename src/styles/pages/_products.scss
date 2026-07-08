@@ -1,5 +1,9 @@
 @use '../abstracts/' as *;
 
+.page-wrapper:has(.product-details) {
+    overflow: visible;
+}
+
 .products {
     .container {
         @include set-flex(column, flex-start, flex-start, 12.5rem);
@@ -81,13 +85,18 @@
 }
 
 .product-details {
+    overflow: visible;
+
     .container {
         @include set-flex(row, space-between, flex-start);
         padding: $padding;
+        overflow: visible;
 
         .slider-wrapper {
             @include set-flex-size(40%);
             @include set-flex(row, space-between, stretch);
+            position: sticky;
+            top: 15rem;
 
             .slider-tabs {
                 @include set-flex(column, flex-start, flex-start, 1.8rem);
@@ -122,7 +131,7 @@
             @include set-flex-size(50%);
             @include set-flex(column, flex-start, flex-start, 4rem);
 
-            .content-box {
+            & > .content-box {
                 border-top: 0.5px solid currentColor;
                 padding-top: 3.5rem;
 
@@ -145,6 +154,73 @@
                     border-bottom: 0.5px solid currentColor;
                 }
             }
+
+            .tab-panel {
+                @extend %size-cover;
+                @include set-flex(column, flex-start, flex-start, 4rem);
+                margin-top: 7.5rem;
+
+                .content-box {
+                    .btns-wrapper {
+                        margin-top: 2.5rem;
+                    }
+                }
+
+                .tab-content {
+                    @extend %size-cover;
+                    margin-top: 2.5rem;
+
+                    .tab-content-list {
+                        @extend %size-cover;
+                        @include set-flex(column, flex-start, flex-start);
+
+                        .list-item {
+                            @extend %size-cover;
+                            @include set-flex(row, space-between, center);
+                            padding: 2.5rem 0;
+                            border-bottom: 0.5px solid currentColor;
+                        }
+
+                        &.data-list {
+                            .list-item {
+                                h6 {
+                                    max-width: 27.5%;
+                                    width: 100%;
+                                }
+
+                                p {
+                                    max-width: 70%;
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        a:hover {
+                            color: $color-orange;
+
+                            h6 {
+                                text-decoration: 1px solid underline;
+                                text-underline-offset: 2px;
+                            }
+                        }
+                    }
+                }
+            }
         }
+    }
+}
+
+.full-image-section {
+    figure {
+        img {
+            min-height: $vh;
+        }
+    }
+}
+
+.related {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding;
     }
 }

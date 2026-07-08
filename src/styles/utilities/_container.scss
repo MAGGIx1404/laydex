@@ -126,7 +126,7 @@ section {
         @include set-flex(column, flex-start, flex-start, 3rem);
 
         &:nth-child(1) {
-            @include set-flex-size(15%);
+            @include set-flex-size(17.5%);
             padding-top: 2rem;
         }
 

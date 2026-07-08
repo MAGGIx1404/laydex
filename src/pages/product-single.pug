@@ -29,3 +29,68 @@ block content
                         img.image(src="/images/products/10-year.png", alt="image")
                         .bar-content
                             p.paragraph-xs Fortessa Door Handles are covered by a 10 Year Guarantee on mechanical parts. Levers have been tested to pass DIN EN 1906 European Quality Standards. Essentially each door handle is guaranteed for 100,000 revolutions.
+
+                .tab-panel
+                    .content-box
+                        +tag('KNOW MORE', 'orange')
+                        h2
+                            | Everything You Need&nbsp;
+                            span.orange to Know
+                        .btns-wrapper
+                            button.link-outline.active(data-tab="1") BENEFITS
+                            button.link-outline(data-tab="2") TECHNICAL DATA
+                            button.link-outline(data-tab="3") DOWNLOADS
+                    .tab-content.active(data-tab-content="1")
+                        .tab-content-list
+                            .list-item
+                                h6 1. All products undergo thorough testing at all stages of manufacture
+                            .list-item
+                                h6 2. All Levers must comply to strict quality examinations
+                            .list-item
+                                h6 3. Each Lever is assessed for its resistance to corrosion and scratches
+                            .list-item
+                                h6 4. Performance of all working parts is rigorously tested
+                            .list-item
+                                h6 5. Before dispatch, all collections are carefully checked by eye to ensure their perfection.
+                            .list-item
+                                h6 6. All levers meet DIN EN 1906 Interior Residential classification standards
+                    .tab-content(data-tab-content="2")
+                        .tab-content-list.data-list
+                            .list-item
+                                h6 Durability
+                                p Grade 6 (100,000 Cycles)
+                            .list-item
+                                h6 Category of Use
+                                p Medium Frequency of Use
+                            .list-item
+                                h6 Colour
+                                p Metal Grey
+                            .list-item
+                                h6 Category of Use
+                                p Grade 1
+                            .list-item
+                                h6 Corrosion Resistance
+                                p Grade 2 (48 hours Salt atomised Spray)
+                            .list-item
+                                h6 Full Information
+                                p Check out the full datasheet available in the Downloads section!
+                    .tab-content(data-tab-content="3")
+                        .tab-content-list
+                            a.list-item(href="/")
+                                h6 Fortessa Gotham Brochure
+                                h6 Dowload
+
+    section.full-image-section
+        figure.image-wrapper
+            img.image(src="/images/products/full.png", alt="image")
+
+    section.related
+        .container
+            .header
+                .header-box
+                    +tag('PRODUCTS', 'orange')
+                .header-box
+                    h2 Related Building Products
+                    .slider-controls
+                        +prev
+                        +next
