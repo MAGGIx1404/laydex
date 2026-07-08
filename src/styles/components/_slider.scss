@@ -1,5 +1,30 @@
 @use '../abstracts/' as *;
 
+%project-card {
+    @include set-flex(column, flex-start, flex-start, 3.5rem);
+
+    figure {
+        img {
+            height: 27.5rem;
+        }
+    }
+
+    .content-box {
+        padding-bottom: 4.5rem;
+        border-bottom: 1px solid currentColor;
+
+        .paragraph-sm {
+            opacity: 0.5;
+        }
+    }
+
+    &:hover {
+        figure {
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 20%);
+        }
+    }
+}
+
 .related {
     @include set-flex(column, flex-start, flex-start, 10rem);
     padding: $padding;
@@ -41,6 +66,93 @@
                     background: $color-orange;
                     color: $color-white;
                     padding: 4rem;
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding;
+
+        .content-box {
+            .btns-wrapper {
+                margin-top: 2.5rem;
+            }
+        }
+
+        .projects-grid {
+            @extend %size-cover;
+            @include set-grid(3, 2.4rem);
+
+            .project-card {
+                @extend %project-card;
+                display: none;
+
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.testimonial {
+    @include set-flex(column, flex-start, flex-start, 10rem);
+    padding: $padding-sm;
+
+    .testimonial-header {
+        @extend %size-cover;
+        @include set-flex(row, flex-start, flex-start, 10rem);
+        max-width: 85%;
+        margin: 0 auto;
+
+        .header-box {
+            @include set-flex(column, flex-start, flex-start, 2.5rem);
+
+            &:nth-child(1) {
+                margin-top: 2.75rem;
+            }
+        }
+    }
+
+    .embla {
+        .embla__container {
+            align-items: flex-start;
+
+            .embla__slide {
+                @include set-flex(column, flex-start, flex-start, 6rem);
+                flex: 0 0 75rem;
+                max-width: 75rem;
+                width: 100%;
+                margin-right: 2.4rem;
+                padding: 5rem 4.5rem;
+                border: 1px solid currentColor;
+
+                .slide-top {
+                    @extend %size-cover;
+                    @include set-flex(row, space-between, center);
+
+                    p {
+                        @include set-flex(row, flex-start, center, 1rem);
+
+                        svg {
+                            width: 7rem;
+                            height: auto;
+
+                            path {
+                                fill: currentColor;
+                            }
+                        }
+                    }
+                }
+
+                &.is-snapped {
+                    background: $color-orange;
+                    color: $color-white;
+                    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 15%);
                 }
             }
         }
