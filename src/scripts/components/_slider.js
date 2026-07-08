@@ -38,6 +38,8 @@ export default class Sliders {
         const prevBtns = section.querySelectorAll('.slider-prev')
         const nextBtns = section.querySelectorAll('.slider-next')
 
+        const tabs = section.querySelectorAll('.slider-tab')
+
         const scroll = (direction) => {
             sliders.forEach((slider) => slider.embla?.[direction]())
         }
@@ -45,6 +47,14 @@ export default class Sliders {
         prevBtns.forEach((btn) => btn.addEventListener('click', () => scroll('scrollPrev')))
 
         nextBtns.forEach((btn) => btn.addEventListener('click', () => scroll('scrollNext')))
+
+        if (tabs.length) {
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    sliders.forEach((slider) => slider.embla?.scrollTo(index))
+                })
+            })
+        }
     }
 }
 

@@ -30,6 +30,12 @@ h5 {
     line-height: 1.25;
 }
 
+h6 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
 p {
     font-size: 1.8rem;
     font-weight: 400;
@@ -51,12 +57,15 @@ label,
 }
 
 .tag {
-    @include set-flex(row, flex-start, center, 0.75rem, nowrap);
+    @include set-flex(row, flex-start, flex-start, 0.75rem, nowrap);
     font-size: 1.6rem;
+    font-weight: 500;
     position: relative;
+    text-transform: uppercase;
 
     svg {
         width: 4rem;
+        margin-top: 0.65rem;
     }
 
     &.orange {

@@ -1,0 +1,31 @@
+extends /layouts/default
+
+block content
+    section.product-details
+        .container
+            .slider-wrapper
+                .slider-tabs
+                    each i in [1,2,3,4]
+                        button.slider-tab
+                            img.image(src=`/images/products/product-${i}.png`, alt="image")
+                .embla.fade-slider
+                    .embla__container
+                        each i in [1,2,3,4]
+                            .embla__slide
+                                img.image(src=`/images/products/product-${i}.png`, alt="image")
+
+            .product-content
+                +tag('Building Products / Fortessa Door Handles & Accessories / Door Levers On Rose / Fortessa Gotham Box Set', 'orange')
+                .content-box
+                    h3 Fortessa Gotham Box Set
+                    p With the Gotham Door Handle collection, we bring you a brand new specialised finish of gun metal grey, paired elegantly with polished chrome metal. This collection beckons you to be brave enough to be yourself. Let our Gotham collection levers reflect your personal style.
+                    p All Fortessa products undergo thorough testing at all stages of manufacture, and performance of all working parts is rigorously tested . Fortessa handles meet DIN EN 1906 Interior Residential classification standards.
+                    h6 Box Set include: Pair of Door Handles, 3 Hinges, Lock with keys
+                    h6 Available in Box Sets:  Magneto | Vadar | Mystique | Phantom | Spectre | Taranis | Rogue
+                    .btns
+                        +btn('MAKE AN ENQUIRY', '/' , 'border')
+                .content-box
+                    .year-bar
+                        img.image(src="/images/products/10-year.png", alt="image")
+                        .bar-content
+                            p.paragraph-xs Fortessa Door Handles are covered by a 10 Year Guarantee on mechanical parts. Levers have been tested to pass DIN EN 1906 European Quality Standards. Essentially each door handle is guaranteed for 100,000 revolutions.

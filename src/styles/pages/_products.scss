@@ -79,3 +79,72 @@
         }
     }
 }
+
+.product-details {
+    .container {
+        @include set-flex(row, space-between, flex-start);
+        padding: $padding;
+
+        .slider-wrapper {
+            @include set-flex-size(40%);
+            @include set-flex(row, space-between, stretch);
+
+            .slider-tabs {
+                @include set-flex(column, flex-start, flex-start, 1.8rem);
+                max-width: 17.5%;
+                width: 100%;
+
+                .slider-tab {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                        height: 10.75rem;
+                    }
+                }
+            }
+
+            .embla {
+                max-width: 80%;
+
+                .embla__container {
+                    .embla__slide {
+                        img {
+                            width: 100%;
+                            height: 50rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .product-content {
+            @include set-flex-size(50%);
+            @include set-flex(column, flex-start, flex-start, 4rem);
+
+            .content-box {
+                border-top: 0.5px solid currentColor;
+                padding-top: 3.5rem;
+
+                .year-bar {
+                    @extend %size-cover;
+                    @include set-flex(row, space-between, center, 2.4rem);
+
+                    img {
+                        width: 10.5rem;
+                    }
+
+                    .bar-content {
+                        flex: 1;
+                    }
+                }
+
+                &:has(.year-bar) {
+                    margin-top: 4rem;
+                    padding: 3.5rem 0;
+                    border-bottom: 0.5px solid currentColor;
+                }
+            }
+        }
+    }
+}
