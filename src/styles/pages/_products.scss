@@ -65,6 +65,15 @@
                 &:hover {
                     background: $color-white;
                     color: $color-dark;
+
+                    .btns {
+                        .btn {
+                            .btn-box,
+                            .icon-box {
+                                border: 1px solid currentColor;
+                            }
+                        }
+                    }
                 }
             }
         }

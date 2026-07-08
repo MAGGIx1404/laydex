@@ -57,6 +57,7 @@ button {
         background: $color-white;
         color: $color-black;
         padding: 1rem 2rem 0.9rem 2rem;
+        border: 1px solid $color-white;
     }
 
     .icon-box {
@@ -64,6 +65,7 @@ button {
         width: 3.55rem;
         background: $color-white;
         color: $color-black;
+        border: 1px solid $color-white;
 
         svg {
             height: 1.25rem;
@@ -73,7 +75,7 @@ button {
     &.border {
         .icon-box,
         .btn-box {
-            border: 1px solid currentColor;
+            border-color: currentColor;
         }
     }
 }
