@@ -1,0 +1,85 @@
+extends /layouts/default
+
+block content
+    section.news-section
+        .container
+            .content-box
+                +tag('NEWS & INSIGHTS', 'orange')
+                h1
+                    | Updates, Expertise&nbsp;
+                    span.orange and Innovations
+                .btns-wrapper
+                    button.link-outline.active(data-tab="all") VIEW ALL
+                    button.link-outline(data-tab="1") LAYDEX NEWS
+                    button.link-outline(data-tab="2") DIY/RENOVATION
+                    button.link-outline(data-tab="3") ROOFING
+                    button.link-outline(data-tab="4") BUILDER MERCHANTS
+
+            .news-grid
+                .news-card(data-tab-content="1")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 We weren’t alone on this 30 year journey
+                        img.image(src="/images/news/news-1.png", alt="image")
+                    .card-content
+                        p In 2025, we’re proudly celebrating a remarkable milestone of 30 years in business. This year has given us a special opportunity to reflect on the journey that brought us here.
+                        +btn('Read More', '/news-single.html', 'border')
+
+                .news-card(data-tab-content="1")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 Eddie McCormack, Area Sales Manager: 22 years of growth at Laydex
+                        img.image(src="/images/news/news-2.png", alt="image")
+                    .card-content
+                        p The stories behind Laydex’s success are often found in the experiences of our dedicated team members. As part of the anniversary series, this time, we caught up with Eddie...
+                        +btn('Read More', '/news-single.html', 'border')
+
+                .news-card(data-tab-content="2")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 Karen White, one year of growth at Laydex
+                        img.image(src="/images/news/news-3.png", alt="image")
+                    .card-content
+                        p Laydex is turning 30, and it’s not just about looking back—it’s about celebrating the entire team, both long-time and new members! One of those new faces is Karen White, our...
+                        +btn('Read More', '/news-single.html', 'border')
+
+                .news-card(data-tab-content="3")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 Jackie McHugh, Executive Assistant: 20 years of dedication at Laydex
+                        img.image(src="/images/news/news-4.png", alt="image")
+                    .card-content
+                        p Next in our 30-year celebration series, we hear from Jackie McHugh, Executive Assistant. With almost two decades of experience, Jackie has been a constant presence at Laydex...
+                        +btn('Read More', '/news-single.html', 'border')
+
+                .news-card(data-tab-content="4")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 Paul O’Connor, Warehouse Operator: 15 years in logistics at Laydex
+                        img.image(src="/images/news/news-5.png", alt="image")
+                    .card-content
+                        p Following our conversation with Declan, we sat down with Paul O’Connor, Warehouse Operator, who has been an essential part of the Laydex team for 15 years. Paul has witnessed, and...
+                        +btn('Read More', '/news-single.html', 'border')
+
+                .news-card(data-tab-content="3")
+                    .card-top
+                        .card-content
+                            p.paragraph-xs 22nd May 2025 | 10 min
+                            h4 30th anniversary: celebrating the people behind Laydex
+                        img.image(src="/images/news/news-6.png", alt="image")
+                    .card-content
+                        p Laydex is turning 30, and it’s not just about looking back—it’s about celebrating the entire team, both long-time and new members! One of those new faces is Karen White, our...
+                        +btn('Read More', '/news-single.html', 'border')
+
+            button.btn.border.load-more
+                span.btn-box Load More
+                .icon-box
+                    svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                        path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+    +type-section

@@ -1,0 +1,158 @@
+@use '../abstracts/' as *;
+
+.news-section {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 10rem);
+        padding: $padding;
+
+        .content-box {
+            .btns-wrapper {
+                margin-top: 2.5rem;
+            }
+        }
+
+        .news-grid {
+            @extend %size-cover;
+            @include set-grid(3);
+            row-gap: 6.25rem;
+            column-gap: 2.4rem;
+
+            .news-card {
+                @include set-flex(column, flex-start, flex-start, 5.5rem);
+                padding-bottom: 6.25rem;
+                border-bottom: 1px solid currentColor;
+                display: none;
+
+                .card-top {
+                    @extend %size-cover;
+                    @include set-flex(row, space-between, flex-start, 4rem);
+
+                    img {
+                        width: 13rem;
+                        height: 13rem;
+                    }
+
+                    .card-content {
+                        gap: 1.5rem;
+                    }
+                }
+
+                .card-content {
+                    @extend %size-cover;
+                    @include set-flex(column, flex-start, flex-start, 2.4rem);
+                    flex: 1;
+                }
+
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+
+.news-content-one {
+    .container {
+        @include set-flex(row, space-between, flex-start);
+        padding: $padding;
+
+        .content-box {
+            @include set-flex-size(45%);
+
+            &:nth-child(2) {
+                margin-top: 15rem;
+            }
+        }
+    }
+}
+
+.news-bottom {
+    @extend %size-cover;
+    @include set-flex(row, flex-start, center, 3rem);
+    padding-top: 5rem;
+    border-top: 0.5px solid currentColor;
+    text-transform: uppercase;
+
+    .btns {
+        margin-top: 0;
+        gap: 1rem;
+    }
+}
+
+.news-content-two {
+    @include set-flex(row, space-between, flex-start);
+    padding: 0 0 10rem 0;
+
+    .content-figure {
+        @include set-flex-size(55%);
+    }
+
+    & > .content-box {
+        @include set-flex-size(45%);
+        gap: 6rem;
+        padding-right: 15rem;
+        margin-top: 25rem;
+
+        .news-bottom {
+            margin-top: 5rem;
+        }
+    }
+}
+
+.news-content-three {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 15rem);
+        padding: 2.5rem 0 12.5rem 0;
+
+        .content-list {
+            @extend %size-cover;
+            @include set-flex(column, flex-start, flex-start, 15rem);
+
+            .list-item {
+                @extend %size-cover;
+                @include set-flex(row, flex-start, stretch, 28rem);
+
+                figure {
+                    @include set-flex-size(30%);
+
+                    img {
+                        height: 100%;
+                    }
+                }
+
+                .content-box {
+                    @include set-flex-size(30%);
+                    padding-bottom: 7.5rem;
+                    border-bottom: 0.5px solid currentColor;
+                }
+
+                &:nth-child(odd) {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+
+        .news-box {
+            align-self: flex-end;
+            max-width: 70%;
+
+            .news-bottom {
+                margin-top: 5rem;
+            }
+        }
+    }
+}
+
+.news-content-four {
+    .container {
+        @include set-flex(column, flex-start, flex-start, 6rem);
+        padding: 2.5rem 15rem 12.5rem 15rem;
+
+        .content-box {
+            &:not(:first-child) {
+                border-top: 0.5px solid currentColor;
+                padding-top: 6rem;
+            }
+        }
+    }
+}

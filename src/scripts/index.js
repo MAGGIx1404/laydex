@@ -44,6 +44,17 @@ class _APP {
             const contents = section.querySelectorAll('[data-tab-content]')
             if (tabs.length === 0 || contents.length === 0) return
 
+            // Initialize: check which tab has active class and activate matching content
+            const activeTab = section.querySelector('[data-tab].active')
+            if (activeTab) {
+                const activeValue = activeTab.getAttribute('data-tab')
+                if (activeValue === 'all') {
+                    contents.forEach((c) => c.classList.add('active'))
+                } else {
+                    section.querySelectorAll(`[data-tab-content="${activeValue}"]`).forEach((c) => c.classList.add('active'))
+                }
+            }
+
             tabs.forEach((tab) => {
                 const target = tab.getAttribute('data-tab')
 
@@ -52,8 +63,11 @@ class _APP {
                     contents.forEach((c) => c.classList.remove('active'))
 
                     tab.classList.add('active')
-                    const content = section.querySelector(`[data-tab-content="${target}"]`)
-                    if (content) content.classList.add('active')
+                    if (target === 'all') {
+                        contents.forEach((c) => c.classList.add('active'))
+                    } else {
+                        section.querySelectorAll(`[data-tab-content="${target}"]`).forEach((c) => c.classList.add('active'))
+                    }
                 })
             })
         })
