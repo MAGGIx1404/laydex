@@ -217,10 +217,3 @@
         }
     }
 }
-
-.related {
-    .container {
-        @include set-flex(column, flex-start, flex-start, 10rem);
-        padding: $padding;
-    }
-}

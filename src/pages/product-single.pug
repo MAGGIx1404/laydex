@@ -85,7 +85,6 @@ block content
             img.image(src="/images/products/full.png", alt="image")
 
     section.related
-        .container
             .header
                 .header-box
                     +tag('PRODUCTS', 'orange')
@@ -94,3 +93,14 @@ block content
                     .slider-controls
                         +prev
                         +next
+
+            .embla.carousel-slider
+                .embla__container
+                    each val, i in ['Fortessa Gotham Rogue', 'Fortessa Gotham Spectre', 'Fortessa Gotham Taranis', 'Fortessa Gotham Vadar', 'Fortessa Gotham Magento', 'Fortessa Gotham Phantom']
+                        .embla__slide.product-slide
+                            img.image(src=`/images/products/pro-${i + 1}.png`, alt="image")
+                            .slide-content
+                                h5=val
+                                +btn('LEARN MORE', '/')
+
+    +type-section

@@ -24,3 +24,17 @@ mixin tab-section
                     each i in [1,2,3,4,5,6,7,8,9,10]
                         .embla__slide
                             img.logo-image(src=`/images/brands/${i}.png`, alt="brand logo")
+
+mixin type-section
+    section.types.bg-dark
+        .container
+            .content-box
+                h2 Build with Confidence. Innovative Solutions for Ireland.
+                .btns
+                    +btn('CONTACT US', '/')
+            .type-list
+                each item, idx in ['BUILDING PRODUCTS', 'ROOFING', 'Radon & Gas Protection', 'FLOORING', 'Passive Fire Protection']
+                    .type-item
+                        p.paragraph-sm=item
+                        .icon-box
+                            img.icon(src=`/images/home/t-${idx+1}.svg`, alt="image")

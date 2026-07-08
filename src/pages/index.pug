@@ -147,15 +147,4 @@ block content
                     figure.certification-figure
                         img(src=`/images/certifications/${image}.svg`, alt="Icon")
 
-    section.types.bg-dark
-        .container
-            .content-box
-                h2 Build with Confidence. Innovative Solutions for Ireland.
-                .btns
-                    +btn('CONTACT US', '/')
-            .type-list
-                each item, idx in ['BUILDING PRODUCTS', 'ROOFING', 'Radon & Gas Protection', 'FLOORING', 'Passive Fire Protection']
-                    .type-item
-                        p.paragraph-sm=item
-                        .icon-box
-                            img.icon(src=`/images/home/t-${idx+1}.svg`, alt="image")
+    +type-section
