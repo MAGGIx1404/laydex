@@ -7,7 +7,7 @@ export default class ScrollAnimations {
     constructor(section) {
         this.section = section
         this.panels = section.querySelectorAll('.why-panel')
-        if (!this.panels.length) return
+        if (!this.panels.length || window.innerWidth <= 482) return
 
         this.init()
     }

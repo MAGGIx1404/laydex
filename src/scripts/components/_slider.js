@@ -150,6 +150,7 @@ class AutoPlaySlider {
 class CarouselSlider {
     constructor(element) {
         this.isCentered = element.classList.contains('centered')
+        this.isLoop = element.classList.contains('no-loop') ? false : true
 
         if (window.innerWidth <= 482) {
             this.isCentered = true
@@ -158,7 +159,7 @@ class CarouselSlider {
         this.embla = EmblaCarousel(
             element,
             {
-                loop: true,
+                loop: this.isLoop,
                 align: this.isCentered ? 'center' : 'start',
             },
             [ClassNames()]
