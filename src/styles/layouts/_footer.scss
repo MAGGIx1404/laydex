@@ -4,6 +4,10 @@
     background: $color-orange;
     color: $color-white;
 
+    &.bg-blue {
+        background: $color-blue;
+    }
+
     .container {
         @include set-flex(column, flex-start, flex-start, 5rem);
         padding: 12.5rem 0 5rem 0;

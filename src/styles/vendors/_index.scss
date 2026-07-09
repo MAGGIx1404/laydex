@@ -52,12 +52,18 @@ html.lenis body {
     .embla__dot {
         width: 0.75rem;
         height: 0.75rem;
-        background: $color-black;
+        background: $color-orange;
         opacity: 0.2;
         border-radius: 50%;
 
         &.embla__dot--selected {
             opacity: 1;
+        }
+    }
+
+    &.blue {
+        .embla__dot {
+            background: $color-blue;
         }
     }
 }

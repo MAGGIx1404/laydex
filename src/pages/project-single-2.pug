@@ -1,33 +1,35 @@
-extends /layouts/default
+extends /layouts/blue
 
 block content
     section.banner
         .container.content-bottom
             .content-box
-                h1 Resitrix SK W & Sage Artificial<br/> Grass Residential Project.<br/> Private Dwelling
+                h1 Residential Green Roof Project.<br/> The Paddocks, Newbridge
         .bg
-            img.image(src="/images/projects/banner.png", alt="image")
+            img.image(src="/images/projects/banner-2.png", alt="image")
 
-    section.case-study.bg-orange
+    section.case-study.bg-blue
         .container
             .case-panel
                 figure.case-figure
-                    img.image(src="/images/projects/image-1.png", alt="image")
+                    img.image(src="/images/projects/image-2.png", alt="image")
                 .content-box
                     +tag('CASE STUDY', 'white')
                     h3
                         img.icon(src="/icons/doc.svg", alt="image")
                         | Project Overview
+                    p The Paddocks’ is an impressive residential development in Newbridge, Co. Kildare, consisting of both houses and apartment blocks, and developed by main contractor, Montane Developments.
+                    p This project focused on the residential green roof of the apartment blocks, comprised of over 250 1-, 2- and 3-bedroom apartments, and is being completed by the expert roofing contractors, Titan Roofing. Currently there are 3 blocks completed with work still ongoing on the remainder.
                     p
-                        | This unique residential project was completed in 2022. The stunning private dwelling is complete with&nbsp;
-                        a(href="/") Resitrix SK W
-                        |  on the flat roof surfaces coupled with&nbsp;
-                        a(href="/") Sage Artificial Grass.
-                    p The Resitrix SK W Black membrane is skilfully welded for a clean and tidy finish that adds to the character of this dwelling.
-                    p
-                        | This unique project fully utilizes the aesthetically pleasing design of our Sage Artificial Grass by creating a warm outdoor space perfect for summer evenings. The grass is easily shaped to the design and is both&nbsp;
-                        a(href="/") low maintenance and mud free.
-                    p Griffin Carpentry ensuring both our Sage and Resitrix products were expertly installed.
+                        | ‘The Paddocks’ apartments residential roof project features&nbsp;
+                        a(href="/") Pluvitec Maxitec, the perfect anti-root solution for a Green Roof
+                        |  along with a&nbsp;
+                        a(href="/") sedum green roof area
+                        |  and stone perimeter. The cladding on the penthouses of each apartment block feature our&nbsp;
+                        a(href="/") Lindab SRP25
+                        |  steel snap-lock system providing a clean, modern finish. Finally,&nbsp;
+                        a(href="/") Renolit ALKORPLAN PVC
+                        |  membrane is featured on the lower flat roof surfaces (e.g. bicycle and rubbish bin sheds).
 
             .case-details
                 .case-detail-box
@@ -35,30 +37,39 @@ block content
                         img.icon(src="/icons/feature.svg", alt="image")
                         | Featured Products
                     p
-                        strong RESITRIX SK W:
-                        |  A heat weldable and glass-reinforced, composite rubber membrane with an EPDM core.
+                        strong
+                            a(href="/") Pluvitec MAXITEC Anti-Root Membrane:
+                        |  A pre-fabricated membrane designed for use on structures where vegetation is foreseen to prevent penetration by roots.
                     p
-                        strong Sage Artificial Grass:
-                        |  An environmentally friendly, low maintenance & pet friendly solution to traditional lawn grass.
+                        strong
+                            a(href="/") Lindab SRP25:
+                        |  Metal Roofing System – 0.6mm Steel Snap Lock System.
+                    p
+                        strong
+                            a(href="/") Renolit ALKORPLAN PVC:
+                        |  A mechanically fixed single Ply PVC membrane.
 
                 .case-detail-box
                     h4
                         img.icon(src="/icons/facts.svg", alt="image")
                         | Project Facts
                     p
-                        strong Main Contractor:
-                        |  Griffin Carpentry
+                        strong Main Contractor:&nbsp;
+                        a(href="/") Montane Developments
+                    p
+                        strong Main Contractor:&nbsp;
+                        a(href="/") Titan Roofing
 
     section.project-gallery
         .container
             .header
                 .header-box
-                    +tag('PROJECT GALLERY', 'orange')
+                    +tag('PROJECT GALLERY', 'blue')
                 .header-box
                     h2 Explore the Project
 
             .slider-handler
-                .embla__dots
+                .embla__dots.blue
                 .slider-controls
                     +prev
                     +next
@@ -67,23 +78,23 @@ block content
                     img.image(src="/images/projects/gallery-1.png", alt="image")
                 .embla.gallery-slider
                     .embla__container
-                        each i in [1,2,3,1,2,3,1,2,3,1]
+                        each i in [2,1,2,1,2,1,2,1,2]
                             button.embla__slide
                                 img.image(src=`/images/projects/gallery-${i}.png`, alt="image")
 
     section.testimonial
         .testimonial-header
             .header-box
-                +tag('TESTIMONIALS', 'orange')
+                +tag('TESTIMONIALS', 'blue')
             .header-box
                 h1
                     | Built on Trust,<br/>
-                    span.orange Backed by Results.
+                    span.blue Backed by Results.
 
         .embla.carousel-slider.centered
             .embla__container
                 each i in [1,2]
-                    .embla__slide
+                    .embla__slide.blue-slide
                         .slide-top
                             p.paragraph-xs
                                 svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -98,7 +109,7 @@ block content
                             p “Laydex have been a trusted partner of ours for years. Their product range is excellent, and the technical support they provide makes a real difference on projects. Deliveries are always on time, communication is clear, and the team are a pleasure to deal with.
                             p We would happily recommend Laydex to anyone in the industry.”
 
-                    .embla__slide
+                    .embla__slide.blue-slide
                         .slide-top
                             p.paragraph-xs
                                 svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -112,7 +123,7 @@ block content
                         .content-box
                             p “I have used RESITRIX now for four years on small and large contracts. It’s a fantasy material to work with. Easy to apply and most of all no time consuming metal on upstands or change of angle, no flame and fast installation. I would highly recommend it and beats other single Ply’s hands down.” Max Roofing
 
-                    .embla__slide
+                    .embla__slide.blue-slide
                         .slide-top
                             p.paragraph-xs
                                 svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
@@ -129,11 +140,11 @@ block content
     section.related
             .header
                 .header-box
-                    +tag('PRODUCTS', 'orange')
+                    +tag('PRODUCTS', 'blue')
                 .header-box
                     h2
                         | Related&nbsp;
-                        span.orange Cases Studies
+                        span.blue Cases Studies
                     .slider-controls
                         +prev
                         +next
