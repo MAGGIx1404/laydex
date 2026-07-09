@@ -1,0 +1,205 @@
+extends /layouts/default
+
+block content
+    section.banner
+        .container.content-bottom
+            .content-box
+                h1 Commercial Vinyl Flooring Project.<br/> Direct Provision Centre, Dublin.
+        .bg
+            img.image(src="/images/projects/banner-3.png", alt="image")
+
+    section.case-study.bg-dark
+        .container
+            .case-panel
+                figure.case-figure
+                    img.image(src="/images/projects/image-2.png", alt="image")
+                .content-box
+                    +tag('CASE STUDY', 'white')
+                    h3
+                        img.icon(src="/icons/doc.svg", alt="image")
+                        | Project Overview
+                    p This commercial flooring project covered the full Direct Provision Centre in Clondalkin. Utilizing aesthetic appeal, as well as safety, our IVC Isafe70 commercial vinyl flooring conforms to the highest standard of European Safety Norms. Isafe 70 enhanced particles limit the risk of falling in various settings. An edgy and modern flooring adding spark to any space. The range includes various vivid colour combinations, traditional and modern woods and stunning concrete designs. Take a look at the photos to see how various colour and texture finishes work together.
+                    p Underneath the IVC Flooring, we used a Damtec Acoustic Underlay 3mm to soundproof the floor effectively. This underlay can be used under parquet, laminate, or carpeting as well as under linoleum and PVC flooring.
+                    .box
+                        h5 Impact sound improvement (ISO 140‐8/ISO 717‐2):
+                        ul
+                            li ΔLw = 29dB with carpet
+                            li ΔLw = 20dB under 8 mm laminate flooring
+                            li ΔLw = 19dB under 13 mm parquetry
+                            li ΔLw = 18dB under 16 mm solid parquetry
+                            li ΔLw = 18dB under 9mm tiles
+                    p An internal play area was also a big challenge for this project. For this, Virgo proved to be the ideal flooring as its light touch makes it feel like real grass, imitating a garden play area.
+
+            .case-details
+                .case-detail-box
+                    h4
+                        img.icon(src="/icons/feature.svg", alt="image")
+                        | Featured Products
+                    p
+                        strong
+                            a(href="/") Damtec 3mm Acoustic Underlay:
+                        |  Premium insulating padding & sound dampening for concrete or wooden subfloor.
+                    p
+                        strong
+                            a(href="/") Virgo 38mm Grass:
+                        |  An extremely durable & low maintenance solution to traditional lawn grass.
+                    p
+                        strong
+                            a(href="/") IVC Isafe 70 Colours:
+                        |  An edgy vinyl flooring perfect for bringing any space to life.
+                    p
+                        strong
+                            a(href="/") IVC Isafe 70 Woods :
+                        |  An impeccable natural timber look heterogeneous vinyl flooring that combines durability and acoustic comfort.
+                    p
+                        strong
+                            a(href="/") IVC Ultimo LVT Dry Back Plank :
+                        |  Waterproof, easy to install, tough and simple to maintain luxury vinyl tiles.
+
+                .case-detail-box
+                    h4
+                        img.icon(src="/icons/facts.svg", alt="image")
+                        | Project Facts
+                    p
+                        strong Company&nbsp;
+                        a(href="/") Fazyard Ltd
+                    p
+                        strong Flooring Contractor:&nbsp;
+                        a(href="/") Gerry Woods
+
+    section.project-gallery
+        .container
+            .header
+                .header-box
+                    +tag('PROJECT GALLERY', 'orange')
+                .header-box
+                    h2 Explore the Project
+
+            .slider-handler
+                .embla__dots
+                .slider-controls
+                    +prev
+                    +next
+            .slider-wrapper
+                figure.slider-preview
+                    img.image(src="/images/projects/gallery-1.png", alt="image")
+                .embla.gallery-slider
+                    .embla__container
+                        each i in [2,1,2,1,2,1,2,1,2]
+                            button.embla__slide
+                                img.image(src=`/images/projects/gallery-${i}.png`, alt="image")
+
+    section.testimonial
+        .testimonial-header
+            .header-box
+                +tag('TESTIMONIALS', 'orange')
+            .header-box
+                h1
+                    | Built on Trust,<br/>
+                    span.blue Backed by Results.
+
+        .embla.carousel-slider.centered
+            .embla__container
+                each i in [1,2]
+                    .embla__slide.dark-slide
+                        .slide-top
+                            p.paragraph-xs
+                                svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                    path(d='m6.55 0 1.471 4.526h4.76L8.93 7.324l1.47 4.526-3.85-2.798L2.7 11.85l1.47-4.526L.32 4.526h4.76zM35 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526L35 9.052l-3.85 2.798 1.47-4.526-3.85-2.798h4.759zM20.777 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm28.445 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm14.227 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76z' fill='currentColor')
+                                | 4.7/5 Google Reviews
+                            p.paragraph-xs October 13, 2024
+                        .slide-header
+                            h5 Niall Mc Donagh
+                            h6
+                                strong Niall McDonagh Roofing Services
+                        .content-box
+                            p “Laydex have been a trusted partner of ours for years. Their product range is excellent, and the technical support they provide makes a real difference on projects. Deliveries are always on time, communication is clear, and the team are a pleasure to deal with.
+                            p We would happily recommend Laydex to anyone in the industry.”
+
+                    .embla__slide.dark-slide
+                        .slide-top
+                            p.paragraph-xs
+                                svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                    path(d='m6.55 0 1.471 4.526h4.76L8.93 7.324l1.47 4.526-3.85-2.798L2.7 11.85l1.47-4.526L.32 4.526h4.76zM35 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526L35 9.052l-3.85 2.798 1.47-4.526-3.85-2.798h4.759zM20.777 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm28.445 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm14.227 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76z' fill='currentColor')
+                                | 4.7/5 Google Reviews
+                            p.paragraph-xs October 13, 2024
+                        .slide-header
+                            h5 Brendan Walsh
+                            h6
+                                strong Director of Max roofing systems
+                        .content-box
+                            p “I have used RESITRIX now for four years on small and large contracts. It’s a fantasy material to work with. Easy to apply and most of all no time consuming metal on upstands or change of angle, no flame and fast installation. I would highly recommend it and beats other single Ply’s hands down.” Max Roofing
+
+                    .embla__slide.dark-slide
+                        .slide-top
+                            p.paragraph-xs
+                                svg(width='70' height='14' viewBox='0 0 70 14' fill='none' xmlns='http://www.w3.org/2000/svg')
+                                    path(d='m6.55 0 1.471 4.526h4.76L8.93 7.324l1.47 4.526-3.85-2.798L2.7 11.85l1.47-4.526L.32 4.526h4.76zM35 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526L35 9.052l-3.85 2.798 1.47-4.526-3.85-2.798h4.759zM20.777 0l1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm28.445 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76zm14.227 0 1.47 4.526h4.76l-3.85 2.798 1.47 4.526-3.85-2.798-3.85 2.798 1.47-4.526-3.85-2.798h4.76z' fill='currentColor')
+                                | 4.7/5 Google Reviews
+                            p.paragraph-xs October 13, 2024
+                        .slide-header
+                            h5 PJ Costello
+                            h6
+                                strong Sterton Enterprises
+                        .content-box
+                            p “The results were class. I can’t believe it in all my years in roofing!”
+
+    section.related
+            .header
+                .header-box
+                    +tag('PRODUCTS', 'orange')
+                .header-box
+                    h2
+                        | Related&nbsp;
+                        span.orange Cases Studies
+                    .slider-controls
+                        +prev
+                        +next
+
+            .embla.carousel-slider
+                .embla__container
+                    each i in [1,2,3]
+                        a.embla__slide.project-slide(href="/project-single.html")
+                            figure.item-figure
+                                img.image(src="/images/projects/p-1.png", alt="image")
+                            .content-box
+                                p.paragraph-sm Building Products
+                                h4 Resitrix SK W & Sage Artificial Grass Residential Project. Private Dwelling
+                                p.paragraph-sm This unique residential project was completed in 2022. The stunning private dwelling is complete with Resitrix SK W on the flat roof surfaces coupled with Sage...
+                                .btns
+                                    button.btn.border
+                                        span.btn-box LEARN MORE
+                                        .icon-box
+                                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+                        a.embla__slide.project-slide(href="/project-single.html")
+                            figure.item-figure
+                                img.image(src="/images/projects/p-2.png", alt="image")
+                            .content-box
+                                p.paragraph-sm Building Products
+                                h4 Colm Quinn BMW Drogheda. Memtech R1 Radon Barrier Installation
+                                p.paragraph-sm This commercial building project required the development of a new premises for Colm Quinn BMW at the M1 Retail Park in Drogheda, Co. Louth. This project...
+                                .btns
+                                    button.btn.border
+                                        span.btn-box LEARN MORE
+                                        .icon-box
+                                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+                        a.embla__slide.project-slide(href="/project-single.html")
+                            figure.item-figure
+                                img.image(src="/images/projects/p-3.png", alt="image")
+                            .content-box
+                                p.paragraph-sm Building Products
+                                h4 St Mary’s Secondary School. Juta GP Titanbond Lift Pit Installation
+                                p.paragraph-sm This project required an accessible lift for a local school in Ballina, Co. Mayo. Setting the foundations for this project, a lift pit installation was required to ensure this...
+                                .btns
+                                    button.btn.border
+                                        span.btn-box LEARN MORE
+                                        .icon-box
+                                            svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+    +contact-section
+    +type-section
