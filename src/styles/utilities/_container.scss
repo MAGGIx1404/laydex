@@ -101,6 +101,11 @@ section {
         color: $color-white;
     }
 
+    &.bg-blue {
+        background: $color-blue;
+        color: $color-white;
+    }
+
     &.bg-gray {
         background: $color-gray;
     }

@@ -63,6 +63,10 @@ label {
         height: 3.55rem;
         background: $color-orange;
 
+        &.blue {
+            background: $color-blue;
+        }
+
         svg {
             width: 1.35rem;
         }
