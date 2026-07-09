@@ -28,6 +28,12 @@
 @include responsive(xl) {
     .navbar {
         .container {
+            .logo {
+                img {
+                    width: 20rem;
+                }
+            }
+
             .navbar-links {
                 .link-outline {
                     display: none;

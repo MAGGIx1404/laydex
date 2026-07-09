@@ -54,3 +54,40 @@
         }
     }
 }
+
+@include responsive(xl) {
+    .team {
+        .container {
+            .team-panel {
+                gap: 10rem;
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .team {
+        .container {
+            gap: 7.5rem;
+
+            .team-panel {
+                gap: 5rem;
+
+                .team-list {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                .team-figure {
+                    margin: 0 auto;
+
+                    img {
+                        &:first-child {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

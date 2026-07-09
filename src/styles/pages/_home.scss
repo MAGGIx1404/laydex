@@ -226,6 +226,8 @@
 @include responsive(md) {
     .banner {
         .container {
+            min-height: 40rem;
+
             .content-box {
                 br {
                     display: none;
