@@ -6,12 +6,21 @@
     figure {
         img {
             height: 27.5rem;
+
+            @include responsive(md) {
+                height: 22.5rem;
+            }
         }
     }
 
     .content-box {
         padding-bottom: 4.5rem;
         border-bottom: 1px solid currentColor;
+        flex: 1;
+
+        .btns {
+            margin-top: auto;
+        }
 
         .paragraph-sm {
             opacity: 0.5;
@@ -165,8 +174,62 @@
     }
 }
 
+@include responsive(xl) {
+    .projects {
+        .container {
+            gap: 7.5rem;
+            padding: 10rem 0 5rem 0;
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    .testimonial {
+        gap: 7.5rem;
+    }
+}
+
 @include responsive(md) {
     .related {
         gap: 5rem;
+
+        .embla {
+            .embla__container {
+                .project-slide {
+                    flex: 0 0 85%;
+                    max-width: 85%;
+                }
+            }
+        }
+    }
+
+    .projects {
+        .container {
+            .projects-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+    .testimonial {
+        .testimonial-header {
+            gap: 2rem;
+        }
+
+        .embla {
+            .embla__container {
+                .embla__slide {
+                    flex: 0 0 85%;
+                    max-width: 85%;
+                    gap: 4rem;
+
+                    .slide-top {
+                        gap: 0.5rem;
+                    }
+                }
+            }
+        }
     }
 }

@@ -23,3 +23,25 @@
         }
     }
 }
+
+@include responsive(xl) {
+    .privacy {
+        .container {
+            .privacy-content {
+                padding: 0 10rem 0 10rem;
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .privacy {
+        .container {
+            gap: 5rem;
+
+            .privacy-content {
+                padding: 0;
+            }
+        }
+    }
+}

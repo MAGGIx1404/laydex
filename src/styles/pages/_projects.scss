@@ -114,3 +114,64 @@
         }
     }
 }
+
+@include responsive(xl) {
+    .case-study {
+        .container {
+            .case-panel {
+                gap: 5rem;
+
+                figure {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                .content-box {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .case-study {
+        .container {
+            gap: 5rem;
+
+            .case-details {
+                .case-detail-box {
+                    flex: 0 0 100% !important;
+                    max-width: 100% !important;
+                    padding: 5rem 0 !important;
+                }
+            }
+        }
+    }
+
+    .project-gallery {
+        .container {
+            .slider-handler {
+                margin-top: 0;
+                order: 3;
+                align-items: center;
+            }
+
+            .slider-wrapper {
+                .embla {
+                    display: none;
+                }
+
+                .slider-preview {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+
+                    img {
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
