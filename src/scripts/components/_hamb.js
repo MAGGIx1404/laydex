@@ -5,8 +5,6 @@ export default class Hamb {
 
         if (!this.menu || !this.trigger) return
 
-        this.accordionTriggers = [...this.menu.querySelectorAll('.hamb-accordion-trigger')]
-
         this._init()
     }
 
@@ -24,39 +22,112 @@ export default class Hamb {
         const isOpen = this.menu.classList.contains('active')
         document.body.style.overflow = isOpen ? 'hidden' : 'auto'
 
-        // Collapse every open accordion whenever the menu is closed
         if (!isOpen) this._resetAccordions()
     }
 
     _initAccordions() {
-        this.accordionTriggers.forEach((trigger) => {
-            trigger.addEventListener('click', (event) => {
-                // Prevent the click from bubbling to an ancestor accordion trigger
-                event.stopPropagation()
+        const accordions = [...this.menu.querySelectorAll('.hamb-accordion')]
 
-                const accordion = trigger.closest('.hamb-accordion')
-                if (!accordion) return
+        accordions.forEach((accordion) => {
+            const trigger = accordion.querySelector(':scope > .hamb-accordion-trigger')
+            if (!trigger) return
+
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation()
+
+                const content = accordion.querySelector(':scope > .hamb-accordion-content')
+                if (!content) return
 
                 const isActive = accordion.classList.contains('active')
 
-                // Single-open behaviour: close siblings at the same depth
+                // Close siblings at same level
                 const parent = accordion.parentElement
                 if (parent) {
-                    parent
-                        .querySelectorAll(':scope > .hamb-accordion.active')
-                        .forEach((sibling) => sibling.classList.remove('active'))
+                    const siblings = [...parent.querySelectorAll(':scope > .hamb-accordion.active')]
+                    siblings.forEach((sibling) => {
+                        if (sibling !== accordion) {
+                            this._closeAccordion(sibling)
+                        }
+                    })
                 }
 
-                // Toggle the clicked accordion. The grid-template-rows trick in
-                // CSS lets nested accordions expand their parents automatically.
-                accordion.classList.toggle('active', !isActive)
+                // Toggle clicked accordion
+                if (isActive) {
+                    this._closeAccordion(accordion)
+                } else {
+                    this._openAccordion(accordion)
+                }
             })
         })
     }
 
+    _openAccordion(accordion) {
+        const content = accordion.querySelector(':scope > .hamb-accordion-content')
+        if (!content) return
+
+        accordion.classList.add('active')
+        content.style.maxHeight = content.scrollHeight + 'px'
+
+        // Ancestors need to grow — set them to none so they don't clip children
+        this._expandAncestors(accordion)
+    }
+
+    _closeAccordion(accordion) {
+        const content = accordion.querySelector(':scope > .hamb-accordion-content')
+        if (!content) return
+
+        // Close all nested active accordions inside first
+        const nested = [...accordion.querySelectorAll('.hamb-accordion.active')]
+        nested.forEach((child) => {
+            child.classList.remove('active')
+            const childContent = child.querySelector(':scope > .hamb-accordion-content')
+            if (childContent) childContent.style.maxHeight = 0
+        })
+
+        accordion.classList.remove('active')
+        content.style.maxHeight = 0
+
+        // Recalculate ancestors — set back to scrollHeight so they can animate closed later
+        this._recalcAncestors(accordion)
+    }
+
+    _expandAncestors(accordion) {
+        let el = accordion.parentElement
+        while (el) {
+            const parentAccordion = el.closest('.hamb-accordion')
+            if (!parentAccordion || !this.menu.contains(parentAccordion)) break
+
+            const parentContent = parentAccordion.querySelector(':scope > .hamb-accordion-content')
+            if (parentContent && parentAccordion.classList.contains('active')) {
+                parentContent.style.maxHeight = 'none'
+            }
+            el = parentAccordion.parentElement
+        }
+    }
+
+    _recalcAncestors(accordion) {
+        let el = accordion.parentElement
+        while (el) {
+            const parentAccordion = el.closest('.hamb-accordion')
+            if (!parentAccordion || !this.menu.contains(parentAccordion)) break
+
+            const parentContent = parentAccordion.querySelector(':scope > .hamb-accordion-content')
+            if (parentContent && parentAccordion.classList.contains('active')) {
+                // Remove none, read actual height, set it as px for future transitions
+                parentContent.style.maxHeight = 'none'
+                const h = parentContent.scrollHeight
+                parentContent.style.maxHeight = h + 'px'
+            }
+            el = parentAccordion.parentElement
+        }
+    }
+
     _resetAccordions() {
-        this.menu.querySelectorAll('.hamb-accordion.active').forEach((accordion) => {
+        const allActive = [...this.menu.querySelectorAll('.hamb-accordion.active')]
+        allActive.forEach((accordion) => {
             accordion.classList.remove('active')
+            const content = accordion.querySelector(':scope > .hamb-accordion-content')
+            if (content) content.style.maxHeight = 0
         })
     }
 }

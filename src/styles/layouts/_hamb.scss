@@ -44,7 +44,7 @@
         }
     }
 
-    //- Top-level rows (accordion + plain links) get a divider
+    //- Top-level rows get a divider
     > .hamb-menu-inner > .hamb-accordion,
     > .hamb-menu-inner > .hamb-link {
         border-top: 1px solid #e6e6e6;
@@ -54,7 +54,7 @@
         }
     }
 
-    //- Top-level plain links (About Us, Sales Contact, etc.)
+    //- Top-level plain links
     > .hamb-menu-inner > .hamb-link.lvl-1 {
         color: $color-dark;
         font-size: 2.8rem;
@@ -64,12 +64,12 @@
     }
 }
 
-//- ---- Accordion core ----
+//- ---- Accordion core (follows site's accordion pattern) ----
 .hamb-accordion {
     width: 100%;
 
     .hamb-accordion-trigger {
-        @include set-flex(row, space-between, center, 2rem, nowrap);
+        @include set-flex(row, space-between, center, 0, nowrap);
         width: 100%;
         text-align: left;
         background: none;
@@ -80,7 +80,6 @@
             line-height: 1.1;
         }
 
-        //- +/- icon
         .hamb-accordion-icon {
             position: relative;
             flex: 0 0 auto;
@@ -110,34 +109,27 @@
         }
     }
 
-    //- Collapsible region (grid trick — nesting-safe, no JS height math)
     .hamb-accordion-content {
-        display: grid;
-        grid-template-rows: 0fr;
-        transition: grid-template-rows 0.4s $ease-in-out-cubic;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $animation-primary;
 
         .hamb-accordion-content-inner {
-            @include set-flex(column, flex-start, stretch, 0, nowrap);
-            min-height: 0;
-            overflow: hidden;
+            @include set-flex(column, flex-start, stretch, 0);
+            padding-top: 0.5rem;
         }
     }
 
-    //- Open state: expand this accordion's own content + flip icon to "–"
     &.active {
         > .hamb-accordion-trigger .hamb-accordion-icon::after {
             transform: translate(-50%, -50%) scaleY(0);
-        }
-
-        > .hamb-accordion-content {
-            grid-template-rows: 1fr;
         }
     }
 }
 
 //- ---- Depth styling ----
 
-//- Level 1: Services, Products
+//- Level 1
 .hamb-accordion.lvl-1 > .hamb-accordion-trigger {
     padding: 2.4rem 0;
 
@@ -153,7 +145,7 @@
     }
 }
 
-//- Level 2: Building Products, Roofing, Flooring...
+//- Level 2
 .hamb-accordion.lvl-2 {
     > .hamb-accordion-trigger {
         padding: 1.8rem 0;
@@ -170,7 +162,7 @@
     }
 }
 
-//- Level 3: Breather Membranes, Fortessa...
+//- Level 3
 .hamb-accordion.lvl-3 {
     border-top: 1px solid #ececec;
 
@@ -197,14 +189,7 @@
         font-size: 1.4rem;
     }
 
-    //- Indent the leaf links a touch inside the inner wrapper
-    .hamb-accordion-content-inner {
+    .hamb-accordion-content .hamb-accordion-content-inner {
         padding-bottom: 1.2rem;
     }
-}
-
-//- Give the Building-Products block its own left padding for hierarchy
-.hamb-accordion.lvl-1 .hamb-accordion-content-inner .hamb-accordion.lvl-2,
-.hamb-accordion.lvl-2 .hamb-accordion-content-inner .hamb-accordion.lvl-3 {
-    padding-left: 0;
 }
