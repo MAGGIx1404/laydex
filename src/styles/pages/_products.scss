@@ -135,6 +135,12 @@
                 border-top: 0.5px solid currentColor;
                 padding-top: 3.5rem;
 
+                h6 {
+                    a:hover {
+                        color: $color-orange;
+                    }
+                }
+
                 .year-bar {
                     @extend %size-cover;
                     @include set-flex(row, space-between, center, 2.4rem);
