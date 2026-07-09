@@ -165,3 +165,46 @@ section {
         }
     }
 }
+
+@include responsive(xl) {
+    .header {
+        .header-box {
+            &:nth-child(1) {
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+
+            &:nth-child(2) {
+                flex: 0 0 70%;
+                max-width: 70%;
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .header {
+        gap: 2.5rem;
+
+        .header-box {
+            &:nth-child(1),
+            &:nth-child(2) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .box-bar {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .section-header {
+        gap: 2.5rem;
+
+        .header-box {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+    }
+}

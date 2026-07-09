@@ -121,6 +121,15 @@
         margin: 0 auto;
     }
 
+    & > .tag {
+        display: none;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 85%;
+        padding-top: 5rem;
+        border-top: 0.5px solid rgba($color-dark, 0.5);
+    }
+
     .embla {
         pointer-events: none;
         overflow: visible;
@@ -133,6 +142,107 @@
                 img {
                     width: auto;
                     height: auto;
+                }
+            }
+        }
+    }
+}
+
+@include responsive(xl) {
+    .content-section {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 7.5rem;
+
+        .content-box {
+            max-width: 85%;
+            margin: 0 auto;
+        }
+    }
+
+    .brands {
+        .embla {
+            .embla__container {
+                .embla__slide {
+                    margin-right: 10rem;
+                }
+            }
+        }
+    }
+
+    .types {
+        .container {
+            gap: 7.5rem;
+
+            .content-box,
+            .type-list {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    .certification {
+        .container {
+            gap: 7.5rem;
+        }
+    }
+}
+
+@include responsive(md) {
+    .brands {
+        gap: 5rem;
+
+        .section-header {
+            .header-box {
+                &:nth-child(1) {
+                    display: none;
+                }
+            }
+        }
+
+        & > .tag {
+            display: flex;
+        }
+
+        .embla {
+            display: block;
+        }
+    }
+
+    .certification {
+        .container {
+            .certification-grid {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4rem;
+            }
+        }
+    }
+
+    .types {
+        .container {
+            .type-list {
+                grid-template-columns: repeat(6, 1fr);
+                row-gap: 4rem;
+
+                .type-item {
+                    &:not(:nth-child(1), :nth-child(2)) {
+                        grid-column: span 2;
+
+                        .icon-box {
+                            height: 12rem;
+                        }
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(2) {
+                        grid-column: span 3;
+
+                        .icon-box {
+                            height: 18rem;
+                        }
+                    }
                 }
             }
         }

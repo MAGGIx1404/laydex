@@ -8,6 +8,12 @@
         @include set-flex(column, flex-start, flex-start, 5rem);
         padding: 12.5rem 0 5rem 0;
 
+        p {
+            a {
+                text-decoration: none !important;
+            }
+        }
+
         .footer-panel {
             @extend %size-cover;
             @include set-flex(row, space-between, flex-start);
@@ -48,6 +54,95 @@
 
             .footer-logo {
                 max-width: 25%;
+            }
+        }
+    }
+}
+
+@include responsive(xl) {
+    .footer {
+        .container {
+            .footer-panel {
+                row-gap: 5rem;
+
+                .footer-links {
+                    width: 100%;
+
+                    &:not(:last-child) {
+                        max-width: 30%;
+                    }
+
+                    &:last-child {
+                        max-width: 40%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .footer {
+        .container {
+            padding: 7.5rem 0 5rem 0;
+
+            .footer-panel {
+                position: relative;
+                border-top: 1px solid currentColor;
+                padding-top: 5rem;
+
+                .footer-links {
+                    flex: 0 0 50%;
+                    max-width: 50% !important;
+                    gap: 2rem;
+
+                    .paragraph-sm {
+                        font-size: 1.8rem;
+                        font-weight: 500;
+                    }
+
+                    &:nth-child(3) {
+                        position: absolute;
+                        right: 0;
+                        top: 36rem;
+                    }
+
+                    &:nth-child(4) {
+                        border-top: 0.5px solid rgba($color-white, 0.5);
+                        padding-top: 4.5rem;
+                    }
+
+                    &:nth-child(4),
+                    &:nth-child(5) {
+                        flex: 0 0 100%;
+                        max-width: 100% !important;
+                        border-bottom: 0.5px solid rgba($color-white, 0.5);
+                        padding-bottom: 4.5rem;
+                    }
+                }
+            }
+
+            .footer-bottom {
+                gap: 5rem;
+
+                .footer-bottom-box {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    row-gap: 2rem;
+
+                    a {
+                        order: -1;
+                        flex: 0 0 50%;
+
+                        &:nth-of-type(2) {
+                            text-align: right;
+                        }
+                    }
+                }
+
+                .footer-logo {
+                    max-width: 100%;
+                }
             }
         }
     }

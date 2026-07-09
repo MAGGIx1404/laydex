@@ -151,6 +151,10 @@ class CarouselSlider {
     constructor(element) {
         this.isCentered = element.classList.contains('centered')
 
+        if (window.innerWidth <= 482) {
+            this.isCentered = true
+        }
+
         this.embla = EmblaCarousel(
             element,
             {

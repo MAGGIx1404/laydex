@@ -24,3 +24,15 @@
         }
     }
 }
+
+@include responsive(xl) {
+    .navbar {
+        .container {
+            .navbar-links {
+                .link-outline {
+                    display: none;
+                }
+            }
+        }
+    }
+}
