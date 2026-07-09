@@ -59,6 +59,7 @@
                         button {
                             opacity: 0.2;
                             transition: opacity 0.3s $ease-in-out-cubic;
+                            text-align: left;
 
                             &:hover,
                             &.active {
@@ -85,6 +86,7 @@
                     .profile-form-wrapper {
                         @extend %size-cover;
                         max-width: 77%;
+                        margin-top: -20rem;
 
                         form {
                             @extend %form, %size-cover;
@@ -163,6 +165,53 @@
     }
 }
 
+@include responsive(xl) {
+    .account {
+        .container {
+            .account-panel {
+                gap: 5rem;
+
+                .left-panel,
+                .right-panel {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+
+                &:nth-child(1) {
+                    .right-panel {
+                        order: -1;
+                    }
+                }
+
+                .right-panel {
+                    margin-top: 0 !important;
+
+                    .btns-wrapper {
+                        align-self: flex-start;
+                    }
+
+                    .content-box {
+                        .profile-form-wrapper {
+                            margin-top: -5rem;
+                            max-width: 100%;
+                        }
+
+                        .training-list {
+                            .training-item {
+                                .item-details {
+                                    img {
+                                        height: 22rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @include responsive(md) {
     .login {
         .container {
@@ -171,6 +220,56 @@
 
             .content-box {
                 order: 2;
+            }
+        }
+    }
+
+    .account {
+        .container {
+            .account-panel {
+                .left-panel {
+                    .content-box {
+                        p {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+                .right-panel {
+                    .content-box {
+                        .downloads-list {
+                            .dowload-item {
+                                gap: 3rem;
+
+                                .item-bar {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    gap: 2.5rem;
+                                }
+                            }
+                        }
+
+                        .training-list {
+                            .training-item {
+                                .item-details,
+                                .item-content {
+                                    flex: 0 0 100%;
+                                    max-width: 100%;
+                                    gap: 2rem;
+                                }
+
+                                .item-details {
+                                    border-right: 0;
+                                    border-bottom: 1px solid currentColor;
+
+                                    img {
+                                        margin-top: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
