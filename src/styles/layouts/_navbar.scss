@@ -22,22 +22,72 @@
         .navbar-links {
             @include set-flex(row, flex-end, center, 0.5rem);
         }
+
+        .hamb-btn {
+            @include set-flex(column, center, center, 0.5rem);
+            display: none;
+            width: 6rem;
+            height: 4rem;
+            pointer-events: all;
+            position: relative;
+            z-index: 5;
+            background: $color-white;
+
+            .divider {
+                width: 50%;
+                height: 1px;
+                background: $color-black;
+                pointer-events: none;
+                transition: all 0.7s $animation-smooth;
+            }
+
+            &.active {
+                .divider:nth-child(1) {
+                    transform: rotate(45deg) translate(0.5rem, 0.35rem);
+                }
+
+                .divider:nth-child(2) {
+                    opacity: 0;
+                    transform: scaleX(0);
+                }
+
+                .divider:nth-child(3) {
+                    transform: rotate(-45deg) translate(0.5rem, -0.35rem);
+                }
+            }
+        }
     }
 }
 
 @include responsive(xl) {
     .navbar {
+        padding: 2.5rem 0;
+        position: fixed;
+        background: transparent;
+
         .container {
+            background: #f9f9f9;
+            padding: 1.5rem 2rem;
+
             .logo {
                 img {
-                    width: 20rem;
+                    width: 17.5rem;
                 }
             }
 
             .navbar-links {
+                .link-outline-icon {
+                    background: $color-white;
+                    border-color: transparent;
+                }
+
                 .link-outline {
                     display: none;
                 }
+            }
+
+            .hamb-btn {
+                display: flex;
             }
         }
     }

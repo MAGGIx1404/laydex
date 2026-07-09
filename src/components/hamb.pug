@@ -1,6 +1,66 @@
+//- Nested accordion mixin for the hamburger menu.
+//- `cls` sets the depth style (lvl-1 / lvl-2 / lvl-3).
+mixin hambAcc(title, cls)
+    .hamb-accordion(class=cls)
+        button.hamb-accordion-trigger(type="button")
+            span.hamb-accordion-title= title
+            span.hamb-accordion-icon
+        .hamb-accordion-content
+            .hamb-accordion-content-inner
+                block
+
+//- Product categories shown under "Building Products".
+//- Each entry becomes a level-3 accordion; `items` are its leaf links.
+-
+  var buildingProducts = [
+    { name: 'Breather Membranes', items: ['Corotop', 'Breath-X'] },
+    { name: 'Building Envelope Solutions', items: ['Explore range'] },
+    { name: 'Torch On & Underslating Membranes', items: ['Explore range'] },
+    { name: 'Cement Board', items: ['Explore range'] },
+    { name: 'Joint Compounds', items: ['Explore range'] },
+    { name: 'Oxide Protective Paint', items: ['Explore range'] },
+    { name: 'Radon & Gas Protection System', items: ['Explore range'] },
+    { name: 'Gas & Hydrocarbon Protection System', items: ['Explore range'] },
+    { name: 'Construction Films & Damp Proofing', items: ['Explore range'] },
+    { name: 'EPDM Membranes', items: ['Explore range'] },
+    { name: 'Floor Protection', items: ['Explore range'] },
+    { name: 'Composite Decking & Fencing', items: ['Explore range'] },
+    { name: 'Artificial Grass', items: ['Explore range'] },
+    { name: 'Loft Ladders', items: ['Explore range'] },
+    { name: 'Adhesives', items: ['Explore range'] },
+    { name: 'Silicones & Sealants', items: ['Explore range'] },
+    { name: 'Cleaners', items: ['Explore range'] },
+    { name: 'Expanding Foams', items: ['Explore range'] },
+    { name: 'Floor Level Compounds', items: ['Explore range'] },
+    { name: 'Roofing & Bituminous Products', items: ['Explore range'] },
+    { name: 'Tapes', items: ['Explore range'] },
+    { name: 'Fortessa', items: ['Bond It', 'Construction Adhesives', 'Contact/Flooring Adhesives', 'Industrial and Super Glues', 'Polyurethane Adhesives', 'Specialist Adhesives', 'Wood Adhesives'] },
+    { name: 'Basta', items: ['Explore range'] },
+    { name: 'Rothley', items: ['Explore range'] }
+  ]
+
+  var productFamilies = ['Roofing', 'Flooring', 'Radon & Gas Protection', 'Passive Fire Protection']
+
 .hamb-menu
     .hamb-menu-inner
-        a.hamb-link(href="/") Home
-        a.hamb-link(href="/") About
-        a.hamb-link(href="/") Services
-        a.hamb-link(href="/") Contact
+        +hambAcc('Services', 'lvl-1')
+            a.hamb-link(href="/") Distribution Division
+            a.hamb-link(href="/") Specification Division
+            a.hamb-link(href="/") CPD
+            a.hamb-link(href="/") Technical Resources
+
+        a.hamb-link.lvl-1(href="/about.html") About Us
+
+        +hambAcc('Products', 'lvl-1')
+            +hambAcc('Building Products', 'lvl-2')
+                each cat in buildingProducts
+                    +hambAcc(cat.name, 'lvl-3')
+                        each item in cat.items
+                            a.hamb-link(href="/products.html")= item
+            each family in productFamilies
+                +hambAcc(family, 'lvl-2')
+                    a.hamb-link(href="/products.html") Explore range
+
+        a.hamb-link.lvl-1(href="/") Sales Contact
+        a.hamb-link.lvl-1(href="/") Contact Us
+        a.hamb-link.lvl-1(href="/login.html") Log In

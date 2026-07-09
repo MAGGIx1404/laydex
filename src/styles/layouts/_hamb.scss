@@ -1,1 +1,210 @@
-@use '../abstracts/' as *;
+@use '../abstracts' as *;
+
+.hamb-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    background: $color-white;
+    color: $color-dark;
+    overflow-y: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-2rem);
+    transition:
+        opacity 0.4s $ease-in-out-cubic,
+        transform 0.4s $ease-in-out-cubic,
+        visibility 0.4s $ease-in-out-cubic;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .hamb-menu-inner {
+        @include set-flex(column, flex-start, stretch, 0);
+        min-height: 100%;
+        padding: 12rem 4rem 8rem 4rem;
+    }
+
+    //- Leaf links
+    .hamb-link {
+        @include set-flex(row, flex-start, center, 0);
+        color: #7d7d7d;
+        font-family: $font-primary;
+        font-size: 1.5rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 1;
+        padding: 1.4rem 0;
+        transition: color 0.3s $ease-in-out-cubic;
+
+        &:hover {
+            color: $color-orange;
+        }
+    }
+
+    //- Top-level rows (accordion + plain links) get a divider
+    > .hamb-menu-inner > .hamb-accordion,
+    > .hamb-menu-inner > .hamb-link {
+        border-top: 1px solid #e6e6e6;
+
+        &:first-child {
+            border-top: none;
+        }
+    }
+
+    //- Top-level plain links (About Us, Sales Contact, etc.)
+    > .hamb-menu-inner > .hamb-link.lvl-1 {
+        color: $color-dark;
+        font-size: 2.8rem;
+        font-weight: 400;
+        text-transform: none;
+        padding: 2.4rem 0;
+    }
+}
+
+//- ---- Accordion core ----
+.hamb-accordion {
+    width: 100%;
+
+    .hamb-accordion-trigger {
+        @include set-flex(row, space-between, center, 2rem, nowrap);
+        width: 100%;
+        text-align: left;
+        background: none;
+        cursor: pointer;
+
+        .hamb-accordion-title {
+            font-family: $font-primary;
+            line-height: 1.1;
+        }
+
+        //- +/- icon
+        .hamb-accordion-icon {
+            position: relative;
+            flex: 0 0 auto;
+            width: 1.6rem;
+            height: 1.6rem;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                background: currentColor;
+                transform: translate(-50%, -50%);
+                transition: transform 0.3s $ease-in-out-cubic;
+            }
+
+            &::before {
+                width: 100%;
+                height: 1.5px;
+            }
+
+            &::after {
+                width: 1.5px;
+                height: 100%;
+            }
+        }
+    }
+
+    //- Collapsible region (grid trick — nesting-safe, no JS height math)
+    .hamb-accordion-content {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s $ease-in-out-cubic;
+
+        .hamb-accordion-content-inner {
+            @include set-flex(column, flex-start, stretch, 0, nowrap);
+            min-height: 0;
+            overflow: hidden;
+        }
+    }
+
+    //- Open state: expand this accordion's own content + flip icon to "–"
+    &.active {
+        > .hamb-accordion-trigger .hamb-accordion-icon::after {
+            transform: translate(-50%, -50%) scaleY(0);
+        }
+
+        > .hamb-accordion-content {
+            grid-template-rows: 1fr;
+        }
+    }
+}
+
+//- ---- Depth styling ----
+
+//- Level 1: Services, Products
+.hamb-accordion.lvl-1 > .hamb-accordion-trigger {
+    padding: 2.4rem 0;
+
+    .hamb-accordion-title {
+        color: $color-dark;
+        font-size: 2.8rem;
+        font-weight: 400;
+    }
+
+    .hamb-accordion-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+//- Level 2: Building Products, Roofing, Flooring...
+.hamb-accordion.lvl-2 {
+    > .hamb-accordion-trigger {
+        padding: 1.8rem 0;
+
+        .hamb-accordion-title {
+            color: $color-orange;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .hamb-accordion-icon {
+            color: $color-orange;
+        }
+    }
+}
+
+//- Level 3: Breather Membranes, Fortessa...
+.hamb-accordion.lvl-3 {
+    border-top: 1px solid #ececec;
+
+    > .hamb-accordion-trigger {
+        padding: 1.6rem 0;
+
+        .hamb-accordion-title {
+            color: #4a4a4a;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        .hamb-accordion-icon {
+            width: 1.3rem;
+            height: 1.3rem;
+            color: #4a4a4a;
+        }
+    }
+
+    .hamb-link {
+        padding: 0.8rem 0;
+        font-size: 1.4rem;
+    }
+
+    //- Indent the leaf links a touch inside the inner wrapper
+    .hamb-accordion-content-inner {
+        padding-bottom: 1.2rem;
+    }
+}
+
+//- Give the Building-Products block its own left padding for hierarchy
+.hamb-accordion.lvl-1 .hamb-accordion-content-inner .hamb-accordion.lvl-2,
+.hamb-accordion.lvl-2 .hamb-accordion-content-inner .hamb-accordion.lvl-3 {
+    padding-left: 0;
+}
