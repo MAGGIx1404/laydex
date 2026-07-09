@@ -156,3 +156,143 @@
         }
     }
 }
+
+@include responsive(xl) {
+    .news-section {
+        .container {
+            .news-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    .news-content-one {
+        .container {
+            .content-box {
+                br {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .news-content-two {
+        gap: 5rem;
+
+        .content-box,
+        .content-figure {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        & > .content-box {
+            max-width: 85%;
+            padding: 0;
+            margin: 0 auto;
+
+            .news-bottom {
+                margin-top: 0;
+            }
+        }
+    }
+
+    .news-content-three {
+        .container {
+            gap: 10rem;
+
+            .content-list {
+                gap: 10rem;
+
+                .list-item {
+                    gap: 7.5rem;
+
+                    .content-box {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+
+                    .content-figure {
+                        flex: 0 0 40%;
+                        max-width: 40%;
+                    }
+                }
+            }
+
+            .news-box {
+                max-width: 100%;
+
+                .news-bottom {
+                    margin-top: 2.5rem;
+                }
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .news-section {
+        .container {
+            gap: 7.5rem;
+
+            .news-grid {
+                grid-template-columns: repeat(1, 1fr);
+
+                .news-card {
+                    gap: 2rem;
+                }
+            }
+        }
+    }
+
+    .news-content-one {
+        .container {
+            gap: 2.5rem;
+
+            .content-box {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-top: 0 !important;
+            }
+        }
+    }
+
+    .news-content-three {
+        .container {
+            gap: 5rem;
+
+            .content-list {
+                gap: 6.5rem;
+
+                .list-item {
+                    flex-wrap: wrap-reverse;
+                    gap: 5rem;
+
+                    .content-figure,
+                    .content-box {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+
+                    .content-box {
+                        padding-bottom: 5rem;
+                    }
+
+                    &:nth-child(odd) {
+                        flex-direction: row;
+                    }
+                }
+            }
+        }
+    }
+
+    .news-content-four {
+        .container {
+            padding: 2.5rem 0 10rem 0;
+            gap: 5rem;
+
+            .content-box {
+                padding-top: 5rem;
+            }
+        }
+    }
+}
