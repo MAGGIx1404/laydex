@@ -154,9 +154,30 @@
         grid-template-columns: repeat(1, 1fr);
         gap: 7.5rem;
 
+        &:has(.content-box .content-figure.mobile-only) {
+            & > .content-figure {
+                display: none;
+            }
+
+            .content-box {
+                margin: 0;
+                max-width: 100%;
+
+                & > *:not(.content-figure.mobile-only) {
+                    max-width: 85%;
+                    margin: 0 auto;
+                    width: 100%;
+                }
+            }
+        }
+
         .content-box {
             max-width: 85%;
             margin: 0 auto;
+
+            .content-figure {
+                margin: 2.5rem 0;
+            }
         }
 
         &.reverse {

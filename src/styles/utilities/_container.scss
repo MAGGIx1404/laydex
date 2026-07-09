@@ -166,6 +166,10 @@ section {
     }
 }
 
+.mobile-only {
+    display: none;
+}
+
 @include responsive(xl) {
     .header {
         .header-box {
@@ -179,6 +183,10 @@ section {
                 max-width: 70%;
             }
         }
+    }
+
+    .mobile-only {
+        display: block;
     }
 }
 
