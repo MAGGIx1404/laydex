@@ -28,7 +28,6 @@
 .related {
     @include set-flex(column, flex-start, flex-start, 10rem);
     padding: $padding-sm;
-    overflow: visible;
 
     .header {
         max-width: 85%;
@@ -163,5 +162,11 @@
                 }
             }
         }
+    }
+}
+
+@include responsive(md) {
+    .related {
+        gap: 5rem;
     }
 }

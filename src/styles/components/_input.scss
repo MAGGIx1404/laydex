@@ -44,7 +44,8 @@ input[type='checkbox'] {
 }
 
 label {
-    @include set-flex(row, flex-start, center, 1rem);
+    @include set-flex(row, flex-start, center, 1rem, nowrap);
+    line-height: 1.4;
 }
 
 .search-box {

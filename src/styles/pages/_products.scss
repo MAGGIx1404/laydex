@@ -221,6 +221,8 @@
 @include responsive(xl) {
     .products {
         .container {
+            gap: 7.5rem;
+
             .section-header {
                 position: relative;
 
@@ -233,6 +235,139 @@
                         top: 0;
                         right: 0;
                     }
+                }
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                row-gap: 5rem;
+            }
+        }
+    }
+
+    .resources {
+        .container {
+            gap: 7.5rem;
+
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+
+    .full-image-section {
+        figure {
+            img {
+                min-height: auto;
+            }
+        }
+    }
+}
+
+@include responsive(md) {
+    .page-wrapper:has(.product-details) {
+        overflow: hidden;
+    }
+
+    .products {
+        .container {
+            .section-header {
+                .header-box {
+                    .btns-wrapper {
+                        & > button {
+                            flex: 1;
+                        }
+
+                        .search-box {
+                            width: 100%;
+
+                            input {
+                                flex: 1;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .cap-icon {
+                        width: 3.5rem;
+                    }
+                }
+            }
+
+            .products-grid {
+                .product-card {
+                    gap: 2.5rem;
+
+                    .card-content,
+                    .product-figure {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                    }
+
+                    .card-content {
+                        gap: 3rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .resources {
+        .container {
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .product-details {
+        .container {
+            gap: 5rem;
+
+            .slider-wrapper {
+                position: relative;
+                top: auto;
+                flex: 0 0 100%;
+                max-width: 100%;
+                gap: 1rem;
+
+                .embla {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+
+                    .embla__container {
+                        .embla__slide {
+                            img {
+                                height: 30rem;
+                            }
+                        }
+                    }
+                }
+
+                .slider-tabs {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    order: 2;
+                    flex-direction: row;
+                    gap: 1rem;
+
+                    .slider-tab {
+                        width: 9.48rem;
+
+                        img {
+                            height: 9.48rem;
+                        }
+                    }
+                }
+            }
+
+            .product-content {
+                flex: 0 0 100%;
+                max-width: 100%;
+
+                .tab-panel {
+                    gap: 0;
+                    margin-top: 5rem;
                 }
             }
         }

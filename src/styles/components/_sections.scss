@@ -194,6 +194,24 @@
             gap: 7.5rem;
         }
     }
+
+    .contact {
+        .container {
+            gap: 7.5rem;
+
+            .content-box,
+            .form-wrapper {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .form-wrapper {
+                form {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+    }
 }
 
 @include responsive(md) {
