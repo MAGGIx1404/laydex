@@ -58,6 +58,10 @@
 
             .footer-logo {
                 max-width: 25%;
+
+                img {
+                    @extend %size-cover;
+                }
             }
         }
     }
