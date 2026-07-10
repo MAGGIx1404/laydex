@@ -77,7 +77,7 @@ class _APP {
     }
 
     _initTabs() {
-        const sections = document.querySelectorAll('section')
+        const sections = document.querySelectorAll('section, .panel[data-panel]')
 
         sections.forEach((section) => {
             const tabs = section.querySelectorAll('[data-tab]')

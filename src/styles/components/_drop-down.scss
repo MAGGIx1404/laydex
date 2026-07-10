@@ -74,17 +74,54 @@
                     height: auto;
                 }
             }
+
+            .btns-wrapper {
+                button {
+                    &:hover,
+                    &.active {
+                        background: $color-white;
+                        color: $color-orange;
+                    }
+                }
+            }
         }
 
         .panel-grid {
             @extend %size-cover;
             @include set-grid(6, 10rem);
 
+            & > .accordion {
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
             .accordion {
                 opacity: 0.5;
 
-                &.active {
+                &.opened {
                     opacity: 1;
+                }
+            }
+
+            .accordion-nested {
+                opacity: 1;
+                width: 100%;
+
+                .accordion-trigger {
+                    .nested-title {
+                        font-family: $font-primary;
+                        font-size: 1.6rem;
+                        font-weight: 400;
+                        cursor: pointer;
+                    }
+                }
+
+                .accordion-content .accordion-content-inner {
+                    padding-top: 1rem;
+                    gap: 1rem;
                 }
             }
         }
