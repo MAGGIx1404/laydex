@@ -1,11 +1,11 @@
 mixin tab-section
     section.brands
             .section-header
-                .header-box
+                .header-box(data-animation="reveal")
                     .btns-wrapper
                         button.link-outline.active(data-tab="1") BUILDING PRODUCTS
                         button.link-outline(data-tab="2") SPECIALIST PRODUCTS
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     +tag('OUR BRANDS', 'orange')
                     h2
                         | Trusted Global Names,&nbsp;<br/>
@@ -30,13 +30,13 @@ mixin tab-section
 mixin type-section
     section.types.bg-dark
         .container
-            .content-box
+            .content-box(data-animation="reveal")
                 h2 Build with Confidence.<br/> Innovative Solutions for Ireland.
                 .btns
                     +btn('CONTACT US', '/')
             .type-list
                 each item, idx in ['BUILDING PRODUCTS', 'ROOFING', 'Radon & Gas Protection', 'FLOORING', 'Passive Fire Protection']
-                    .type-item
+                    .type-item(data-animation="reveal" data-animation-delay=`${idx*100}`)
                         p.paragraph-sm=item
                         .icon-box
                             img.icon(src=`/images/home/t-${idx+1}.svg`, alt="image")
@@ -44,7 +44,7 @@ mixin type-section
 mixin contact-section
     section.contact
         .container
-            .content-box
+            .content-box(data-animation="reveal")
                 +tag('CONTACT')
                 h1 Got a Question?<br/> Reach Out to Us
                 .box
@@ -54,7 +54,7 @@ mixin contact-section
                 .btns
                     +btn('REQUEST A CALL BACK', '/')
                     +btn('FIND A STOCKIST', '/')
-            .form-wrapper
+            .form-wrapper(data-animation="reveal" data-animation-delay="100")
                 form
                     input(type="text", placeholder="Full name")
                     input(type="tel", placeholder="Phone number")

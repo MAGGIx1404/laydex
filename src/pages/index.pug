@@ -4,9 +4,9 @@ block content
     section.banner
         .container
             .content-box
-                h1 The Leading Supplier of<br/> Building Materials in the<br/> Irish Construction Market.
-                p Laydex delivers sustainable, innovative building solutions that meet the evolving needs of the construction industry. In partnership with global manufacturers, we’re committed to providing premium products that support Ireland’s construction growth.
-                .btns
+                h1(data-animation="reveal") The Leading Supplier of<br/> Building Materials in the<br/> Irish Construction Market.
+                p(data-animation="reveal" data-animation-delay="100") Laydex delivers sustainable, innovative building solutions that meet the evolving needs of the construction industry. In partnership with global manufacturers, we’re committed to providing premium products that support Ireland’s construction growth.
+                .btns(data-animation="reveal" data-animation-delay="200")
                     +btn('DISTRIBUTION DIVISION', '/')
                     +btn('SPECIFICATION DIVISION', '/')
                     +btn('CONTACT US', '/')
@@ -15,14 +15,14 @@ block content
 
     section.divisions.bg-dark
             .divisions-header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('DIVISIONS', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2 Product areas that matches your needs
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="200")
                     +btn('SEE ALL', '/')
 
-            .embla.carousel-slider
+            .embla.carousel-slider(data-animation="reveal")
                 .embla__container
                     each i in [1,2]
                         .embla__slide
@@ -54,9 +54,9 @@ block content
                                 img.image(src="/images/home/r-3.png", alt="image")
 
     section.content-section.bg-orange
-        figure.content-figure
+        figure.content-figure(data-animation="reveal")
             img.image(src="/images/home/image-1.png", alt="image")
-        .content-box
+        .content-box(data-animation="reveal" data-animation-delay="100")
             +tag('ABOUT US')
             h2 Building Excellence Since 1995: Innovation, Quality, and Expertise You Can Trust
             figure.content-figure.mobile-only
@@ -66,9 +66,9 @@ block content
 
     section.expertise
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('Evolving Expertise', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2 Updates, Expertise and Innovations
                     .box-bar
                         .btns
@@ -77,7 +77,7 @@ block content
                             +prev
                             +next
 
-            .embla.carousel-slider
+            .embla.carousel-slider(data-animation="reveal" data-animation-delay="200")
                 .embla__container
                     each i in [1,2]
                         .embla__slide
@@ -174,8 +174,8 @@ block content
             .container
                 .content-box
                     +tag('WHY US', 'white')
-                    h2 Partnering with Global Manufacturers, We Supply Premium Products for Builders and Specifiers.
-                .embla.carousel-slider.no-loop
+                    h2(data-animation="reveal") Partnering with Global Manufacturers, We Supply Premium Products for Builders and Specifiers.
+                .embla.carousel-slider.no-loop(data-animation="reveal")
                     .embla__container
                         .embla__slide
                             h5
@@ -203,15 +203,15 @@ block content
 
     section.stats.bg-orange
         .container
-            .stats-box
+            .stats-box(data-animation="reveal")
                 img.icon(src="/images/home/i-1.svg", alt="image")
                 h3 28102
                 p.paragraph-sm Orders shipped in 2021
-            .stats-box
+            .stats-box(data-animation="reveal" data-animation-delay="100")
                 img.icon(src="/images/home/i-2.svg", alt="image")
                 h3 1175
                 p.paragraph-sm Active Customers
-            .stats-box
+            .stats-box(data-animation="reveal" data-animation-delay="200")
                 img.icon(src="/images/home/i-3.svg", alt="image")
                 h3 2000+
                 p.paragraph-sm Over 2000 products listed
@@ -221,16 +221,16 @@ block content
     section.certification.bg-dark
         .container
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('CERTIFICATIONS', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h3
                         | Our Commitment to&nbsp;
                         span.orange Industry Standards
 
             .certification-grid
                 each image in [1,2,3,4,5]
-                    figure.certification-figure
+                    figure.certification-figure(data-animation="reveal" data-animation-delay=`${image * 100}`)
                         img(src=`/images/certifications/${image}.svg`, alt="Icon")
 
     +type-section

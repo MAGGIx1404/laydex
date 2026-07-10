@@ -4,15 +4,15 @@ block content
     section.banner
         .container
             .content-box
-                h1 Built on Expertise.<br/> Driven by Quality.
-                p Since 1995, Laydex has been delivering innovative and high-performance building solutions across Ireland, combining trusted global brands with local expertise and unrivalled technical support.
+                h1(data-animation="reveal") Built on Expertise.<br/> Driven by Quality.
+                p(data-animation="reveal" data-animation-delay="100") Since 1995, Laydex has been delivering innovative and high-performance building solutions across Ireland, combining trusted global brands with local expertise and unrivalled technical support.
         .bg
             img.image(src="/images/about/banner.png", alt="image")
 
     section.content-section.bg-dark
-        figure.content-figure
+        figure.content-figure(data-animation="reveal")
             img.image(src="/images/about/image-1.png", alt="image")
-        .content-box
+        .content-box(data-animation="reveal" data-animation-delay="100")
             +tag('ABOUT US', 'orange')
             h2 About Laydex
             p Laydex Building Solutions was founded in 1995 and is a wholly owned, independent Irish Company servicing the Construction industry in the Republic of Ireland. Operating from our 40,000 square foot Warehousing, Sales, Administration, and Distribution centre in Dublin we represent some of the world’s leading brands in construction materials encompassing Roofing, Flooring and a wide range of Building Products.
@@ -23,7 +23,7 @@ block content
 
     section.team.bg-gray
         .container
-            .section-top
+            .section-top(data-animation="reveal")
                 +tag('THE TEAM', 'orange')
                 h2
                     | Our People,&nbsp;<br/>
@@ -33,27 +33,27 @@ block content
                     each i in [1,2,3,4,5]
                         img.image(src=`/images/about/team-${i}.png`, alt="image")
                 .team-list
-                    .team-item
+                    .team-item(data-animation="reveal" data-animation-delay="100")
                         h5 Peter Woods
                         h5 Managing Director & CEO
-                    .team-item
+                    .team-item(data-animation="reveal" data-animation-delay="200")
                         h5 Michael McErlean
                         h5 Finance Director
-                    .team-item
+                    .team-item(data-animation="reveal" data-animation-delay="300")
                         h5 Alan Donohoe
                         h5 Commercial Director
-                    .team-item
+                    .team-item(data-animation="reveal" data-animation-delay="400")
                         h5 Declan Murphy
                         h5 Roofing Director
-                    .team-item
+                    .team-item(data-animation="reveal" data-animation-delay="500")
                         h5 Jason Coburn
                         h5 Operations Director
 
     section.content-section.reverse
-        figure.content-figure
+        figure.content-figure(data-animation="reveal")
             img.image(src="/images/about/image-2.png", alt="image")
 
-        .content-box
+        .content-box(data-animation="reveal" data-animation-delay="100")
             +tag('CAREERS', 'blue')
             h2
                 | Interested in joining us?&nbsp;

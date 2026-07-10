@@ -3,14 +3,14 @@ extends /layouts/default
 block content
     section.login
         .container.content-bottom
-            .content-box
+            .content-box(data-animation="reveal")
                 h1 New to Laydex?
                 p To receive your login details, please contact us. Our customer service team will register you and set up access to your exclusive Laydex partner portal.
                 .box
                     p.paragraph-sm Get In Touch
                     a.link(href="/") IE: 01 6426600
                     a.link(href="/") NI: 028 9038 2223
-            .form-wrapper
+            .form-wrapper(data-animation="reveal" data-animation-delay="100")
                 h1 Log In
                 form
                     input(type="email", placeholder="Email Address")

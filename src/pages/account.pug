@@ -4,7 +4,7 @@ block content
     section.account
         .container
             .account-panel
-                .left-panel
+                .left-panel(data-animation="reveal")
                     .content-box(data-tab-content="profile")
                         +tag('PROFILE & SETTINGS', 'orange')
                         h1
@@ -33,7 +33,7 @@ block content
                             span.orange Certified
                         p Laydex provides industry-leading training and certification programmes in partnership with our global manufacturing partners. These programmes are designed to keep contractors, installers, and specifiers fully informed and compliant with current standards and best practices.
 
-                .right-panel
+                .right-panel(data-animation="reveal" data-animation-delay="100")
                     .btns-wrapper
                         button.link-outline.active(data-tab="profile") PROFILE & SETTINGS
                         button.link-outline(data-tab="orders") ORDER HISTORY
@@ -41,7 +41,7 @@ block content
                         button.link-outline(data-tab="training") TRAINING & CERTIFICATIONS
 
             .account-panel
-                .left-panel
+                .left-panel(data-animation="reveal" data-animation-delay="200")
                     .content-box(data-tab-content="downloads")
                         .tabs-list
                             button.active(data-sub-tab="agreement")
@@ -64,7 +64,7 @@ block content
                             button(data-sub-tab="certificates")
                                 h5 Your certificates of completion
 
-                .right-panel
+                .right-panel(data-animation="reveal" data-animation-delay="300")
                     .content-box(data-tab-content="profile")
                         .profile-form-wrapper
                             form

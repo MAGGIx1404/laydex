@@ -5,9 +5,9 @@ block content
         .container
             .content-box
                 +tag('SPECIFICATIONS', 'orange')
-                h1 For Roofing Experts &<br/> Design Teams
-                p High-performance roofing and waterproofing solutions designed for long-lasting reliability.
-                .btns
+                h1(data-animation="reveal") For Roofing Experts &<br/> Design Teams
+                p(data-animation="reveal" data-animation-delay="100") High-performance roofing and waterproofing solutions designed for long-lasting reliability.
+                .btns(data-animation="reveal" data-animation-delay="200")
                     +btn('ROOFING PRODUCTS', '/')
                     +btn('TECHNICAL RESOURCES', '/')
                     +btn('TRAINING', '/')
@@ -16,9 +16,9 @@ block content
             img.image(src="/images/products-roofing/banner.png", alt="image")
 
     section.content-section.bg-blue
-        figure.content-figure
+        figure.content-figure(data-animation="reveal")
             img.image(src="/images/products-roofing/image-1.png", alt="image")
-        .content-box
+        .content-box(data-animation="reveal" data-animation-delay="100")
             +tag('WHY US', 'white')
             h2 Ireland’s Leading Supplier of<br/> Roofing and Waterproofing Systems
             p Laydex Roofing supply the most comprehensive range of waterproofing systems in Ireland for Commercial, Industrial and Domestic projects. Representing many of the world’s foremost manufacturers of PVC, Single Ply, Bituminous, Liquid and metal roof materials, Laydex Roofing work with industry renowned architectural practices on flagship construction projects throughout Ireland on a daily basis.
@@ -27,7 +27,7 @@ block content
     section.products
         .container
             .section-header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('PRODUCTS', 'blue')
                     h2
                         | Ireland’s Leading Supplier of&nbsp;<br/>
@@ -39,62 +39,62 @@ block content
                             input(type="text", placeholder="SEARCH...")
                             button.search-btn.blue
                                 img(src="/images/products/search.svg", alt="search")
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     img.cap-icon(src="/images/products-roofing/icon.svg", alt="icon")
             .products-grid
                 each item, idx in ['Fortessa Door Handles & Accessories', 'Fibre Cement & Tile Backer Boards', 'Joint Compounds', 'Radon & Gas Protection', 'DPC & DPM', 'Breather Membranes']
-                    .product-card
+                    .product-card(data-animation="reveal" data-animation-delay=`${idx*100}`)
                         figure.product-figure
                             img.image(src=`/images/products/p-${idx+1}.png`, alt="image")
                         .card-content
                             h3=item
                             +btn('SEE ALL', '/product-single.html', 'border')
-            .btns
+            .btns(data-animation="reveal")
                 +btn('SEE MORE', '/', 'border')
 
     section.resources.bg-blue
         .container
             .section-header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('Technical Resources', 'white')
                     h2
                         | Specifications, Guides&nbsp;<br/> and Downloads
 
             .resources-grid
-                .resource-card
+                .resource-card(data-animation="reveal" data-animation-delay="100")
                     h5 Technical Data Sheets
                     p Access a wide collection of over 430 datasheets with detailed technical characteristics and specifications for our products.
                     .btns
                         +btn('READ MORE', '/')
-                .resource-card
+                .resource-card(data-animation="reveal" data-animation-delay="200")
                     h5 Brochures
                     p Explore our products and ranges through downloadable brochures.
                     .btns
                         +btn('READ MORE', '/')
-                .resource-card
+                .resource-card(data-animation="reveal" data-animation-delay="300")
                     h5 Agrément Certificates
                     p Access our product standards and compliance documents.
                     .btns
                         +btn('READ MORE', '/')
-                .resource-card
+                .resource-card(data-animation="reveal" data-animation-delay="400")
                     h5 Installation Instructions
                     p Check out the installation instructions section to view all instruction sheets, or narrow your search by choosing a specific product.
                     .btns
                         +btn('READ MORE', '/')
 
-            .btns
+            .btns(data-animation="reveal")
                 +btn('SEE ALL RESOURCES', '/')
 
     section.testimonial
         .testimonial-header
-            .header-box
+            .header-box(data-animation="reveal")
                 +tag('TESTIMONIALS', 'blue')
-            .header-box
+            .header-box(data-animation="reveal" data-animation-delay="100")
                 h1
                     | Trusted by Builders,<br/>
                     span.blue Architects and Contractors
 
-        .embla.carousel-slider.centered
+        .embla.carousel-slider.centered(data-animation="reveal" data-animation-delay="200")
             .embla__container
                 each i in [1,2]
                     .embla__slide.blue-slide
@@ -142,9 +142,9 @@ block content
 
     section.brands
             .section-header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('OUR BRANDS', 'blue')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2
                         | Trusted Global Names,&nbsp;<br/>
                         span.blue Delivered Locally
@@ -152,7 +152,7 @@ block content
                     p Each brand we represent shares our commitment to excellence, ensuring contractors, architects and specifiers have access to products that meet the highest industry standards. Together with our manufacturing partners, we deliver proven solutions backed by technical expertise, certification and dedicated support at every stage.
 
             +tag('BUILDING MATERIAL BRANDS', 'blue')
-            .embla.autoscroll-slider.active
+            .embla.autoscroll-slider.active(data-animation="reveal" data-animation-delay="200")
                 .embla__container
                     each i in [1,2,3,4,5,6,7,8,9,10,11,12]
                         .embla__slide
@@ -161,16 +161,16 @@ block content
     section.certification.bg-dark
         .container
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('CERTIFICATIONS', 'blue')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h3
                         | Our Commitment to&nbsp;
                         span.blue Industry Standards
 
             .certification-grid
                 each image in [1,2,3,4,5]
-                    figure.certification-figure
+                    figure.certification-figure(data-animation="reveal" data-animation-delay=`${image*100}`)
                         img(src=`/images/certifications/${image}.svg`, alt="Icon")
 
     +type-section

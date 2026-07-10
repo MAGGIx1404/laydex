@@ -16,7 +16,7 @@ block content
 
             .product-content
                 +tag('Building Products / Fortessa Door Handles & Accessories / Door Levers On Rose / Fortessa Gotham Box Set', 'orange')
-                .content-box
+                .content-box(data-animation="reveal")
                     h3 Fortessa Gotham Box Set
                     p With the Gotham Door Handle collection, we bring you a brand new specialised finish of gun metal grey, paired elegantly with polished chrome metal. This collection beckons you to be brave enough to be yourself. Let our Gotham collection levers reflect your personal style.
                     p All Fortessa products undergo thorough testing at all stages of manufacture, and performance of all working parts is rigorously tested . Fortessa handles meet DIN EN 1906 Interior Residential classification standards.
@@ -38,14 +38,14 @@ block content
                         a(href="#") Rogue
                     .btns
                         +btn('MAKE AN ENQUIRY', '/' , 'border')
-                .content-box
+                .content-box(data-animation="reveal" data-delay="100")
                     .year-bar
                         img.image(src="/images/products/10-year.png", alt="image")
                         .bar-content
                             p.paragraph-xs Fortessa Door Handles are covered by a 10 Year Guarantee on mechanical parts. Levers have been tested to pass DIN EN 1906 European Quality Standards. Essentially each door handle is guaranteed for 100,000 revolutions.
 
                 .tab-panel
-                    .content-box
+                    .content-box(data-animation="reveal" data-delay="200")
                         +tag('KNOW MORE', 'orange')
                         h2
                             | Everything You Need&nbsp;
@@ -94,21 +94,21 @@ block content
                                 h6 Fortessa Gotham Brochure
                                 h6 Dowload
 
-    section.full-image-section
+    section.full-image-section(data-animation="reveal")
         figure.image-wrapper
             img.image(src="/images/products/full.png", alt="image")
 
     section.related
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('PRODUCTS', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2 Related Building Products
                     .slider-controls
                         +prev
                         +next
 
-            .embla.carousel-slider
+            .embla.carousel-slider(data-animation="reveal" data-animation-delay="200")
                 .embla__container
                     each val, i in ['Fortessa Gotham Rogue', 'Fortessa Gotham Spectre', 'Fortessa Gotham Taranis', 'Fortessa Gotham Vadar', 'Fortessa Gotham Magento', 'Fortessa Gotham Phantom']
                         .embla__slide.product-slide

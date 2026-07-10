@@ -7,6 +7,8 @@ import Sliders from './components/_slider'
 import ScrollAnimations from './components/_scrolltrigger'
 import Accordion from './components/_accordion'
 
+import Reveal from './animations/_reveal'
+
 if (window.history.scrollRestoration) {
     window.history.scrollRestoration = 'manual'
 }
@@ -15,6 +17,8 @@ window.scrollTo(0, 0)
 class _APP {
     constructor() {
         console.log('App is running🦸🦸🦸🦸...')
+        this.animations = []
+        this.revealElements = [...document.querySelectorAll('[data-animation="reveal"]')]
         this._init()
     }
 
@@ -25,6 +29,7 @@ class _APP {
             this._initScrollAnimations()
             this._initTabs()
             this._initPanel()
+            this._initRevealAnimations()
             this._initAccordion()
             console.log('App initialized successfully🎉🎉🎉🎉')
         } catch (error) {
@@ -138,6 +143,13 @@ class _APP {
                 })
             })
         })
+    }
+
+    _initRevealAnimations() {
+        for (let i = 0; i < this.revealElements.length; i++) {
+            let animation = new Reveal({ element: this.revealElements[i] })
+            this.animations.push(animation)
+        }
     }
 
     _onResize() {}
