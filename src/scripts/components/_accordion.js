@@ -15,7 +15,8 @@ export default class Accordions {
                     if (accordion !== this.accordions[i]) {
                         accordion.classList.remove('active')
                         accordion.querySelector('.accordion-content').style.maxHeight = 0
-                        icon ? (icon.textContent = '+') : null
+                        const _icon = accordion.querySelector('.accordion-icon')
+                        if (_icon) _icon.textContent = '+'
                     }
                 })
                 this.accordions[i].classList.toggle('active')
