@@ -54,6 +54,8 @@ block content
                             button.link-outline.active(data-tab="1") BENEFITS
                             button.link-outline(data-tab="2") TECHNICAL DATA
                             button.link-outline(data-tab="3") DOWNLOADS
+                            button.link-outline(data-tab="4") CASE STUDIES
+                            button.link-outline(data-tab="5") VIDEO
                     .tab-content.active(data-tab-content="1")
                         .tab-content-list
                             .list-item
@@ -93,6 +95,38 @@ block content
                             a.list-item(href="/")
                                 h6 Fortessa Gotham Brochure
                                 h6 Dowload
+                    .tab-content(data-tab-content="4")
+                        .cases-list
+                                a.project-card(href="/project-single.html")
+                                    figure.item-figure
+                                        img.image(src="/images/projects/p-1.png", alt="image")
+                                    .content-box
+                                        p.paragraph-sm Building Products
+                                        h4 Resitrix SK W & Sage Artificial Grass Residential Project. Private Dwelling
+                                        p.paragraph-sm This unique residential project was completed in 2022. The stunning private dwelling is complete with Resitrix SK W on the flat roof surfaces coupled with Sage...
+                                        .btns
+                                            button.btn.border
+                                                span.btn-box LEARN MORE
+                                                .icon-box
+                                                    svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+                                a.project-card(href="/project-single-2.html")
+                                    figure.item-figure
+                                        img.image(src="/images/projects/p-2.png", alt="image")
+                                    .content-box
+                                        p.paragraph-sm Building Products
+                                        h4 Colm Quinn BMW Drogheda. Memtech R1 Radon Barrier Installation
+                                        p.paragraph-sm This commercial building project required the development of a new premises for Colm Quinn BMW at the M1 Retail Park in Drogheda, Co. Louth. This project...
+                                        .btns
+                                            button.btn.border
+                                                span.btn-box LEARN MORE
+                                                .icon-box
+                                                    svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                                        path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+                    .tab-content(data-tab-content="5")
+                        .video-wrapper
+                            iframe(width='560', height='315', src='https://www.youtube.com/embed/IIsCLIGA8UQ?si=CuxWCJlMavQz06oB', title='YouTube video player', frameborder='0', allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share', referrerpolicy='strict-origin-when-cross-origin', allowfullscreen='')
 
     section.full-image-section(data-animation="reveal")
         figure.image-wrapper

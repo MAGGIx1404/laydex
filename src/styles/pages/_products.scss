@@ -210,6 +210,15 @@
                             }
                         }
                     }
+
+                    .video-wrapper {
+                        max-width: 100%;
+
+                        iframe {
+                            width: 100%;
+                            height: 50rem;
+                        }
+                    }
                 }
             }
         }
@@ -265,6 +274,22 @@
         figure {
             img {
                 min-height: auto;
+            }
+        }
+    }
+
+    .product-details {
+        .container {
+            .product-content {
+                .tab-panel {
+                    .tab-content {
+                        .video-wrapper {
+                            iframe {
+                                height: 30rem;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -374,6 +399,14 @@
                 .tab-panel {
                     gap: 0;
                     margin-top: 5rem;
+
+                    .tab-content {
+                        .video-wrapper {
+                            iframe {
+                                height: 25rem;
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -34,6 +34,14 @@
     }
 }
 
+.cases-list {
+    @include set-grid(2, 2.4rem);
+
+    .project-card {
+        @extend %project-card;
+    }
+}
+
 .related {
     @include set-flex(column, flex-start, flex-start, 10rem);
     padding: $padding-sm;
@@ -196,6 +204,10 @@
 
     .testimonial {
         gap: 7.5rem;
+    }
+
+    .cases-list {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
