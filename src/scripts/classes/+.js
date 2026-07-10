@@ -1,1 +1,1 @@
-import './_animation.js'
+export { default as _animation } from './_animation.js'

@@ -5,10 +5,10 @@ block content
         .container
             .content-box
                 +tag('PROJECTS', 'orange')
-                h2
+                h2(data-animation="reveal")
                     | Proven Projects,&nbsp;
                     span.orange Trusted Solutions
-                .btns-wrapper
+                .btns-wrapper(data-animation="reveal" data-animation-delay="100")
                     button.link-outline.active(data-tab="all") VIEW ALL
                     button.link-outline(data-tab="1") BUILDING PRODUCTS
                     button.link-outline(data-tab="2") ROOFING
@@ -18,7 +18,7 @@ block content
 
             .projects-grid
                 each i in [1,2,3]
-                    a.project-card(href="/project-single.html" data-tab-content="1")
+                    a.project-card(href="/project-single.html" data-tab-content="1" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-1.png", alt="image")
                         .content-box
@@ -32,7 +32,7 @@ block content
                                         svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
                                             path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
 
-                    a.project-card(href="/project-single-2.html" data-tab-content="2")
+                    a.project-card(href="/project-single-2.html" data-tab-content="2" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-2.png", alt="image")
                         .content-box
@@ -46,7 +46,7 @@ block content
                                         svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
                                             path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
 
-                    a.project-card(href="/project-single-3.html" data-tab-content="3")
+                    a.project-card(href="/project-single-3.html" data-tab-content="3" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-3.png", alt="image")
                         .content-box
@@ -62,14 +62,14 @@ block content
 
     section.testimonial
         .testimonial-header
-            .header-box
+            .header-box(data-animation="reveal")
                 +tag('TESTIMONIALS', 'orange')
-            .header-box
+            .header-box(data-animation="reveal" data-animation-delay="100")
                 h1
                     | Trusted by Builders,<br/>
                     span.orange Architects and Contractors
 
-        .embla.carousel-slider.centered
+        .embla.carousel-slider.centered(data-animation="reveal")
             .embla__container
                 each i in [1,2]
                     .embla__slide

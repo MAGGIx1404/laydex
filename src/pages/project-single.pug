@@ -4,16 +4,16 @@ block content
     section.banner
         .container.content-bottom
             .content-box
-                h1 Resitrix SK W & Sage Artificial<br/> Grass Residential Project.<br/> Private Dwelling
+                h1(data-animation="reveal") Resitrix SK W & Sage Artificial<br/> Grass Residential Project.<br/> Private Dwelling
         .bg
             img.image(src="/images/projects/banner.png", alt="image")
 
     section.case-study.bg-orange
         .container
             .case-panel
-                figure.case-figure
+                figure.case-figure(data-animation="reveal")
                     img.image(src="/images/projects/image-1.png", alt="image")
-                .content-box
+                .content-box(data-animation="reveal" data-animation-delay="100")
                     +tag('CASE STUDY', 'white')
                     h3
                         img.icon(src="/icons/doc.svg", alt="image")
@@ -30,7 +30,7 @@ block content
                     p Griffin Carpentry ensuring both our Sage and Resitrix products were expertly installed.
 
             .case-details
-                .case-detail-box
+                .case-detail-box(data-animation="reveal" data-animation-delay="200")
                     h4
                         img.icon(src="/icons/feature.svg", alt="image")
                         | Featured Products
@@ -41,7 +41,7 @@ block content
                         strong Sage Artificial Grass:
                         |  An environmentally friendly, low maintenance & pet friendly solution to traditional lawn grass.
 
-                .case-detail-box
+                .case-detail-box(data-animation="reveal" data-animation-delay="300")
                     h4
                         img.icon(src="/icons/facts.svg", alt="image")
                         | Project Facts
@@ -52,17 +52,17 @@ block content
     section.project-gallery
         .container
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('PROJECT GALLERY', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2 Explore the Project
 
-            .slider-handler
+            .slider-handler(data-animation="reveal" data-animation-delay="200")
                 .embla__dots
                 .slider-controls
                     +prev
                     +next
-            .slider-wrapper
+            .slider-wrapper(data-animation="reveal" data-animation-delay="300")
                 figure.slider-preview
                     img.image(src="/images/projects/gallery-1.png", alt="image")
                 .embla.gallery-slider
@@ -73,14 +73,14 @@ block content
 
     section.testimonial
         .testimonial-header
-            .header-box
+            .header-box(data-animation="reveal")
                 +tag('TESTIMONIALS', 'orange')
-            .header-box
+            .header-box(data-animation="reveal" data-animation-delay="100")
                 h1
                     | Built on Trust,<br/>
                     span.orange Backed by Results.
 
-        .embla.carousel-slider.centered
+        .embla.carousel-slider.centered(data-animation="reveal")
             .embla__container
                 each i in [1,2]
                     .embla__slide
@@ -128,9 +128,9 @@ block content
 
     section.related
             .header
-                .header-box
+                .header-box(data-animation="reveal")
                     +tag('PRODUCTS', 'orange')
-                .header-box
+                .header-box(data-animation="reveal" data-animation-delay="100")
                     h2
                         | Related&nbsp;
                         span.orange Cases Studies
@@ -138,7 +138,7 @@ block content
                         +prev
                         +next
 
-            .embla.carousel-slider
+            .embla.carousel-slider(data-animation="reveal")
                 .embla__container
                     each i in [1,2,3]
                         a.embla__slide.project-slide(href="/project-single.html")
