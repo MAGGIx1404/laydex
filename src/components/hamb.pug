@@ -15,10 +15,8 @@ mixin hambAcc(title, cls)
 -
   var buildingProducts = [
     { name: 'Breather Membranes', items: ['Corotop Blue Breathable Membrane', 'Corotop Extra Protect 165 Breather Membrane', 'Corotop Green Strong Breathable Membrane', 'Corotop Grey Breathable Roofing Membrane', 'Corotop Red Strong Roof Underlay', 'Corotop Smart Breathable Membrane', 'Corotop House Wrap'] },
-    { name: 'Building Envelope Solutions', items: ['Explore range'], subcategories: [
-      { name: 'Flooring', items: ['MAPEI'] }
-    ]},
-    { name: 'Torch On & Underslating Membranes', items: ['Explore range'] },
+    { name: 'Building Envelope Solutions', items: ['Explore range']},
+    { name: 'Torch On & Underslating Membranes', items: ['Pluvitec Specialtec P 3 mm', 'Pluvitec Plusgum', 'Pluvitec Ultratec', 'Index SIRIO Polyester'] },
     { name: 'Cement Board', items: ['Explore range'] },
     { name: 'Joint Compounds', items: ['Explore range'] },
     { name: 'Oxide Protective Paint', items: ['Explore range'] },
@@ -29,14 +27,16 @@ mixin hambAcc(title, cls)
     { name: 'Floor Protection', items: ['Explore range'] },
     { name: 'Composite Decking & Fencing', items: ['Explore range'] },
     { name: 'Artificial Grass', items: ['Sage Artificial Grass 35 mm', 'VIRGO Artificial Landscape Grass 38 mm', 'Breeze Artificial Landscape Grass 30 mm', 'Comfort Artificial Landscape Grass 36 mm', 'Bond It Astro Pro'] },
-    { name: 'Loft Ladders', items: ['Explore range'] },
-    { name: 'Adhesives', items: ['Explore range'] },
+    { name: 'Loft Ladders', items: ['Complete Loft Ladder', 'Polar Extrem - Extreme Insulation'] },
+    { name: 'Adhesives', items: ['Construction', 'Contact'], subcategories: [
+      { name: 'Flooring', items: ['MAPEI'] }
+    ], itemsAfter: ['Hybrid', 'Industrial & Super Glues', 'Polyurethane', 'Specialist', 'Wood']},
     { name: 'Silicones & Sealants', items: ['Explore range'] },
     { name: 'Cleaners', items: ['Explore range'] },
     { name: 'Expanding Foams', items: ['Explore range'] },
     { name: 'Floor Level Compounds', items: ['Latex Liquids', 'Levelling Compounds'] },
-    { name: 'Roofing & Bituminous Products', items: ['Explore range'] },
-    { name: 'Tapes', items: ['Explore range'] },
+    { name: 'Roofing & Bituminous Products', items: ['Bituminous Products', 'Chipping Solution', 'Reflective Paint', 'Roof Repair'] },
+    { name: 'Tapes', items: ['Dry Wall Scrim', 'Duct', 'Masking'] },
     { name: 'Fortessa', items: ['Bond It', 'Construction Adhesives', 'Contact/Flooring Adhesives', 'Industrial and Super Glues', 'Polyurethane Adhesives', 'Specialist Adhesives', 'Wood Adhesives'] },
     { name: 'Basta', items: ['Explore range'] },
     { name: 'Rothley', items: ['Explore range'] }
@@ -66,6 +66,9 @@ mixin hambAcc(title, cls)
                                 +hambAcc(sub.name, 'lvl-4')
                                     each item in sub.items
                                         a.hamb-link(href="/products.html")= item
+                        if cat.itemsAfter
+                            each item in cat.itemsAfter
+                                a.hamb-link(href="/products.html")= item
             each family in productFamilies
                 +hambAcc(family, 'lvl-2')
                     a.hamb-link(href="/products.html") Explore range
