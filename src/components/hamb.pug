@@ -11,27 +11,30 @@ mixin hambAcc(title, cls)
 
 //- Product categories shown under "Building Products".
 //- Each entry becomes a level-3 accordion; `items` are its leaf links.
+//- Entries with `subcategories` get level-4 sub-accordions instead of flat links.
 -
   var buildingProducts = [
-    { name: 'Breather Membranes', items: ['Corotop', 'Breath-X'] },
-    { name: 'Building Envelope Solutions', items: ['Explore range'] },
+    { name: 'Breather Membranes', items: ['Corotop Blue Breathable Membrane', 'Corotop Extra Protect 165 Breather Membrane', 'Corotop Green Strong Breathable Membrane', 'Corotop Grey Breathable Roofing Membrane', 'Corotop Red Strong Roof Underlay', 'Corotop Smart Breathable Membrane', 'Corotop House Wrap'] },
+    { name: 'Building Envelope Solutions', items: ['Explore range'], subcategories: [
+      { name: 'Flooring', items: ['MAPEI'] }
+    ]},
     { name: 'Torch On & Underslating Membranes', items: ['Explore range'] },
     { name: 'Cement Board', items: ['Explore range'] },
     { name: 'Joint Compounds', items: ['Explore range'] },
     { name: 'Oxide Protective Paint', items: ['Explore range'] },
-    { name: 'Radon & Gas Protection System', items: ['Explore range'] },
+    { name: 'Radon & Gas Protection System', items: ['JUTA GP® Titanbond', 'JUTA GP® Titanbond Plus', 'JUTA GP® Titanbond Pro', 'JUTA GP® Titanbond Pro Plus', 'JUTA GP® Titanbond Pro Ultra', 'JUTA GP® Titanbond Ultra', 'JUTA GP® Titanflex', 'JUTA GP® Titantank', 'MEMTECH R1 Reinforced Radon Barrier', 'RADEX 3000 Non-Reinforced Radon Membrane', 'LAYDEX RADON POLYSUMP', 'VISQUEEN Gas Resistant Self Adhesive Membrane', 'RADEX Radon Tape', 'VISQUEEN Protect & Drain', 'TOP HAT'] },
     { name: 'Gas & Hydrocarbon Protection System', items: ['Explore range'] },
     { name: 'Construction Films & Damp Proofing', items: ['Explore range'] },
     { name: 'EPDM Membranes', items: ['Explore range'] },
     { name: 'Floor Protection', items: ['Explore range'] },
     { name: 'Composite Decking & Fencing', items: ['Explore range'] },
-    { name: 'Artificial Grass', items: ['Explore range'] },
+    { name: 'Artificial Grass', items: ['Sage Artificial Grass 35 mm', 'VIRGO Artificial Landscape Grass 38 mm', 'Breeze Artificial Landscape Grass 30 mm', 'Comfort Artificial Landscape Grass 36 mm', 'Bond It Astro Pro'] },
     { name: 'Loft Ladders', items: ['Explore range'] },
     { name: 'Adhesives', items: ['Explore range'] },
     { name: 'Silicones & Sealants', items: ['Explore range'] },
     { name: 'Cleaners', items: ['Explore range'] },
     { name: 'Expanding Foams', items: ['Explore range'] },
-    { name: 'Floor Level Compounds', items: ['Explore range'] },
+    { name: 'Floor Level Compounds', items: ['Latex Liquids', 'Levelling Compounds'] },
     { name: 'Roofing & Bituminous Products', items: ['Explore range'] },
     { name: 'Tapes', items: ['Explore range'] },
     { name: 'Fortessa', items: ['Bond It', 'Construction Adhesives', 'Contact/Flooring Adhesives', 'Industrial and Super Glues', 'Polyurethane Adhesives', 'Specialist Adhesives', 'Wood Adhesives'] },
@@ -55,8 +58,14 @@ mixin hambAcc(title, cls)
             +hambAcc('Building Products', 'lvl-2')
                 each cat in buildingProducts
                     +hambAcc(cat.name, 'lvl-3')
-                        each item in cat.items
-                            a.hamb-link(href="/products.html")= item
+                        if cat.items
+                            each item in cat.items
+                                a.hamb-link(href="/products.html")= item
+                        if cat.subcategories
+                            each sub in cat.subcategories
+                                +hambAcc(sub.name, 'lvl-4')
+                                    each item in sub.items
+                                        a.hamb-link(href="/products.html")= item
             each family in productFamilies
                 +hambAcc(family, 'lvl-2')
                     a.hamb-link(href="/products.html") Explore range

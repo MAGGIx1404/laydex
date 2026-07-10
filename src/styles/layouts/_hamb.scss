@@ -193,3 +193,34 @@
         padding-bottom: 1.2rem;
     }
 }
+
+//- Level 4 — same visual weight as lvl-3 leaf links
+.hamb-accordion.lvl-4 {
+    > .hamb-accordion-trigger {
+        padding: 0.8rem 0;
+
+        .hamb-accordion-title {
+            color: #7d7d7d;
+            font-family: $font-primary;
+            font-size: 1.4rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .hamb-accordion-icon {
+            width: 1.1rem;
+            height: 1.1rem;
+            color: #7d7d7d;
+        }
+    }
+
+    .hamb-link {
+        padding: 0.6rem 0 0.6rem 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .hamb-accordion-content .hamb-accordion-content-inner {
+        padding-bottom: 0.8rem;
+    }
+}
