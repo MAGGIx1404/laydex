@@ -52,7 +52,7 @@
             @include set-flex(row, space-between, flex-end);
 
             .footer-bottom-box {
-                @include set-flex-size(60%);
+                @include set-flex-size(55%);
                 @include set-flex(row, space-between, center);
             }
 

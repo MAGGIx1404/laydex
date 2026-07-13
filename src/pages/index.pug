@@ -16,7 +16,7 @@ block content
     section.divisions.bg-dark
             .divisions-header
                 .header-box(data-animation="reveal")
-                    +tag('DIVISIONS', 'orange')
+                    +tag('RANGE', 'orange')
                 .header-box(data-animation="reveal" data-animation-delay="100")
                     h2 Product areas that matches your needs
                 .header-box(data-animation="reveal" data-animation-delay="200")
@@ -218,9 +218,9 @@ block content
             .bg
                 img.image(src="/images/home/why-1.png", alt="image")
 
-
     section.stats.bg-orange
         .container
+            +tag('RANGE', 'white')
             .stats-box(data-animation="reveal")
                 img.icon(src="/images/home/i-1.svg", alt="image")
                 h3 28102

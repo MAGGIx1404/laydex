@@ -69,15 +69,16 @@
 
     .why-panel {
         @extend %size-full;
+        @include set-flex(column, center, center);
         position: absolute;
-        top: 0;
+        top: 50%;
         left: 0;
+        transform: translateY(-50%);
 
         .container {
-            @include set-flex(row, space-between, center);
+            @include set-flex(row, space-between, stretch);
             padding: $padding;
             color: $color-white;
-            height: $vh;
 
             .content-box {
                 @include set-flex-size(37.5%);
@@ -188,6 +189,10 @@
     .container {
         @include set-grid(3);
         padding: $padding;
+
+        .tag {
+            display: none;
+        }
 
         .stats-box {
             @include set-flex(column, center, center, 1.75rem);
@@ -321,6 +326,11 @@
         .container {
             grid-template-columns: repeat(1, 1fr);
             gap: 5rem;
+
+            .tag {
+                display: flex;
+                margin-bottom: 2.5rem;
+            }
 
             .stats-box {
                 padding-bottom: 5rem;
