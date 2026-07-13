@@ -143,7 +143,7 @@
 
 .expertise {
     @include set-flex(column, flex-start, flex-start, 10rem);
-    padding: $padding;
+    padding: 10rem 0 5rem 0;
 
     .header {
         max-width: 85%;
@@ -293,6 +293,7 @@
 
     .expertise {
         gap: 5rem;
+        padding: 7.5rem 0 5rem 0;
 
         .embla {
             .embla__container {
