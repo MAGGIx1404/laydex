@@ -64,3 +64,19 @@
 .terms {
     @include set-flex(row, flex-start, center, 1rem, nowrap);
 }
+
+.-mt-10 {
+    margin-top: -10rem;
+}
+
+@include responsive(xl) {
+    .-mt-10 {
+        margin-top: -5rem;
+    }
+}
+
+@include responsive(xl) {
+    .-mt-10 {
+        margin-top: 0rem;
+    }
+}

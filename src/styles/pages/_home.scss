@@ -315,9 +315,17 @@
 
         .embla {
             .embla__container {
+                align-items: flex-start;
+
                 .embla__slide {
                     flex: 0 0 85%;
                     width: 85%;
+
+                    .content-box {
+                        .btns {
+                            margin-top: 2rem;
+                        }
+                    }
                 }
             }
         }
