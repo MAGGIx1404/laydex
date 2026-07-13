@@ -283,7 +283,8 @@
 @include responsive(md) {
     .banner {
         .container {
-            min-height: 40rem;
+            padding: 20rem 0 10rem 0;
+            min-height: auto;
 
             .content-box {
                 br {

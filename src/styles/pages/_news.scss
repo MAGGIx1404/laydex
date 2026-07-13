@@ -238,6 +238,14 @@
         .container {
             gap: 7.5rem;
 
+            .content-box {
+                .btns-wrapper {
+                    margin-top: 0;
+                    border: none;
+                    padding: 0;
+                }
+            }
+
             .news-grid {
                 grid-template-columns: repeat(1, 1fr);
 
@@ -295,7 +303,8 @@
 
     .news-content-four {
         .container {
-            padding: 2.5rem 0 10rem 0;
+            margin-top: -5rem;
+            padding: 0 0 10rem 0;
             gap: 5rem;
 
             .content-box {

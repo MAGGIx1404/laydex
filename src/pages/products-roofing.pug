@@ -41,10 +41,10 @@ block content
                 .header-box(data-animation="reveal" data-animation-delay="100")
                     img.cap-icon(src="/images/products-roofing/icon.svg", alt="icon")
             .products-grid
-                each item, idx in ['Fortessa Door Handles & Accessories', 'Fibre Cement & Tile Backer Boards', 'Joint Compounds', 'Radon & Gas Protection', 'DPC & DPM', 'Breather Membranes']
+                each item, idx in ['Bituminous Membrane', 'Single Ply RESITRIX Hybrid Membranes', 'Single Ply PVC Membranes', 'Green Roof Systems', 'Knauf Fall Arrest Systems', 'Cold Applied Liquid Waterproofing Systems']
                     .product-card(data-animation="reveal" data-animation-delay=`${idx*100}`)
                         figure.product-figure
-                            img.image(src=`/images/products/p-${idx+1}.png`, alt="image")
+                            img.image(src=`/images/products-roofing/p-${idx+1}.png`, alt="image")
                         .card-content
                             h3=item
                             +btn('SEE ALL', '/product-single.html', 'border')

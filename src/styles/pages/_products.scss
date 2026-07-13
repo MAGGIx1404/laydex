@@ -44,6 +44,10 @@
                 }
             }
         }
+
+        .btns {
+            margin-top: -7.5rem;
+        }
     }
 }
 
@@ -80,6 +84,10 @@
                     }
                 }
             }
+        }
+
+        .btns {
+            margin-top: -5rem;
         }
     }
 }
@@ -257,6 +265,10 @@
                 grid-template-columns: 1fr;
                 row-gap: 5rem;
             }
+
+            .btns {
+                margin-top: -2.5rem;
+            }
         }
     }
 
@@ -266,6 +278,10 @@
 
             .resources-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btns {
+                margin-top: -2.5rem;
             }
         }
     }
