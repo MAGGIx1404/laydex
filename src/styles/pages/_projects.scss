@@ -78,6 +78,14 @@
 
             .slider-controls {
                 width: 23.5%;
+
+                .slider-prev {
+                    transform: rotate(-90deg);
+                }
+
+                .slider-next {
+                    transform: rotate(90deg);
+                }
             }
         }
 
@@ -156,6 +164,16 @@
                 margin-top: 0;
                 order: 3;
                 align-items: center;
+
+                .slider-controls {
+                    .slider-next {
+                        transform: rotate(0) !important;
+                    }
+
+                    .slider-prev {
+                        transform: rotate(180deg);
+                    }
+                }
             }
 
             .slider-wrapper {

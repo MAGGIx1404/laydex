@@ -62,6 +62,7 @@ button {
 .btn {
     @extend %link;
     @include set-flex(row, flex-start, stretch, 0.25rem);
+    text-transform: uppercase;
 
     .btn-box {
         background: $color-white;
