@@ -79,9 +79,8 @@
                     @include set-flex(column, space-between, flex-start, 2.4rem);
                     width: 100%;
                     flex: 1;
-                    background: $color-orange;
-                    color: $color-white;
-                    padding: 4rem;
+                    padding: 4rem 0;
+                    border-bottom: 1px solid currentColor;
                 }
             }
 
