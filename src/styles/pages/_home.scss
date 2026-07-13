@@ -120,7 +120,8 @@
                         @include set-flex(column, flex-start, flex-start, 4rem);
                         flex: 0 0 100%;
                         max-width: 100%;
-                        background: $color-dark;
+                        background: $color-white;
+                        color: $color-black;
                         padding: 4rem;
 
                         &:not(:last-child) {
@@ -133,6 +134,18 @@
                             img {
                                 width: 1.75rem;
                                 height: auto;
+                                filter: invert(1);
+                            }
+                        }
+
+                        &.is-snapped {
+                            background: $color-dark;
+                            color: $color-white;
+
+                            h5 {
+                                img {
+                                    filter: invert(0);
+                                }
                             }
                         }
                     }
