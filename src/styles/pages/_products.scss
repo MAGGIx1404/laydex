@@ -10,9 +10,17 @@
         padding: $padding-sm;
 
         .section-header {
+            align-items: stretch;
+
             .header-box {
+                &:has(.cap-icon) {
+                    justify-content: center;
+                }
+
                 .cap-icon {
                     align-self: flex-end;
+                    width: 8rem;
+                    height: 8rem;
                 }
             }
         }
@@ -349,6 +357,7 @@
 
                     .cap-icon {
                         width: 3.5rem;
+                        height: 3.5rem;
                     }
                 }
             }
