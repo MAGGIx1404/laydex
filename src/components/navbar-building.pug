@@ -1,0 +1,101 @@
+
+//- Product categories shown under "Building Products".
+//- Each entry becomes a level-3 accordion; `items` are its leaf links.
+//- Entries with `subcategories` get level-4 sub-accordions instead of flat links.
+-
+  var buildingProducts = [
+    { name: 'Breather Membranes', items: ['Corotop Blue Breathable Membrane', 'Corotop Extra Protect 165 Breather Membrane', 'Corotop Green Strong Breathable Membrane', 'Corotop Grey Breathable Roofing Membrane', 'Corotop Red Strong Roof Underlay', 'Corotop Smart Breathable Membrane', 'Corotop House Wrap'], category: '1' },
+    { name: 'Building Envelope Solutions', items: ['Explore range'], category: '1' },
+    { name: 'Torch On & Underslating Membranes', items: ['Pluvitec Specialtec P 3 mm', 'Pluvitec Plusgum', 'Pluvitec Ultratec', 'Index SIRIO Polyester'], category: '1' },
+    { name: 'Cement Board', items: ['Explore range'], category: '2' },
+    { name: 'Joint Compounds', items: ['Explore range'], category: '3' },
+    { name: 'Oxide Protective Paint', items: ['Explore range'], category: '3' },
+    { name: 'Radon & Gas Protection System', items: ['JUTA GP® Titanbond', 'JUTA GP® Titanbond Plus', 'JUTA GP® Titanbond Pro', 'JUTA GP® Titanbond Pro Plus', 'JUTA GP® Titanbond Pro Ultra', 'JUTA GP® Titanbond Ultra', 'JUTA GP® Titanflex', 'JUTA GP® Titantank', 'MEMTECH R1 Reinforced Radon Barrier', 'RADEX 3000 Non-Reinforced Radon Membrane', 'LAYDEX RADON POLYSUMP', 'VISQUEEN Gas Resistant Self Adhesive Membrane', 'RADEX Radon Tape', 'VISQUEEN Protect & Drain', 'TOP HAT'], category: '4' },
+    { name: 'Gas & Hydrocarbon Protection System', items: ['Explore range'], category: '4' },
+    { name: 'Construction Films & Damp Proofing', items: ['Explore range'], category: '4' },
+    { name: 'EPDM Membranes', items: ['Explore range'], category: '4' },
+    { name: 'Floor Protection', items: ['Explore range'], category: '4' },
+    { name: 'Composite Decking & Fencing', items: ['Explore range'], category: '4' },
+    { name: 'Artificial Grass', items: ['Sage Artificial Grass 35 mm', 'VIRGO Artificial Landscape Grass 38 mm', 'Breeze Artificial Landscape Grass 30 mm', 'Comfort Artificial Landscape Grass 36 mm', 'Bond It Astro Pro'], category: '4' },
+    { name: 'Loft Ladders', items: ['Complete Loft Ladder', 'Polar Extrem - Extreme Insulation'], category: '4' },
+    { name: 'Adhesives', items: ['Construction', 'Contact'], subcategories: [
+      { name: 'Flooring', items: ['MAPEI'] }
+    ], itemsAfter: ['Hybrid', 'Industrial & Super Glues', 'Polyurethane', 'Specialist', 'Wood'], category: '4' },
+    { name: 'Silicones & Sealants', items: ['Explore range'], category: '2' },
+    { name: 'Cleaners', items: ['Explore range'], category: '4' },
+    { name: 'Expanding Foams', items: ['Explore range'], category: '3' },
+    { name: 'Floor Level Compounds', items: ['Latex Liquids', 'Levelling Compounds'], category: '4' },
+    { name: 'Roofing & Bituminous Products', items: ['Bituminous Products', 'Chipping Solution', 'Reflective Paint', 'Roof Repair'], category: '4' },
+    { name: 'Tapes', items: ['Dry Wall Scrim', 'Duct', 'Masking'], category: '4' },
+    { name: 'Fortessa', items: ['Bond It', 'Construction Adhesives', 'Contact/Flooring Adhesives', 'Industrial and Super Glues', 'Polyurethane Adhesives', 'Specialist Adhesives', 'Wood Adhesives'], category: '4' },
+    { name: 'Basta', items: ['Explore range'], category: '4' },
+    { name: 'Rothley', items: ['Explore range'], category: '4' }
+  ]
+
+nav.navbar
+    .container
+        a.logo(href="/")
+            img.logo-image(src="/images/logo.svg", alt="Laydex logo")
+        .navbar-links
+            button.link-outline-icon
+                img.icon(src="/icons/search.svg", alt="image")
+            a.link-outline.fill-orange(href="/") DISTRIBUTION
+            a.link-outline(href="/about.html") ABOUT US
+            .drop-down
+                a.link-outline(href="/products.html") PRODUCTS +
+                .drop-down-content
+                    a.link-outline(href="/products.html") BUILDING PRODUCTS
+                    a.link-outline(href="/products.html") flooring
+                    a.link-outline(href="/products.html") passive fire protection
+                    a.link-outline(href="/products-roofing.html") roofing
+                    a.link-outline(href="/products.html") radon & gas protection
+                    button.link-outline(data-panel-trigger="products") ALL PRODUCTS
+            a.link-outline(href="/") Sales Contacts
+            a.link-outline(href="/") Contact US
+            a.link-outline(href="/login.html")
+                | LOG IN
+                img.icon(src="/icons/user.svg", alt="image")
+            button.hamb-btn
+                .divider
+                .divider
+                .divider
+
+.panel(data-panel="products")
+    .panel-inner
+        .panel-top
+            h3
+                img.icon(src="/icons/cap.svg", alt="image")
+                | Building Products
+            .btns-wrapper
+                button.link-outline.active(data-tab="all") BUILDING PRODUCTS
+                button.link-outline(data-tab="1") ROOFING
+                button.link-outline(data-tab="2") FLOORING
+                button.link-outline(data-tab="3") PASSIVE FIRE PROTECTION
+                button.link-outline(data-tab="4") RADON & GAS PROTECTION
+            button.close-btn Close
+        .panel-grid
+            each cat in buildingProducts
+                .accordion(data-tab-content=cat.category)
+                    .accordion-trigger
+                        h6
+                            | #{cat.name}&nbsp;
+                            span.accordion-icon +
+                    .accordion-content
+                        .accordion-content-inner
+                            if cat.items
+                                each item in cat.items
+                                    a.link(href="/products.html")= item
+                            if cat.subcategories
+                                each sub in cat.subcategories
+                                    .accordion.accordion-nested
+                                        .accordion-trigger
+                                            span.nested-title
+                                                | #{sub.name}&nbsp;
+                                                span.accordion-icon +
+                                        .accordion-content
+                                            .accordion-content-inner
+                                                each item in sub.items
+                                                    a.link(href="/products.html")= item
+                            if cat.itemsAfter
+                                each item in cat.itemsAfter
+                                    a.link(href="/products.html")= item

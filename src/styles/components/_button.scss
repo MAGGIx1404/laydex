@@ -46,6 +46,18 @@ button {
             filter: invert(1);
         }
     }
+
+    &.fill-blue {
+        background: $color-blue;
+        color: $color-white;
+        border-color: $color-blue;
+    }
+
+    &.fill-orange {
+        background: $color-orange;
+        color: $color-white;
+        border-color: $color-orange;
+    }
 }
 
 .link-outline-icon {
