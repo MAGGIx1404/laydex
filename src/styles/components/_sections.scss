@@ -57,6 +57,23 @@
                 width: max-content;
             }
         }
+
+        .embla {
+            overflow: visible;
+            pointer-events: none;
+
+            .embla__container {
+                .embla__slide {
+                    @include set-flex(row, center, center);
+                    margin-right: 7.5rem;
+                    flex: 0 0 auto;
+
+                    img {
+                        max-width: 15rem;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -271,11 +288,10 @@
 
     .certification {
         .container {
+            overflow: visible;
+
             .certification-grid {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 4rem;
+                display: none;
             }
         }
     }

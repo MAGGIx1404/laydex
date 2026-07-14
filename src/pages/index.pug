@@ -250,7 +250,11 @@ block content
                 each image in [1,2,3,4,5]
                     figure.certification-figure(data-animation="reveal" data-animation-delay=`${image * 100}`)
                         img(src=`/images/certifications/${image}.svg`, alt="Icon")
-
+            .embla.mobile-only.autoscroll-slider
+                .embla__container
+                    each image in [1,2,3,4,5,1,2,3,4,5]
+                        .embla__slide
+                            img(src=`/images/certifications/${image}.svg`, alt="Icon")
     .-mt-10
 
     +type-section
