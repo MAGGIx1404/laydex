@@ -27,7 +27,7 @@
             @include set-flex(column, center, center, 0.5rem);
             display: none;
             width: 6rem;
-            height: 4rem;
+            height: 5rem;
             pointer-events: all;
             position: relative;
             z-index: 5;
@@ -70,6 +70,9 @@
             padding: 1.5rem 2rem;
 
             .logo {
+                background: $color-white;
+                padding: 1rem;
+
                 img {
                     width: 17.5rem;
                 }
@@ -79,6 +82,12 @@
                 .link-outline-icon {
                     background: $color-white;
                     border-color: transparent;
+                    width: 5rem;
+                    height: 5rem;
+
+                    img {
+                        width: 2rem;
+                    }
                 }
 
                 .link-outline {

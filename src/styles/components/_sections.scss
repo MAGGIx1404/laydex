@@ -2,7 +2,7 @@
 
 .content-section {
     @include set-grid(2, 12.5rem);
-    align-items: center;
+    // align-items: center;
     padding: $padding;
 
     .content-box {
@@ -20,6 +20,14 @@
                 border-bottom: 0.5px solid currentColor;
                 padding-bottom: 3rem;
             }
+        }
+    }
+
+    .content-figure {
+        padding-top: 6rem;
+
+        img {
+            height: 100%;
         }
     }
 
@@ -179,6 +187,10 @@
             .content-figure {
                 margin: 2.5rem 0;
             }
+        }
+
+        .content-figure {
+            padding-top: 0;
         }
 
         &.reverse {

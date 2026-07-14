@@ -42,6 +42,15 @@
         &:hover {
             color: $color-orange;
         }
+
+        &.lvl-3 {
+            padding: 1.6rem 0;
+            color: #4a4a4a;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
     }
 
     //- Top-level rows get a divider

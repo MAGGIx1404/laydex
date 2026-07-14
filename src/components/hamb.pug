@@ -56,6 +56,7 @@ mixin hambAcc(title, cls)
 
         +hambAcc('Products', 'lvl-1')
             +hambAcc('Building Products', 'lvl-2')
+                a.hamb-link.lvl-3(href="/products.html") All Building Products
                 each cat in buildingProducts
                     +hambAcc(cat.name, 'lvl-3')
                         if cat.items
@@ -71,7 +72,7 @@ mixin hambAcc(title, cls)
                                 a.hamb-link(href="/products.html")= item
             each family in productFamilies
                 +hambAcc(family, 'lvl-2')
-                    a.hamb-link(href="/products.html") Explore range
+                    a.hamb-link(href="/products.html") All #{family} Products
 
         a.hamb-link.lvl-1(href="/") Find a Rep
         a.hamb-link.lvl-1(href="/") Contact Us

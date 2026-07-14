@@ -20,6 +20,10 @@
                 img {
                     height: 100%;
                     display: none;
+
+                    &:first-child {
+                        display: block;
+                    }
                 }
             }
 
@@ -36,6 +40,10 @@
 
                     &:first-child {
                         border-top: 0.5px solid rgba($color-black, 0.5);
+                    }
+
+                    &:hover {
+                        color: $color-orange;
                     }
                 }
             }
@@ -89,10 +97,6 @@
                                 font-weight: 400;
                             }
                         }
-
-                        &:hover {
-                            color: $color-orange;
-                        }
                     }
                 }
 
@@ -102,10 +106,6 @@
 
                     img {
                         object-position: top;
-
-                        &:first-child {
-                            display: block;
-                        }
                     }
                 }
             }
