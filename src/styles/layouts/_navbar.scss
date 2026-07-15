@@ -21,6 +21,94 @@
 
         .navbar-links {
             @include set-flex(row, flex-end, center, 0.5rem);
+
+            .search-wrapper {
+                position: relative;
+
+                .search-trigger {
+                    position: relative;
+
+                    &:hover {
+                        background: $color-orange;
+                        border-color: $color-orange;
+
+                        img {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+
+                    .close-icon {
+                        @extend %size-full;
+                        @include set-flex(column, center, center);
+                        position: absolute;
+                        background: $color-black;
+                        opacity: 0;
+
+                        .divider {
+                            position: absolute;
+                            width: 60%;
+                            height: 1px;
+                            background: $color-white;
+
+                            &:nth-child(1) {
+                                transform: rotate(45deg);
+                            }
+
+                            &:nth-child(2) {
+                                transform: rotate(-45deg);
+                            }
+                        }
+                    }
+
+                    &.active {
+                        .close-icon {
+                            opacity: 1;
+                        }
+
+                        &:hover {
+                            border-color: $color-black;
+                        }
+                    }
+                }
+
+                .search-box {
+                    @include set-flex(column, flex-start, flex-start);
+                    width: 30rem;
+                    position: absolute;
+                    right: 0;
+                    top: calc(100% + 1rem);
+                    background: $color-white;
+                    padding: 1rem 1rem 1rem 1.5rem;
+                    border: 1px solid currentColor;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    &.active {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+
+                    .search-form {
+                        @extend %size-cover;
+                        @include set-flex(row, flex-start, center, 0.5rem);
+
+                        input {
+                            flex: 1;
+                            border: none;
+                            padding: 0.5rem 0;
+                            border-bottom: 1px solid currentColor;
+                        }
+
+                        .search-btn {
+                            border-color: $color-orange;
+
+                            img {
+                                filter: brightness(0) invert(1);
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .hamb-btn {
@@ -79,14 +167,40 @@
             }
 
             .navbar-links {
-                .link-outline-icon {
-                    background: $color-white;
-                    border-color: transparent;
-                    width: 5rem;
-                    height: 5rem;
+                .search-wrapper {
+                    .search-trigger {
+                        background: $color-white;
+                        border-color: transparent;
+                        width: 5rem;
+                        height: 5rem;
 
-                    img {
-                        width: 2rem;
+                        img {
+                            width: 2rem;
+                        }
+                    }
+
+                    .search-box {
+                        width: 85%;
+                        position: fixed;
+                        top: 12.5rem;
+                        right: auto;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border: none;
+                        padding: 1rem 1rem 1rem 2rem;
+
+                        .search-form {
+                            gap: 4rem;
+
+                            .search-btn {
+                                width: 5rem;
+                                height: 5rem;
+
+                                img {
+                                    width: 2rem;
+                                }
+                            }
+                        }
                     }
                 }
 

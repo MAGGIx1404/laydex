@@ -37,8 +37,17 @@ nav.navbar
         a.logo(href="/")
             img.logo-image(src="/images/logo.svg", alt="Laydex logo")
         .navbar-links
-            button.link-outline-icon
-                img.icon(src="/icons/search.svg", alt="image")
+            .search-wrapper
+                button.link-outline-icon.search-trigger
+                    img.icon(src="/icons/search.svg", alt="image")
+                    .close-icon
+                        .divider
+                        .divider
+                .search-box
+                    .search-form
+                        input(type="text", placeholder="Search products...")
+                        button.link-outline-icon.search-btn
+                            img.icon(src="/icons/search.svg", alt="image")
             a.link-outline.fill-orange(href="/") DISTRIBUTION
             a.link-outline(href="/about.html") ABOUT US
             .drop-down

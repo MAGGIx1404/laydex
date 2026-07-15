@@ -3,6 +3,7 @@ import '../styles/main.scss'
 import { setDynamicVH } from './utils/_viewports'
 
 import Hamb from './components/_hamb'
+import Search from './components/_search'
 import Sliders from './components/_slider'
 import ScrollAnimations from './components/_scrolltrigger'
 import Accordion from './components/_accordion'
@@ -25,6 +26,7 @@ class _APP {
     _init() {
         try {
             this._initHamb()
+            this._initSearch()
             this._initSliders()
             this._initScrollAnimations()
             this._initTabs()
@@ -40,6 +42,10 @@ class _APP {
 
     _initHamb() {
         new Hamb()
+    }
+
+    _initSearch() {
+        new Search()
     }
 
     _initSliders() {
