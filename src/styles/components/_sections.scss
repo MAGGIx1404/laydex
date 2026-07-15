@@ -321,4 +321,18 @@
             }
         }
     }
+
+    .content-section {
+        &.reverse {
+            & > .content-figure {
+                padding-left: 7.5%;
+            }
+        }
+
+        &:not(.reverse) {
+            & > .content-figure {
+                padding-right: 7.5%;
+            }
+        }
+    }
 }
