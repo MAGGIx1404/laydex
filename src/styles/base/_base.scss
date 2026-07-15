@@ -70,6 +70,7 @@ textarea {
 html {
     box-sizing: border-box;
     overscroll-behavior: none;
+    color-scheme: light;
     font-size: calc(100vw / 1920 * 10) !important;
 
     @media only screen and (max-width: 1024px) {
