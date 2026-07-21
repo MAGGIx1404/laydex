@@ -1,7 +1,7 @@
 extends /layouts/default
 
 block content
-    section.projects
+    section.projects(data-tab-multi)
         .container
             .content-box
                 +tag('PROJECTS', 'orange')
@@ -10,15 +10,15 @@ block content
                     span.orange Trusted Solutions
                 .btns-wrapper(data-animation="reveal" data-animation-delay="100")
                     button.link-outline.active(data-tab="all") VIEW ALL
-                    button.link-outline(data-tab="1") BUILDING PRODUCTS
-                    button.link-outline(data-tab="2") ROOFING
-                    button.link-outline(data-tab="3") FLOORING
-                    button.link-outline(data-tab="4") PASSIVE FIRE PROTECTION
-                    button.link-outline(data-tab="5") RADON & GAS PROTECTION
+                    button.link-outline(data-tab="building-product") BUILDING PRODUCTS
+                    button.link-outline(data-tab="roofing") ROOFING
+                    button.link-outline(data-tab="flooring") FLOORING
+                    button.link-outline(data-tab="passive-fire-protection") PASSIVE FIRE PROTECTION
+                    button.link-outline(data-tab="radon-gas-protection") RADON & GAS PROTECTION
 
             .projects-grid
                 each i in [1,2,3]
-                    a.project-card(href="/project-single.html" data-tab-content="1" data-animation="reveal" data-animation-delay=`${i * 100}`)
+                    a.project-card(href="/project-single.html" data-tab-content="building-product" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-1.png", alt="image")
                         .content-box
@@ -32,7 +32,7 @@ block content
                                         svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
                                             path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
 
-                    a.project-card(href="/project-single-2.html" data-tab-content="2" data-animation="reveal" data-animation-delay=`${i * 100}`)
+                    a.project-card(href="/project-single-2.html" data-tab-content="roofing" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-2.png", alt="image")
                         .content-box
@@ -46,13 +46,41 @@ block content
                                         svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
                                             path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
 
-                    a.project-card(href="/project-single-3.html" data-tab-content="3" data-animation="reveal" data-animation-delay=`${i * 100}`)
+                    a.project-card(href="/project-single-3.html" data-tab-content="flooring" data-animation="reveal" data-animation-delay=`${i * 100}`)
                         figure.item-figure
                             img.image(src="/images/projects/p-3.png", alt="image")
                         .content-box
                             p.paragraph-sm Building Products
                             h4 St Mary’s Secondary School. Juta GP Titanbond Lift Pit Installation
                             p.paragraph-sm This project required an accessible lift for a local school in Ballina, Co. Mayo. Setting the foundations for this project, a lift pit installation was required to ensure this...
+                            .btns
+                                button.btn.border
+                                    span.btn-box LEARN MORE
+                                    .icon-box
+                                        svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                            path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+                    a.project-card(href="/project-single.html" data-tab-content="passive-fire-protection" data-animation="reveal" data-animation-delay=`${i * 100}`)
+                        figure.item-figure
+                            img.image(src="/images/projects/p-1.png", alt="image")
+                        .content-box
+                            p.paragraph-sm Building Products
+                            h4 Resitrix SK W & Sage Artificial Grass Residential Project. Private Dwelling
+                            p.paragraph-sm This unique residential project was completed in 2022. The stunning private dwelling is complete with Resitrix SK W on the flat roof surfaces coupled with Sage...
+                            .btns
+                                button.btn.border
+                                    span.btn-box LEARN MORE
+                                    .icon-box
+                                        svg(width="10", height="11", viewBox="0 0 10 11", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                            path(d="m5.754.5 3.628 5-3.628 5H.98l3.413-4.706.212-.294-.212-.294L.98.5z", stroke="currentColor")
+
+                    a.project-card(href="/project-single-2.html" data-tab-content="radon-gas-protection" data-animation="reveal" data-animation-delay=`${i * 100}`)
+                        figure.item-figure
+                            img.image(src="/images/projects/p-2.png", alt="image")
+                        .content-box
+                            p.paragraph-sm Building Products
+                            h4 Colm Quinn BMW Drogheda. Memtech R1 Radon Barrier Installation
+                            p.paragraph-sm This commercial building project required the development of a new premises for Colm Quinn BMW at the M1 Retail Park in Drogheda, Co. Louth. This project...
                             .btns
                                 button.btn.border
                                     span.btn-box LEARN MORE

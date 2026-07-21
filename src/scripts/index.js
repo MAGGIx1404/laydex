@@ -90,32 +90,140 @@ class _APP {
             const contents = section.querySelectorAll('[data-tab-content]')
             if (tabs.length === 0 || contents.length === 0) return
 
-            // Initialize: check which tab has active class and activate matching content
-            const activeTab = section.querySelector('[data-tab].active')
-            if (activeTab) {
-                const activeValue = activeTab.getAttribute('data-tab')
-                if (activeValue === 'all') {
-                    contents.forEach((c) => c.classList.add('active'))
-                } else {
-                    section.querySelectorAll(`[data-tab-content="${activeValue}"]`).forEach((c) => c.classList.add('active'))
-                }
-            }
+            const isMultiSelect = section.hasAttribute('data-tab-multi')
 
-            tabs.forEach((tab) => {
-                const target = tab.getAttribute('data-tab')
+            // URL-based tab activation for multi-select sections
+            if (isMultiSelect) {
+                const urlParams = new URLSearchParams(window.location.search)
+                const tabsParam = urlParams.get('tabs')
 
-                tab.addEventListener('click', () => {
+                if (tabsParam) {
+                    // Parse URL: ?tabs=building-product+roofing
+                    const activeFromUrl = tabsParam.split(' ').map((t) => t.trim()).filter(Boolean)
+
+                    // Clear default active states
                     tabs.forEach((t) => t.classList.remove('active'))
                     contents.forEach((c) => c.classList.remove('active'))
 
-                    tab.classList.add('active')
-                    if (target === 'all') {
+                    // Activate tabs from URL
+                    activeFromUrl.forEach((slug) => {
+                        const matchingTab = section.querySelector(`[data-tab="${slug}"]`)
+                        if (matchingTab) matchingTab.classList.add('active')
+                        section.querySelectorAll(`[data-tab-content="${slug}"]`).forEach((c) => c.classList.add('active'))
+                    })
+
+                    // Sync "all" tab if all individual tabs are active
+                    const allTab = section.querySelector('[data-tab="all"]')
+                    if (allTab) {
+                        const nonAllTabs = [...tabs].filter((t) => t.getAttribute('data-tab') !== 'all')
+                        if (nonAllTabs.every((t) => t.classList.contains('active'))) {
+                            allTab.classList.add('active')
+                        }
+                    }
+                } else {
+                    // No URL param: use default active classes from markup
+                    const defaultActiveTabs = section.querySelectorAll('[data-tab].active')
+                    defaultActiveTabs.forEach((activeTab) => {
+                        const activeValue = activeTab.getAttribute('data-tab')
+                        if (activeValue === 'all') {
+                            contents.forEach((c) => c.classList.add('active'))
+                        } else {
+                            section.querySelectorAll(`[data-tab-content="${activeValue}"]`).forEach((c) => c.classList.add('active'))
+                        }
+                    })
+                }
+            } else {
+                // Initialize single-select: check which tab has active class and activate matching content
+                const activeTabs = section.querySelectorAll('[data-tab].active')
+                activeTabs.forEach((activeTab) => {
+                    const activeValue = activeTab.getAttribute('data-tab')
+                    if (activeValue === 'all') {
                         contents.forEach((c) => c.classList.add('active'))
                     } else {
-                        section.querySelectorAll(`[data-tab-content="${target}"]`).forEach((c) => c.classList.add('active'))
+                        section.querySelectorAll(`[data-tab-content="${activeValue}"]`).forEach((c) => c.classList.add('active'))
                     }
                 })
-            })
+            }
+
+            if (isMultiSelect) {
+                // Helper: update URL with current active tabs
+                const updateUrl = () => {
+                    const nonAllTabs = [...tabs].filter((t) => t.getAttribute('data-tab') !== 'all')
+                    const activeSlugs = nonAllTabs.filter((t) => t.classList.contains('active')).map((t) => t.getAttribute('data-tab'))
+
+                    const url = new URL(window.location)
+                    if (activeSlugs.length === 0 || activeSlugs.length === nonAllTabs.length) {
+                        url.searchParams.delete('tabs')
+                    } else {
+                        url.searchParams.set('tabs', activeSlugs.join('+'))
+                    }
+                    window.history.replaceState({}, '', url)
+                }
+
+                // Multi-select mode: toggle tabs independently
+                tabs.forEach((tab) => {
+                    const target = tab.getAttribute('data-tab')
+
+                    tab.addEventListener('click', () => {
+                        if (target === 'all') {
+                            // "All" tab toggles everything
+                            const isActive = tab.classList.contains('active')
+                            if (isActive) {
+                                tab.classList.remove('active')
+                                contents.forEach((c) => c.classList.remove('active'))
+                            } else {
+                                tabs.forEach((t) => t.classList.add('active'))
+                                contents.forEach((c) => c.classList.add('active'))
+                            }
+                        } else {
+                            // Toggle individual tab
+                            tab.classList.toggle('active')
+
+                            // Toggle matching content
+                            section.querySelectorAll(`[data-tab-content="${target}"]`).forEach((c) => c.classList.toggle('active'))
+
+                            // Sync the "all" tab state
+                            const allTab = section.querySelector('[data-tab="all"]')
+                            if (allTab) {
+                                const nonAllTabs = [...tabs].filter((t) => t.getAttribute('data-tab') !== 'all')
+                                const allActive = nonAllTabs.every((t) => t.classList.contains('active'))
+                                const noneActive = nonAllTabs.every((t) => !t.classList.contains('active'))
+
+                                if (allActive) {
+                                    allTab.classList.add('active')
+                                } else {
+                                    allTab.classList.remove('active')
+                                }
+
+                                // If nothing is selected, show all
+                                if (noneActive) {
+                                    tabs.forEach((t) => t.classList.add('active'))
+                                    contents.forEach((c) => c.classList.add('active'))
+                                }
+                            }
+                        }
+
+                        updateUrl()
+                    })
+                })
+            } else {
+                // Single-select mode (default behavior)
+                tabs.forEach((tab) => {
+                    const target = tab.getAttribute('data-tab')
+
+                    tab.addEventListener('click', () => {
+                        tabs.forEach((t) => t.classList.remove('active'))
+                        contents.forEach((c) => c.classList.remove('active'))
+
+                        tab.classList.add('active')
+                        if (target === 'all') {
+                            contents.forEach((c) => c.classList.add('active'))
+                        } else {
+                            section.querySelectorAll(`[data-tab-content="${target}"]`).forEach((c) => c.classList.add('active'))
+                        }
+                    })
+                })
+            }
 
             // Sub-tabs
             const subTabs = section.querySelectorAll('[data-sub-tab]')
